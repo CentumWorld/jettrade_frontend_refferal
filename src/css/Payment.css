@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.payment_container{
+    height: 90vh;
+    display: flex;
+    background-image:-webkit-linear-gradient(rgb(231, 223, 231),rgb(247, 204, 204));
+    justify-content: center;
+    align-items: center;
+}
+.payment-box{
+    width: 350px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: rgb(232, 240, 240);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.payment-box h1{
+    font-size: 30px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    
+}
+.payment-box h4{
+    font-size: 20px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    color: green;
+    
+}
+.input-box{
+    margin-top: 32px;
+    align-items: center;
+    justify-content: center;
+   
+}
+.payment-box input[type=text] {
+     text-align:center ;
+     justify-content: center;
+     font-weight: bold;
+     font-size: larger;
+     /* margin-top: 10px;
+     margin-bottom: 30px; */
+    
+}
+.payment-box input{
+    width: 70%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.payment-button button{
+    width: 65%;
+    margin: 10px;
+}
+.note-para{
+    margin: 10px;
+    text-align: left;
+}

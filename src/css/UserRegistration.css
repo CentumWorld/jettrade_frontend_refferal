@@ -1,0 +1,163 @@
+.registration-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90vh;
+    /* background-color:rgb(240,239,240); */
+    background: url('/src/img/reg-bg1.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animationBg 5s linear infinite;
+}
+@keyframes animationBg {
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.registration-body{
+    width: 45%;
+    height: 90%;
+    border-radius: 20px;
+    padding: 15px;
+    /*  */
+    overflow: scroll;
+    background: transparent;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,.5);
+    
+
+}
+.registration-body::-webkit-scrollbar{
+    display: none;
+}
+.registration-body p{
+    text-align: center;
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+.registration-body h4{
+    text-align: center;
+    font-family: Calibri;
+    color: #fff;
+    
+}
+.gender-dob{
+        display: flex;
+        justify-content: space-between;
+    
+}
+.gender-dob-section p{
+    text-align: start;
+    margin-bottom: 0px;
+}
+.first_name p{
+    text-align: start;
+    font-weight: 600;
+    font-family: Calibri;
+    margin-bottom: 0px;
+}
+.custom-placeholder-input.ant-input::placeholder{
+    color:#808080;
+}
+.custom-datepicker .ant-picker-input input::placeholder {
+    color:#808080; /* Change the placeholder color to red */
+  }
+.aadhar-front{
+    line-height: 0px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.aadhar-front p{
+    text-align: start;
+    font-weight: 600;
+    font-family: Calibri;
+}
+.aadhar_upload {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.aadhar-back{
+    line-height: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.aadhar-back p{
+    text-align: start;
+    font-weight: 600;
+    font-family: Calibri;
+}
+.Pan_card{
+    line-height: 0px;
+}
+.pan_number p{
+    text-align: start;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: Calibri;
+}
+.pan_card p{
+    text-align: start;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: Calibri;
+}
+.password-input p{
+    text-align: start;
+    margin-bottom: 0px;
+    font-weight: 600;
+    font-family: Calibri;
+}
+
+.submit-footer{
+    margin-top: 15px;
+}
+.submit-footer p{
+    font-weight: 500;
+    font-family: Calibri;
+}
+.submit-footer button{
+    margin-left: 10px;
+}
+.form-content form{
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    padding: 10px;
+    /* background: linear-gradient(red,blue); */
+}
+.input_label p{
+    text-align: start;
+    margin-bottom: 0px;
+}
+@media only screen and (min-width: 768px) and (max-width:1024px){
+    .registration-body{
+        width: 70%
+    }    
+}
+@media only screen and (max-width: 768px){
+    .registration-body{
+        width: 70%
+    }    
+}
+@media only screen and (max-width: 576px){
+    .registration-body{
+        width: fit-content;
+        
+    }
+    /* .aadhar_upload{
+        display: block;
+        width: auto;
+         
+    } */
+     /* .aadhar_front_mobile {
+        margin-bottom: 10px;
+    }  */
+    .submit-footer button{
+        width: 100%;
+        margin-bottom: 10px;
+        margin-left: 0px;
+    }
+}

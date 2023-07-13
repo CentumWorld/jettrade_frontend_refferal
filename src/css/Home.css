@@ -1,0 +1,149 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home_container{
+    height: 90vh;
+    display: flex;
+    background-image:-webkit-linear-gradient(purple,black);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.home_container:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    background-image:url("/src/img/pip7.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+
+  }
+.home_heading1{
+    text-align: center;
+    display: block;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+ 
+}
+.home_heading1 p{
+    margin-top: -20px;
+    text-align: center;
+    display: block;
+    font-size: 70px;
+    font-weight: bold;
+    color: #fff;
+ 
+}
+/* .forex-ticker{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+.forex-ticker{
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height:90px;
+    border-radius: 10px;
+    background-image:-webkit-linear-gradient(rgb(250, 21, 250),rgb(75, 4, 240));
+    padding: 20px 15px 5px 15px;
+    margin-left: 20px;
+    
+}
+.forex-ticker p{
+    font-size: 14px;
+}
+.forex-ticker a{
+    
+    color: blue;
+}
+
+.smallChart{
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
+}
+
+.jettrade{
+    width: 450px;
+    height: 35px;
+    margin-top: -25px;
+    border: 1px solid white;
+    justify-content: center;
+    align-items: center;
+
+}
+.jettrade P{
+
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 5px;
+    font-weight: lighter;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+.home-footer P{
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: lighter; 
+    color: rgb(207, 203, 203);
+    letter-spacing: 2px;
+}
+
+/* media query */
+
+@media only screen and (max-width:768px){
+    .home_container:before {
+        width: 100%;
+        height: 100%;
+        background-position: 25% 0;
+      }
+}
+
+@media only screen and (max-width:576px) {
+    .home_heading1{
+        font-size: 20px;
+    }
+    .home_heading1 p{
+        font-size: 40px;
+    }
+    .jettrade{
+        width: 300px;
+        height: 30px;
+    }
+    .jettrade P{
+        font-size: 10px;
+        word-spacing: 3px;
+        letter-spacing: 1px; 
+    }
+    .home-footer P{
+        font-size: 10px;
+    }
+    .home_container:before {
+        background-position: 15% 0;
+    
+    }
+    .forex-ticker{
+        width: 250px;
+    }
+    .forex-ticker p{
+        font-size: 14px;
+    }
+    .forex-ticker a{
+        font-size: 14px;
+        color: blue;
+    }
+}

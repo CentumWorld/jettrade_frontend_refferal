@@ -1,0 +1,144 @@
+.user_details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+ 
+}
+
+.user_card{
+    width: 80%;
+    height: 80vh;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 15px;
+   
+}
+.user_main_heading {
+    display: flex;
+    justify-content: space-between;
+  }
+.user_main_heading p{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: Calibri;
+}
+.user_main_heading_paragraph p{
+    font-size: 16px;
+    color:rgb(134, 133, 133);
+    font-family: Calibri;
+}
+.user_head{
+    color: rgb(197, 195, 195);
+    font-family: Calibri;
+}
+.row_content{
+    display: flex;
+    justify-content: space-between;
+}
+.user_head_data{
+    display: flex;
+    justify-content: space-between;
+}
+.user_head_data h6{
+    margin-right: 2px;
+    font-family: Calibri;
+}
+.user_profile{
+    display: flex;
+    justify-content: center;
+}
+.pic img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.upload_file button{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 1024px) and (min-width:768px){
+    .pic img{
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .user_deatails_main_div {
+        position: relative;
+
+    }
+    .user_profile{
+        position: absolute;
+
+    }
+    .user_profile img{
+        width: 100px;
+        height: 100px;
+    }
+    .user_details_content{
+        position: absolute;
+        margin-top: 60%;
+    }
+    .user_card{
+        overflow:scroll;
+    }
+    
+}
+
+@media only screen and (max-width:576px) {
+    .user_card {
+        width: 100%;
+    }
+
+    .user_main_heading p {
+        font-size: 16px;
+        font-family: Calibri;
+    }
+
+    .user_main_heading_paragraph p {
+        font-size: 14px;
+        font-family: Calibri;
+    }
+
+    .user_head h6 {
+        font-size: 12px;
+    }
+
+    .user_head_data h6,
+    span {
+        font-size: 12px;
+    }
+
+    .verification_status h6 {
+        font-size: 12px;
+    }
+
+    .user_profile {
+        margin-bottom: 10px;
+    }
+
+    .pic img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .upload_file button {
+        width: 100%;
+    }
+
+    .upload_file {
+        justify-content: center;
+        align-items: center;
+    }
+    .user_main_heading {
+        display: block;
+    
+      }
+}

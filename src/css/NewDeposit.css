@@ -1,0 +1,486 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.new-deposit_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:auto;
+    
+    
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.new-deposit_card{
+    width: 900px;
+    height: 90vh;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 15px;
+    overflow-y:scroll ;
+    margin-bottom: 30px;
+   
+}
+
+.new-deposit_heading h2{
+    font-size: 20px;
+    font-weight:700;
+    padding: 20px 20px;
+    
+
+   
+}
+.where_to_money_transfer span {
+    padding: 0px 25px;
+}
+/* .where_to_money_transfer span Select{
+    width: 300px;
+    height: 60px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+} */
+.where_to_money_transfer_select{
+    width: 300px;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+.new_deposit_for_account h2{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0px 20px;
+    margin-bottom: 30px;
+}
+.deposite_coin_account_type {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: 15px;
+    overflow-x: scroll;
+}
+/* .deposite_coin_account_one {
+    display: flex;
+    justify-content:space-around;
+    padding: 0px 15px 0px 15px;
+} */
+
+.deposite_coin_card{
+    width: 220px;
+    height: 60px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/* .deposite_coin_card small{
+    
+} */
+/* .doge_coin_area{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+}
+.ethereum_coin_area{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+}
+.deposite_coin_account_two{
+    display: flex;
+    justify-content:space-around;
+    padding: 0px 15px 0px 15px;
+    margin-top: 20px;
+}
+.lite_coin_area{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+    
+}
+.neteuer_coin_area{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+}
+.skrill_coin_area{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+}
+.deposit_coin_account_three{
+    display: flex;
+    margin-top: 20px;
+}
+.tether_erc_coin{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin: 5px;
+    
+}
+.tether_trc_coin{
+    width: 250px;
+    height: 80px;
+    background: #f6f6f6;
+    border: 1px solid rgb(184, 183, 183);
+    display:flex ;
+    justify-content:center;
+    align-items: center;
+    margin:5px; 
+} */
+.deposit_commission_area ul{
+    margin-top:30px ;
+    display: flex;
+    justify-content:space-around;
+}
+.deposit_commission_area ul li span{
+    font-size: 20px;
+    color: rgb(95, 95, 238);
+}
+.choose_bonus_heading h2{
+    margin-top: 15px;
+    padding-left: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.choose_bonus_area{
+    width: 80%;
+    height: 50px;
+    border: 1px solid rgb(184, 183, 183);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 15px;
+    
+}
+.bonus_point_area{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    padding: 0px 20px 20px 0px;
+    cursor: pointer;
+    
+}
+.bonus_point_area h3{
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.choose_bonus_area_large{
+    width: 100%;
+    height: auto;
+    border: 1px solid rgb(184, 183, 183);
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* -webkit-transition: all 1.5s ease; */
+    transition: all 1.5s ease; 
+ 
+}
+.bonus_advantage ul  {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.bonus_advantage ul li{
+    border-bottom: 1px solid rgb(197, 197, 197);
+    margin: 0px 10px 20px 0px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.bonus_advantage ul li small{
+    margin-left: 20px;
+   
+}
+.bonus_continue_button{
+    margin-top: 30px;
+    float: right;
+    
+}
+.bonus_continue_button button{
+    width: 120px;
+    height: 40px;
+    margin: 0px 15px 15px 0px;
+    background: rgb(13,111,251);
+    font-weight: 600;
+    border-radius: 10px;
+    
+}
+.proceed-to-deposit-main-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:auto;
+    
+}
+
+.proceed-to-deposit{
+    width: 900px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 30px 30px 15px 30px;
+    overflow-y:scroll ;
+    margin-bottom: 30px;
+
+}
+.bit-coin-card h4{
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.bit-coin-card h6{
+    font-size: 18px;
+}
+.bit-coin-para {
+    display: flex;
+}
+.bit-coin-para span{
+    font-size: 24px;
+    color: rgb(255,148,0);
+    margin-right: 10px;
+}
+.bit-coin-para p{
+    font-size: 16px;
+    padding-top: 10px;
+    font-family: roboto,sans-serif;
+
+}
+.bit-coin-para-two{
+    display: flex;
+}
+.bit-coin-para-two span{
+    font-size: 24px;
+    color: rgb(255,148,0);
+    margin-right: 10px;  
+}
+.bit-coin-para-two p{
+    font-size: 16px;
+    padding-top: 10px;
+    font-family: roboto,sans-serif;
+}
+.proceed_with_bitcoin_button{
+    float: right;
+}
+.choose_another_method_btc{
+    height: 45px;
+    background: #ffffff;
+    color:#0d6ffb;
+    border: none;
+    
+}
+.proceed_with_bitcoin{
+    height: 45px;
+    font-weight: 600;
+    background: #0d6ffb;
+    margin-left: 10px;
+}
+.ethereum-coin-card h4{
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+.ethereum_coin_currency{
+    display: flex;
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    border: 3px solid #0d6ffb;
+    justify-content:space-around;
+    margin-bottom: 20px;
+}
+.ethereum_coin_currency span{
+    font-size: 18px;
+    padding-top: 10px;
+}
+.ethereum_coin_currency  img{
+   width: 30px;
+   height: 30px;
+}
+.select-ready-made-opton-heading h5{
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.select-ready-made-opton {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+
+}
+.ready-made-option-one {
+    display: flex;
+    width: 220px;
+    height: 50px;
+    border: 1px solid rgb(236, 236, 236);
+    border-radius: 30px;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+
+}
+/* .ready-made-first-radio input[type=radio]{
+    border: 0px;
+    width: 50%;
+    height: 2em;
+} */
+.ready-made-option-one span{
+    display: flex;
+    font-size: 16px;
+    text-align: center;
+    padding-bottom: 5px;
+}
+.ready-made-option-one small{
+    padding-bottom: 5px;
+}
+.enter-manually-heading h5{
+    margin-top: 20px;
+}
+.enter-manually-amount{
+    width: 380px;
+    height: 50px;
+    border: 2px solid #082cf7;
+    padding: 10px 10px 15px 10px;
+    border-radius: 4px;
+}
+.enter-manually-heading h5{
+    font-size: 18px;
+}
+.enter-manually-amount input{
+    width: 180px;
+    outline: none !important;
+    border: none;
+    font-size: 20px;
+    font-weight: 400;
+}
+.enter-manually-amount span{
+    font-size: 14px;
+    font-weight: 600;
+    color: #666464;
+}
+.enter-manually-amount input{
+    font-size: 16px;
+}
+.amount-footer{
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+.ethereum-continue-btn{
+    float: right;
+}
+
+/* media query */
+@media only screen and (max-width:769px){
+    .deposite_coin_account_type {
+   
+        grid-template-columns: repeat(2,1fr);
+      
+    }
+    .deposit_commission_area ul li span{
+        font-size: 18px;
+    }
+    .bonus_point_area span h3{
+        font-size: 16px;
+    }
+    .bonus_advantage ul li{
+        font-size: 14px;
+    }
+   
+}
+ @media only screen and (max-width:576px) {
+    .deposite_coin_card{
+        width: 200px;
+        height: 60px;
+      
+    }
+    .deposite_coin_card span img{
+        width: 90px;
+        height: 40px;
+        padding: 5px;
+    }
+    .deposite_coin_card span {
+        font-size: 14px;
+    
+    }
+    .deposit_commission_area ul li span{
+       font-size: 18px;
+    }
+    .new-deposit_heading h2{
+        font-size: 18px;
+    }
+    .new_deposit_for_account h2{
+        font-size: 18px;
+    }
+    .choose_bonus_heading h2{
+        font-size: 18px;
+    }
+    .bonus_point_area span h3{
+        font-size: 16px;
+    }
+    .deposit_commission_area ul li{
+        font-size: 14px;
+    }
+    .bonus_advantage ul  {
+        grid-template-columns: repeat(1,1fr);
+       
+    }
+    .bonus_advantage ul li{
+        font-size: 14px;
+    }
+    .proceed-to-deposit h4{
+        font-size: 20px;
+    }
+    .proceed-to-deposit h6{
+        font-size: 16px;
+    }
+    .bit-coin-para p{
+        font-size: 14px;
+    }
+    .bit-coin-para span{
+        font-size: 16px;
+    }
+    .bit-coin-para-two p{
+        font-size: 14px;
+    }
+    .bit-coin-para-two span{
+        font-size: 18px;
+    }
+    
+
+} 

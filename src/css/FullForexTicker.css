@@ -1,0 +1,13 @@
+.FullViewChart{
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
+    display: block;
+    
+}
+.FullViewChart p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: purple;
+}

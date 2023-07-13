@@ -1,0 +1,179 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main-container{
+    position: sticky;
+    top: 70px;
+}
+.userSidebar{
+   /* background: rgb(241, 239, 239);  */
+   background: #fff;
+   color: rgb(37, 35, 35);
+   height: 91vh;
+   overflow: scroll;
+  
+    
+}
+.userSidebar::-webkit-scrollbar{
+    display: none;
+}
+.routes{
+    color: rgb(148, 233, 38);
+}
+.top_section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 15px 10px;
+}
+.logo{
+    font-size: 24px;
+    line-height: 0;
+}
+.icon{
+    font-size: 20px;
+}
+.deposit_logo{
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+.bars{
+    font-size: 22px;
+}
+
+.refferal-notification-title .ant-modal-title {
+    color: red; /* Change the color as desired */
+  }
+
+  .for-refferal-only-notification-section {
+    height: 100px;
+    overflow-y:scroll;
+  }
+  .for-refferal-notification-section{
+    height: 100px;
+    overflow-y:scroll;
+  }
+  .refferal-general-notification-section{
+    height: 100px;
+    overflow-y: scroll;
+  }
+  .refferal-notification-title .refferal-general-notification{
+    color:blue;
+    font-weight: 600;
+    
+  }
+  .refferal-notification-title .for-refferal-notification{
+    color: brown;
+    font-weight: 600;
+  }
+  .refferal-notification-title .for-refferal-only-notification{
+    color: blueviolet;
+    font-weight: 600;
+  }
+.deposit_button{
+    height: 50px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 16px;
+    margin: 10px 20px;
+    font-weight: 600;
+}
+/* .deposit_button button{
+    justify-content: center;
+    align-items: center;
+} */
+.user_sidebar_link{
+    display: flex;
+    color: rgb(34, 31, 31);
+    gap: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    /* font-family: 'Times New Roman', Times, serif; */
+
+}
+a{
+    text-decoration: none;
+}
+
+.user_sidebar_link:hover{
+    border-right: 2px solid rgb(199, 27, 27);
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    background: white;
+}
+.user_sidebar_link_small{
+    display: flex;
+    color: rgb(34, 31, 31);
+    gap: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+.user_sidebar_link_small:hover{
+    border-right: 2px solid rgb(199, 27, 27);
+    border-radius: 10px;
+    width: 50px;
+    height: 40px;
+    background: white;
+}
+
+
+.menu{
+    display: flex;
+    color: rgb(34, 31, 31);
+    gap: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: 500;
+    /* font-family: 'Times New Roman', Times, serif; */
+    justify-content: space-between;
+}
+.menu_item{
+    display: flex;
+    gap: 10px;
+}
+
+.menu_container .user_sidebar_link{
+    padding-left: 40px;
+    border-bottom: #fff .5px solid;
+}
+.setting{
+    font-size: 20px;
+
+}
+
+.setting:hover{
+    
+    animation: rotate 0.3s ease-in-out;
+    /* transform: translateX(180px) rotate(45deg); */
+    cursor: pointer;
+    
+}
+
+@keyframes rotate{
+    from {
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@media only screen and (max-width:576px){
+    .deposit_button{
+        width: 90%;
+        height: 40px;
+        font-size: 14px;
+    }
+   
+}

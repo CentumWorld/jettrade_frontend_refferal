@@ -1,0 +1,59 @@
+#portal .container {
+    position: fixed;
+    top: 100px;
+    left: 15px;
+    display: flex;
+  }
+  .container .user_modal {
+    z-index: 10;
+    width: 250px;
+    height: 80vh;
+    /* background: whitesmoke; */
+    background: #fff;
+    display: flex;
+    /* align-items: center;
+    justify-content: center; */
+    padding-top: 30px;
+    border-radius: 20px;
+    position: relative;
+    animation: animate 0.3s;
+    box-shadow: 1px 1px 10px rgb(187, 186, 186);
+  }
+  .user_modal a{
+    color: rgb(17, 17, 17);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+  }
+ ul{
+  list-style:none;
+ }
+
+ .user_modal ul :hover{
+  width: 220px;
+  height: 40px;
+  border-radius: 15px;
+  background: rgb(230, 226, 226);
+ }
+ 
+  .user_modal button {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    padding: 8px 11px;
+    background: crimson;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  @keyframes animate {
+    from {
+      transform: scale(0.5);
+    }
+    to {
+      transform: scale(1);
+    }
+  }

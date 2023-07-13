@@ -1,0 +1,193 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.real_account{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    
+}
+.real_account_card{
+    width: 80%;
+    height: 85vh;
+    background: #fff;
+    border-radius: 20px;
+    padding: 30px;
+    overflow: scroll;
+}
+.real_account_card::-webkit-scrollbar{
+    display: none;
+}
+.account_details_heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+.account_type_para{
+    font-size: 18px;
+    font-weight: 700;
+}
+.account_type_btn_real button{
+    width: 180px;
+    height: 40px;
+    border-radius: 25px;
+}
+.account_type_btn_demo button{
+    width: 180px;
+    height: 40px;
+    border-radius: 25px;
+}
+.account_type{
+    display: flex;
+}
+.account_type_btn_real{
+    margin-right: 15px;
+}
+.account_plateform p{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.accont_three_div{
+    display: flex;
+    position: relative;
+
+}
+.metatrade_five{
+    width: 280px;
+    height: auto;
+    border:2px solid;
+    border-color: rgb(47, 11, 248);
+    padding: 10px;
+    border-radius: 5px;
+}
+.metatrade_five_heading p{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: cursive;
+}
+.meta_trade_content p{
+    font-size: 16px;
+    margin-top: -20px;
+}
+
+.metatrade_four{
+    width: 280px;
+    height: auto;
+    border:2px solid;
+    border-color: rgb(204, 201, 201);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.meta_trade_content p small{
+    color: rgb(190, 187, 187);
+}
+.metatrade_jet{
+    width: 280px;
+    height: auto;
+    border:2px solid;
+    border-color: rgb(204, 201, 201);
+    padding: 10px;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.metatrade_jet_heading p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.leverage{
+    margin-top: 15px;
+}
+.leverage_heading p{
+    font-size: 18px;
+    font-weight: 700;
+}
+.leverage_select_option{
+    width: 300px;
+}
+.leverage_select_option select{
+    height: 50px;
+    border-radius: 20px;
+}
+.leverage_btn{
+    float: right;
+}
+.leverage_btn button{
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 15px;
+}
+.three_div_small_select_metatrade_five{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    border-style: solid;
+    border-color: rgb(38, 5, 226);
+    border-radius: 15px;
+    padding: 10px;
+}
+.three_div_small p{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: cursive;
+}
+.metatrade_five_div{
+    width: 100%;
+    height: fit-content;
+    /* border-style: solid;
+    border-color: rgb(135, 135, 219); */
+}
+.meta_trade_content_small{
+    border:2px solid;
+    border-color: rgb(47, 11, 248);
+    padding: 10px;
+    border-radius: 5px;
+}
+.meta_trade_content_small p small{
+    color: rgb(190, 187, 187);
+}
+.meta_trade_content_small{
+    border:2px solid;
+    border-color: rgb(47, 11, 248);
+    padding: 10px;
+    border-radius: 5px; 
+}
+.three_div_small_select_jettrade{
+    border:2px solid;
+    border-color: rgb(47, 11, 248);
+    padding: 10px;
+    border-radius: 5px;
+}
+.meta_trade_content_small{
+    border:2px solid;
+    border-color: rgb(47, 11, 248);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* meadia query */
+@media only screen and (max-width:576px){
+    .account_type{
+        display: block;
+    }
+    .account_type_btn_real{
+        margin-bottom: 15px;
+    }
+}
+@media only screen and (min-width:768px){
+    .three_div_small{
+        display: none;
+    }
+}
+@media only screen and (max-width:768px){
+    .accont_three_div{
+        display: none;
+    }
+    .real_account_card{
+        overflow: scroll;
+    }
+}

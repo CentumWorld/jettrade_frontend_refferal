@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.transfer_main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:80vh;
+   
+}
+::-webkit-scrollbar{
+    display: hidden;
+}
+
+.transfer_card{
+    width: 80%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    
+}
+.transfer_heading p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* .select_status{
+    height: 55px;
+    width: 300px;
+    background:#fff;
+    border-radius: 10px;
+    border: solid 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 20px;
+    border-color: rgb(204, 201, 201);
+} */
+.transfer_select_status{
+    margin-bottom: 20px;
+}
+.transfer_select_status select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.transfer_select_timeframe{
+    margin-bottom: 20px;
+}
+.transfer_select_timeframe select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.transfer_select_account{
+    margin-bottom: 40px;
+}
+.transfer_select_account select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.transfer_filter_button button{
+    width: 160px;
+    height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    background: rgb(19, 19, 219);
+    margin-bottom: 20px;
+}
+.transfer_history_record{
+    display: flex;
+    justify-content: space-between;
+}
+/* .history_list{
+    margin-right:10px ;
+} */
+
+/* media query */
+@media only screen and (max-width: 576px){
+    .transfer_select_status select{
+        width: 100%;
+    }
+    .transfer_select_account select{
+        width: 100%;
+    }
+    .transfer_select_timeframe select{
+        width: 100%;
+    }
+    .transfer_filter_button button{
+        width: 100%;
+    }
+    
+
+}
+@media only screen and (max-width: 767px){
+    .transfer_history_record{
+        overflow: scroll;
+    }
+    .transfer_card{
+        overflow: scroll; 
+     }
+     .transfer_card::-webkit-scrollbar{
+         display: none;
+     }
+}

@@ -1,0 +1,97 @@
+.memberLogin-page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 93vh;
+    /* background-color:rgb(240,239,240); */
+    background: url('/src/img/backgroundImage.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    animation: animationBg 5s linear infinite;
+}
+@keyframes animationBg {
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.memberLogin-body{
+    width: 35%;
+    height: 65%;
+    border-radius: 20px;
+    padding: 15px;
+    border: 2px solid rgba(255,255,255,.5);
+    /* background: #fff; */
+    overflow: scroll;
+    padding: 0 25px 0 25px;
+    font-family: Calibri;
+    background: transparent;
+    overflow: scroll;
+    padding: 0 25px 0 25px;
+    font-family: Calibri;
+    backdrop-filter: blur(15px);
+}
+.memberLogin-body h4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-top: 10px;
+}
+.memberLogin-body p {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    /* color: rgb(151, 150, 149); */
+    color: #fff;
+}
+.memberid-section label{
+    color: blueviolet;
+    font-weight: 700;
+}
+.password-section label{
+    color: blueviolet;
+    font-weight: 700;
+}
+.signin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signin-button Button{
+    margin-top: 20px;
+    background:#5e72e4;
+}
+.custom-placeholder-memberid ::placeholder{
+    color:#5e72e4;
+}
+.custom-placeholder-password ::placeholder {
+    color:#5e72e4; /* Replace with your desired color */
+  }
+  .home-signup  {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .home a, .signup a{
+    color: #fff;
+  }
+
+  /* media query */
+  @media only screen and (min-width: 769px) and (max-width:1024px){
+    .memberLogin-body{
+        width: 50%
+    }    
+}
+  @media only screen and (min-width: 576px) and (max-width:768px){
+    .memberLogin-body{
+        width: 60%
+    }    
+}
+  @media only screen and (max-width: 576px){
+    .memberLogin-body{
+        width: 90%;
+        height: 60%;
+    }
+  }

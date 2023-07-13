@@ -1,0 +1,90 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bonuses_main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:80vh;
+   
+}
+/* ::-webkit-scrollbar{
+    display: hidden;
+} */
+
+.bonuses_card{
+    width: 70%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    
+}
+.bonuses_heading p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.bonuses_para p{
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.deposite_bonuses_tab{
+    margin-top: 40px;
+}
+.deposit_bonus_data p{
+    font-size: 16px;
+    color: rgb(156, 153, 153);
+}
+.active_canceled_bonus_para p{
+    font-size: 16px;
+    color: rgb(156, 153, 153);
+}
+.active_canceled_bonus_para_second p{
+    font-size: 16px;
+}
+.deposite_bonuses_tab_heading {
+    display: flex;
+    justify-content: space-around;
+    color: rgb(156, 153, 153);
+}
+.active_canceled_bonuses_tab_heading{
+    display: flex;
+    justify-content: space-around;
+    color: rgb(156, 153, 153); 
+}
+.active_canceled_bonuses_tab{
+    margin-top: 40px;
+}
+
+/* media query */
+
+@media only screen and (max-width: 768px){
+    .bonuses_card{
+        overflow: scroll;
+    }
+    .bonuses_card::-webkit-scrollbar{
+        display: none;
+    }
+    .bonuses_heading p{
+        font-size: 18px;
+    }
+    .bonuses_para p{
+        font-size: 12px;
+    }
+    .deposit_bonus_data p{
+        font-size: 12px;
+    }
+    .active_canceled_bonus_para p{
+        font-size: 12px;
+
+    }
+    .active_canceled_bonus_para_second p{
+        font-size: 12px;
+    }
+    
+
+    
+}

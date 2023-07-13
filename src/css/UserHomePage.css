@@ -1,0 +1,352 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.user-dashboard-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+
+}
+.user-dashboard-home-card {
+    margin-top: 30px;
+    width: 80%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: scroll;
+    margin-bottom: 50px;
+
+}
+.user-dashboard-home-card::-webkit-scrollbar{
+    display: none;
+}
+.user-dashboard-home-card-heading p {
+    font-weight: bold;
+    font-size: 20px;
+  
+}
+.user-dashboard-home-card-heading span{
+    font-size: 24px;
+}
+.user_dashboard_account select{
+    margin-top: 40px;
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+}
+.user_dashboard_overview_current_funds_maindiv{
+    margin-top: 15px;
+    display: flex;
+}
+.over-view-heading p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.current-fund-heading {
+    font-size: 16px;
+    font-weight: bold;
+}
+.over-server{
+    display: flex;
+    justify-content: space-between;
+}
+.over-server p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.over-server span{
+    font-size: 16px;
+}
+.over-leverage{
+    display: flex;
+    justify-content: space-between;
+}
+.over-leverage p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.over-leverage a{
+    font-size: 16px;
+}
+.over-noswap{
+    display: flex;
+    justify-content: space-between;
+}
+.over-noswap p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.over-on-off{
+    display: flex;
+    justify-content: space-between;
+}
+
+.current-fund-content{
+    display: flex;
+    justify-content: space-between;
+}
+.free-margin p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.equity p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.user-home-balance p{
+    color: #c5c1c1;
+    font-size: 16px;
+}
+.current-fund-btn{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 22px;
+    
+}
+.new-deposite button{
+    font-weight: bold;
+    border-radius: 25px;
+    color: rgb(118, 118, 238);
+    background: #3e3e66;
+}
+.trade button{
+    font-weight: bold;
+    border-radius: 25px;
+    
+}
+
+/* Bonus card */
+
+.user_dashboard_bonus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+
+}
+
+.user_dashboard_bonus_card {
+    width: 80%;
+    height: 35vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+
+}
+.user_dashboard_bonus_heading h2{
+    font-weight: bold;
+    font-size: 20px;
+  
+}
+/* .user_dashboard_bonus_card::-webkit-scrollbar{
+    display: none;
+} */
+.user_dashboard_bonus_heading span{
+    font-size: 22px;
+}
+.user_dashboard_bonus_area{
+    display: flex;
+    margin-top: 24px;
+}
+.user_dashboard_bonus_button button{
+    float: right;
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    background: #F3F5FE;
+    color: #0C34F0;
+    font-weight: bold;
+}
+.user_dashboard_bonus_link{
+    margin: 20px 0px 0px;
+}
+
+
+/* -------------third card----------- */
+
+.user_dashboard_your_account_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%;
+    height: 80vh; */
+
+}
+.user_dashboard_your_account_card {
+
+    width: 80%;
+    height: 35vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+
+}
+.user_dashboard_your_account_heading h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 20px;
+  
+}
+.user_dashboard_your_account_heading {
+    display: flex;
+    justify-content: space-between;
+}
+.user_dashboard_your_account_heading span{
+    font-weight: 500;
+    color: #0C34F0;
+}
+.type-rate{
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    background: #0C34F0;
+    padding: 1px 2px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+}
+.create-account-table thead tr th{
+    padding: 10px 10px 16px 0px;
+    color: #828ca0;
+    font-size: 14px;
+    font-family: sans-serif;
+    width: 120px;
+}
+.create-account-table tbody tr td{
+    font-size: 14px;
+}
+.create-account-table tbody tr td small{
+    font-family: cursive;
+    font-size: 14px;
+    color: rgb(245, 162, 67);
+}
+.create-account-table tbody tr td strong{
+    font-family: cursive;
+    color: #0b0b16;
+    font: 12px;
+}
+.three-dot{
+    cursor: pointer;
+}
+
+
+
+
+
+/* media query */
+@media only screen and (max-width: 768px){
+    .user-dashboard-home-card-heading p{
+        font-size: 18px;
+    }
+    .over-view{
+        display: none;
+    }
+    .current-fund-content{
+        display: block;
+        width: 100%;
+        
+    }
+    .free-margin{
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .free-margin p, .equity p, .user-home-balance p{
+        font-size: 14px;
+    }
+    .equity{
+        display: flex;
+        justify-content: space-between;
+    }
+    .user-home-balance{
+        display: flex;
+        justify-content: space-between;
+    }
+    .user_dashboard_bonus_area{
+        display: block;
+        
+    }
+    .user_dashboard_bonus_para  {
+        width: 100%;
+    }
+    .user_dashboard_bonus_button  {
+        width: 100%;
+    }
+    .user_dashboard_bonus_heading h2{
+        font-size: 18px;
+      
+    }
+    .current-fund-heading{
+        font-size: 16px;
+    }
+    .user_dashboard_bonus_heading span{
+        font-size: 18px;
+    }
+
+}
+@media only screen and (max-width: 576px){
+    .user-dashboard-home-card-heading p{
+        font-size: 16px;
+    }
+    .user_dashboard_account select{
+        width: 100%;
+    }
+    .user_dashboard_bonus_heading h2{
+        font-size: 16px;
+    }
+    .user_dashboard_bonus_para p{
+        font-size: 12px;
+    }
+    .user_dashboard_bonus_area{
+        display: block;
+        
+    }
+    .user_dashboard_bonus_para  {
+        width: 100%;
+    }
+    .user_dashboard_bonus_button  {
+        width: 100%;
+    }
+    .current-fund-heading{
+        font-size: 14px;
+    }
+    .user_dashboard_bonus_button button{
+        width:100% ;
+        margin-bottom: 10px;
+
+    }
+    .user_dashboard_bonus_heading span{
+        font-size: 18px;
+    }
+    .user_dashboard_bonus_link a{
+        font-size:12px ;
+        
+    }
+    .user_dashboard_bonus_link{
+        text-align: center;
+    }
+    .current-fund-btn {
+        display: block;
+    }
+    .new-deposite button{
+        width: 80%;
+        margin-bottom: 18px;
+    }
+    .trade button{
+        width:80%;
+    }
+    .user_dashboard_bonus_card{
+        height: auto;
+    }
+  
+
+}
+

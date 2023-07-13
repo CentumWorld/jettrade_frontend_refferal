@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.user_internal_transfer_main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    margin-top:15px;
+
+}
+.user_internal_transfer_card {
+    width: 768px;
+    height: 90vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    overflow-y: scroll;
+
+}
+.user_internal_transfer_card::-webkit-scrollbar{
+    display: none;
+}
+
+.user_internal_transfer_heading p {
+    font-weight: bold;
+    font-size: 20px;
+}
+.user_internal_transfer_para p{
+    font-size: 14px;
+    color: #bebebe;
+    margin-bottom: 40px;
+
+}
+.internal_transfer_from select{
+    width: 300px;
+    height: 45px;
+}
+.internal_transfer_to select{
+    width: 300px;
+    height: 45px;
+}
+.user_internal_transfer_amount_card{
+    margin-top: 25px;
+    width: 668px;
+    height: 40vh;
+    border-top: 1px solid black;
+    background: #fbfbfb;
+
+}
+.user_internal_transfer_amount {
+    padding: 20px 20px;
+}
+.transfer_amount_heading h2{
+  font-size: 20px;
+
+}
+.internal_transfer_amount_from{
+    margin-top: 18px;
+}
+.internal_transfer_amount_from input{
+    width: 300px;
+    padding-left: 30px;
+    border: 1px solid rgb(40, 40, 236);
+}
+.internal_transfer_pin_part{
+    display: flex;
+    margin-top: 25px;
+}
+.internal_transfer_amount_from label{
+    font-weight: bold;
+    color: #858484;
+}
+
+.internal_transfer_pin label{
+    font-weight: bold;
+    color: #616060;
+}
+.forget_internal_transfer_pin{
+    margin-left: 10px;
+}
+.internal_transfer_pin_area{
+    display: flex;
+    position: relative;
+}
+.internal_transfer_request{
+    right: 0;
+    bottom: 0;
+    text-align: right;
+    position: absolute;
+    padding-bottom: 5px;
+    padding-right: 20px;
+
+}
+
+
+
+/* media query */
+@media only screen and (max-width:576px){
+    .user_internal_transfer_amount_card{
+        width: 100%;
+    }
+    .user_internal_transfer_heading p {
+        font-size: 18px;
+    }
+    .user_internal_transfer_para p{
+        font-size: 12px;
+    }
+    .user_internal_transfer_card {
+        overflow-y: scroll;
+    }
+    .internal_transfer_amount_from input{
+        width: 100%;
+    }
+    .user_internal_transfer_card{
+        padding: 0;
+    }
+    .user_internal_transfer_amount {
+        padding: 5px 5px;
+    }
+    
+}
+@media only screen and (max-width:768px){
+    .user_internal_transfer_amount_card{
+        width: 100%;
+    }
+    .internal_transfer_pin_part{
+        display: inline-block;
+    }
+}

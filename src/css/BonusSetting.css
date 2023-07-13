@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.bonus_setting{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height:auto;
+}
+.bonus_card{
+    margin-top: 20px;
+    width: 80%;
+    height: 40vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+   
+}
+.bonus_heading p{
+    font-size: 20px;
+    font-weight: 700;
+}
+.bonuscheck{
+    display:flex;
+
+} 
+.bonuscheckbox {
+    margin-right: 10px;
+}
+.bonus_check_setting_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+    margin-top: 30px;
+}
+.bonus_backto_personal{
+    margin-right: 30px;
+   
+}
+.bonus_backto_personal button{
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+}
+.bonus_save button{
+    font-size: 18px;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+/* media query */
+ 
+@media only screen and (max-width: 768px){
+
+    .bonus_check_setting_buttons{
+        display: block;
+        
+    }
+}

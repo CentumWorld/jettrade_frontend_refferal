@@ -1,0 +1,104 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.accounts_main_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+
+}
+
+.accounts_card {
+    width: 80%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+
+}
+
+.accounts_heading p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tab_heading {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab_heading span {
+    font-weight: 400;
+    color: rgb(134, 131, 131);
+}
+
+.tab_data {
+    display: flex;
+    justify-content: space-around;
+}
+
+.tab_btn {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.tab_btn button {
+    border-radius: 30px;
+    height: 50px;
+    background: rgb(127, 127, 165);
+    border-style: none;
+    word-spacing: 2px;
+    padding: 15px;
+}
+
+.contest_data p {
+    color: rgb(156, 153, 153);
+    font-size: 16px;
+}
+
+.constest_btn {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.constest_btn button {
+    height: 50px;
+    border-radius: 25px;
+}
+
+.demo_button button {
+    height: 50px;
+    border-radius: 25px;
+    margin-top: 30px;
+    float: right;
+    word-spacing: 2px;
+}
+
+.demo_data p {
+    color: rgb(156, 153, 153);
+    font-size: 16px;
+}
+
+.close_data p {
+    color: rgb(156, 153, 153);
+    font-size: 16px;
+}
+
+/* media query */
+@media only screen and (max-width: 768px) {
+    .accounts_card {
+        width: 100%;
+    }
+}
+@media only screen and (max-width:576px){
+    .tab_btn button{
+        width: 100%;
+        height: auto;
+        padding: 10px 15px;
+    }
+}

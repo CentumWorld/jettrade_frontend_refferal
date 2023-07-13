@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.withdrawal_main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:80vh;
+   
+}
+::-webkit-scrollbar{
+    display: hidden;
+}
+
+.withdrawal_card{
+    width: 80%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    
+}
+.withdrawal_heading p{
+    font-size: 20px;
+    font-weight: bold;
+}
+/* .select_status{
+    height: 55px;
+    width: 300px;
+    background:#fff;
+    border-radius: 10px;
+    border: solid 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    font-size: 20px;
+    border-color: rgb(204, 201, 201);
+} */
+.withdrawal_select_status{
+    margin-bottom: 20px;
+}
+.withdrawal_select_status select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.withdrawal_select_timeframe{
+    margin-bottom: 20px;
+}
+.withdrawal_select_timeframe select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.withdrawal_select_account{
+    margin-bottom: 40px;
+}
+.withdrawal_select_account select{
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    border-style:rgb(218, 213, 213);
+}
+.withdrawal_filter_button button{
+    width: 160px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 16px;
+    background: rgb(19, 19, 219);
+    margin-bottom: 20px;
+}
+.withdrawal_history_record{
+    display: flex;
+    justify-content: space-between;
+}
+/* .history_list{
+    margin-right:10px ;
+} */
+
+/* media query */
+@media only screen and (max-width: 576px){
+    .withdrawal_select_status select{
+        width: 100%;
+    }
+    .withdrawal_select_account select{
+        width: 100%;
+    }
+    .withdrawal_select_timeframe select{
+        width: 100%;
+    }
+    .withdrawal_filter_button button{
+        width: 100%;
+    }
+    
+
+}
+@media only screen and (max-width: 767px){
+    .withdrawal_history_record{
+        overflow: scroll;
+    }
+    .withdrawal_card{
+        overflow: scroll; 
+     }
+     .withdrawal_card::-webkit-scrollbar{
+         display: none;
+     }
+}

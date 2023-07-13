@@ -1,0 +1,101 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.monitoring_main_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:80vh;
+   
+}
+/* ::-webkit-scrollbar{
+    display: hidden;
+} */
+
+.monitoring_card{
+    width: 70%;
+    height: 80vh;
+    padding: 30px;
+    background: #fff;
+    border-radius: 20px;
+    
+}
+.monitoring_heading p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.monitoring_para p{
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+.monitoring_available_account p{
+    font-weight: 600;
+    font-size: 20px;
+}
+.monitoring_available_account_field{
+    display: flex;
+    color: rgb(156, 153, 153);
+    font-size: 18px;
+    justify-content:space-between;
+}
+.monitoring_available_account_field_data span{
+    font-size: 16px;
+}
+
+.monitoring_monitored_account p{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.monitoring_monitored_account_field{
+    display: flex;
+    color: rgb(156, 153, 153);
+    font-size: 18px;
+    justify-content:space-between;
+}
+.monitorined_account_data span{
+    font-size: 16px;
+}
+
+/* media query */
+
+@media only screen and (max-width: 768px){
+
+    .monitoring_card{
+        overflow: scroll;
+        width:100%;
+    }
+    .monitoring_card::-webkit-scrollbar{
+        display: none;
+    }
+    .monitoring_heading p{
+        font-size: 18px;
+    }
+    .monitoring_para p{
+        font-size: 14px;
+    }
+    .monitoring_available_account p{
+        font-size: 18px;
+    }
+    .monitoring_available_account_field{
+        font-size: 16px;
+    }
+    .monitoring_available_account_field_data span{
+        font-size: 14px;
+    }
+    .monitoring_monitored_account p{
+        font-size: 18px;
+    }
+
+    .monitoring_monitored_account_field{
+        font-size: 18px;
+    }
+    .monitorined_account_data span{
+        font-size: 14px;
+    }
+}
+    
