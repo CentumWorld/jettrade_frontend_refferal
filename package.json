@@ -3,8 +3,8 @@
   "homepage": "https://app.jettradefx.com",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
-  "dependencies": {
+  "proxy": "http://103.149.68.19:8081",
+    "dependencies": {
     "@ant-design/icons": "^5.0.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
