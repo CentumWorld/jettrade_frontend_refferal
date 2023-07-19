@@ -5,6 +5,9 @@ import { UserOutlined, UnlockOutlined } from '@ant-design/icons';
 import { NavLink, useNavigate } from 'react-router-dom';
 import Axios from 'axios';
 import { UserContext } from '../App';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 const MemberLogin = () => {
 
@@ -54,7 +57,7 @@ const MemberLogin = () => {
             localStorage.removeItem('password');
             localStorage.removeItem('rememberMe');
         }
-        Axios.post("/member/member-login", {
+        Axios.post(`${apiurl}`+"/member/member-login", {
             memberid: member.memberid,
             password: member.password,
         })

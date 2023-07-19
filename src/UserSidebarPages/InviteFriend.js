@@ -4,7 +4,10 @@ import share from '../img/share-icon.png'
 import whatsapp from '../img/whatsapp.png'
 import facebook from '../img/facebook1.png'
 import twitter from '../img/twitter.png'
-import '../css/InviteFriend.css'
+import '../css/InviteFriend.css';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 
 const InviteFriend = () => {
@@ -21,7 +24,7 @@ const InviteFriend = () => {
     };
 
     const handleShareWhatsApp = () => {
-        const link = "https://example.com";
+        const link = "http://trader.jettradefx.in";
         const message = `Join us with invite code: ${inviteCode}\n\n${link}`;
         
         const url = `https://wa.me/?text=${encodeURIComponent(message)}`;

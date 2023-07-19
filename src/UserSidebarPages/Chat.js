@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import ScrollToBottom from 'react-scroll-to-bottom'
 import { AiOutlineSend } from 'react-icons/ai'
 import { message } from 'antd'
-import axios from 'axios'
+import axios from 'axios';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 const Chat = ({ socket, username, room }) => {
 
@@ -79,7 +82,7 @@ const Chat = ({ socket, username, room }) => {
         const config = {
             headers: { 'Authorization': `Bearer ${token}` }
         };
-        axios.post('/member/refferal/fetch-chat-message-refferal', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/fetch-chat-message-refferal', data, config)
             .then((result) => {
                 console.log(result.data.refferalChatMessage)
                 //setMessageList((list) => [...list, result.data.adminChatMessage])
@@ -99,7 +102,7 @@ const Chat = ({ socket, username, room }) => {
             headers: { 'Authorization': `Bearer ${token}` }
         };
 
-        axios.get('/member/refferal/admin-online-or-not-refferal',config)
+        axios.get(`${apiurl}`+'/member/refferal/admin-online-or-not-refferal',config)
         .then((res)=>{
             setIsAdminOnline(res.data.isOnline)
         })

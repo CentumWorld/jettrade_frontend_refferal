@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Button, Modal, Input, message } from 'antd';
 import axios from 'axios';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 function MemberForgetPassword(props) {
     const [visible, setVisible] = useState(true);
@@ -36,7 +39,7 @@ function MemberForgetPassword(props) {
             message.warning('Please enter UserID');
         } else {
            
-            axios.post('member/member-forget-password', data)
+            axios.post(`${apiurl}`+'member/member-forget-password', data)
             .then((res) => {
                 message.success('OTP sent successfully');
                 setMemberIdSubmitted(true);
@@ -61,7 +64,7 @@ function MemberForgetPassword(props) {
             message.warning('Please enter OTP !!')
             
         } else {
-            axios.post('/member/member-verify-otp',data)
+            axios.post(`${apiurl}`+'/member/member-verify-otp',data)
             .then((res) => {
              console.log(res);
              message.success(res.data.message);
@@ -97,7 +100,7 @@ function MemberForgetPassword(props) {
             message.warning('Password and confirm password mismatch !!')
         }   
         else {
-            axios.post('/member/member-reset-password',data)
+            axios.post(`${apiurl}`+'/member/member-reset-password',data)
             .then((res) => {
                 //console.log(res);
                 message.success(res.data.message);

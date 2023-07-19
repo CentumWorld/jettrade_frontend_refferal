@@ -4,6 +4,9 @@ import '../css/DisplayCard.css';
 import { FaRupeeSign } from 'react-icons/fa';
 import axios from 'axios';
 import { Modal,Menu, Dropdown } from 'antd';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 const DisplayCard = () => {
 
@@ -84,7 +87,7 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post('/member/fetch-member-details-member-side', data, config)
+        axios.post(`${apiurl}`+'/member/fetch-member-details-member-side', data, config)
             .then((res) => {
 
                 const walletAmount = res.data.result.wallet
@@ -116,7 +119,7 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post('/member/refferal/refferal-total-withdrawal', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/refferal-total-withdrawal', data, config)
             .then((res) => {
                 //console.log(res.data.walletAmount)
                 if (res.data.data === 0) {
@@ -146,7 +149,7 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post('/member/refferal/refferal-my-team', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/refferal-my-team', data, config)
             .then((res) => {
                 // console.log(res.data.teamMembers.length)
                 if (res.data.teamMembers.length > 0) {

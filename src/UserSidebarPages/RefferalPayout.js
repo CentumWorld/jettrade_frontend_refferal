@@ -4,6 +4,9 @@ import axios from 'axios';
 import { Button, Input, message, Tabs, Table } from 'antd'
 import { FaRupeeSign } from 'react-icons/fa';
 import moment from 'moment';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 const { TabPane } = Tabs;
 
@@ -39,7 +42,7 @@ const RefferalPayout = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         }
 
-        axios.post('/member/refferal/refferal-payout-request-member', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/refferal-payout-request-member', data, config)
             .then((res) => {
                 message.success('Requested sent');
                 fetchRefferalPayout();
@@ -64,7 +67,7 @@ const RefferalPayout = () => {
         const data = {
             memberid: memberid
         }
-        axios.post('/member/refferal/member-fetch-refferal-payout', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/member-fetch-refferal-payout', data, config)
             .then((res) => {
                 const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
                     style: 'currency',
@@ -85,7 +88,7 @@ const RefferalPayout = () => {
         let config = {
             headers: { 'Authorization': `Bearer ${token}` }
         }
-        axios.post('/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
             .then((res) => {
                 const length = res.data.memberWithdrawalRequest.length;
                 const lastData = res.data.memberWithdrawalRequest[length - 1];
@@ -119,7 +122,7 @@ const RefferalPayout = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         }
 
-        axios.post('/member/refferal/member-fetch-refferal-payout-approve-withdrawal', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/member-fetch-refferal-payout-approve-withdrawal', data, config)
             .then((res) => {
                 console.log(res.data);
                 setApprovedDetails(res.data.memberApproveWithdrawal)
