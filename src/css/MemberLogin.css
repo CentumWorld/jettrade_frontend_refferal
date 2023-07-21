@@ -78,6 +78,17 @@
     color: #fff;
   }
 
+  .member-login-btn{
+    border: none;
+    padding: 2px 3px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+  }
+  .member-login-btn:hover{
+    border: 1px solid cyan;
+  }
+
   /* media query */
   @media only screen and (min-width: 769px) and (max-width:1024px){
     .memberLogin-body{

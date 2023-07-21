@@ -14,7 +14,7 @@
     position: sticky;
     top: 0px;
     z-index: 10;
-
+    height: 10vh;
 }
 .modal-title {
     font-weight: bold;
@@ -31,4 +31,21 @@ form label {
 
 .navbar-box {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 365px) {
+    img{
+        display: none;
+    }
+    .navbar-brand{
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* tablet Screen */
+@media only screen and (max-width: 980px) {
+    .navbar{
+        height: max-content;
+    }
 }
