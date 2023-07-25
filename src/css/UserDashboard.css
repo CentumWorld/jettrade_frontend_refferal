@@ -7,9 +7,9 @@
 .main_container{
     display: flex;
     width: 100%;
-    height: auto;
+    height: 90vh;
     background: rgb(243,245,254);
-
+    overflow: hidden;
 }
 .user_content_container{
     margin-left: 2px;
@@ -17,7 +17,8 @@
     align-items: center;
     width: 90%;
     padding: 20px;
-    overflow: scroll;
+    /* overflow: scroll; */
+    height: 100%;
 }
 .user_content_container::-webkit-scrollbar{
     display: none;
