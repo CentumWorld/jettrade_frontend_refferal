@@ -204,7 +204,7 @@ const DisplayCard = () => {
                         <h6>Member ID </h6>&nbsp; : &nbsp;<span style={{ color: 'yellow' }}>{memberDetails.memberid}</span>
                     </div>
                     <div className='d-flex'>
-                        <h6>Refferal ID</h6> &nbsp; : &nbsp; <span style={{ cursor: 'pointer', color: 'yellow' }}>{memberDetails.refferal}</span>
+                        <h6>Referral ID</h6> &nbsp; : &nbsp; <span style={{ cursor: 'pointer', color: 'yellow' }}>{memberDetails.refferal}</span>
                     </div>
                 </div>
                 <div className='card1'>
@@ -225,7 +225,7 @@ const DisplayCard = () => {
                 </div>
                 <div className='card1'>
                     <div className='wallet'>
-                        <h6> Refferal Wallet</h6>
+                        <h6> Referral Wallet</h6>
                     </div>
                     <div className='d-flex'>
                         <h6>Amount :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}>{subscriptionStatus.formattedAmount}</span>
@@ -252,7 +252,7 @@ const DisplayCard = () => {
                 </div>
                 <div className='card1'>
                     <div className='refferal-payout'>
-                        <h6>Refferal Payout</h6>
+                        <h6>Referral Payout</h6>
                     </div>
                     <div className='refferal-payout-view'>
                         <span style={{ color: 'yellow', cursor: 'pointer' }} onClick={refferalPayout} >View</span>
