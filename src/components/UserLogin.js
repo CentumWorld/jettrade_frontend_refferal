@@ -9,6 +9,9 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { Input } from 'antd';
 import { UserOutlined,UnlockOutlined } from '@ant-design/icons';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 function UserLogin(props) {
 
@@ -30,7 +33,7 @@ function UserLogin(props) {
    
     const userLogin = (e) => {
         e.preventDefault();
-        Axios.post("/member/member-login", {
+        Axios.post(`${apiurl}`+"/member/member-login", {
             memberid: user.userid,
             password: user.password
         })

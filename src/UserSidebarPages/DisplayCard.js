@@ -268,7 +268,7 @@ const DisplayCard = () => {
                 </div>
                 <div className='card1'>
                     <div className='trading-chart'>
-                        <h6>Chart Data</h6>
+                        <h6>Chart and Data</h6>
                     </div>
                     <div className='trading-chart'>
                         <Dropdown overlay={menu} trigger={['click']} placement="bottomCenter">

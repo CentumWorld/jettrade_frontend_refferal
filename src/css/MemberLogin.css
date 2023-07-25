@@ -16,8 +16,8 @@
     }
 }
 .memberLogin-body{
-    width: 35%;
-    height: 65%;
+    width: max-content;
+    height: max-content;
     border-radius: 20px;
     padding: 15px;
     border: 2px solid rgba(255,255,255,.5);

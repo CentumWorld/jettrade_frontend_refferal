@@ -13,6 +13,9 @@ import { FaAddressCard } from 'react-icons/fa';
 //import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/bootstrap.css';
+import baseUrl from '../baseUrl';
+
+const apiurl = baseUrl.apiUrl;
 const { TextArea } = Input;
 const { Text } = Typography;
 
@@ -172,7 +175,7 @@ function UserRegistration() {
         }
 
         if (countryCode === '91') {
-            axios.post('/member/member-registration', formData)
+            axios.post(`${apiurl}`+'/member/member-registration', formData)
                 .then((res) => {
                     setMemberData({
                         fname: "",
@@ -188,7 +191,7 @@ function UserRegistration() {
                     setSpin(false);
                 })
         } else {
-            axios.post('/member/refferal/other-country-member-registration', formData)
+            axios.post(`${apiurl}`+'/member/refferal/other-country-member-registration', formData)
                 .then((res) => {
                     message.success('Registration successful');
                     navigate('/member-login');
@@ -258,44 +261,7 @@ function UserRegistration() {
                     <p>Sign up with credentials</p>
                     <div className='form-content'>
                         <form>
-                            {/* dorpdown and input box for refferal */}
-
-                            {/* <div className='d-flex'>
-                                <Select value={selectedOption} onChange={handleDropdownChange}>
-
-                                    <Option value="official">Official ID</Option>
-                                    <Option value="referral"> Put Referral ID</Option>
-                                </Select>
-
-                                {selectedOption === 'official' && (
-                                    <div >
-
-                                        <Input type="text" id="official-id" value={officialId} style={{ marginBottom: '10px', width: '100%' }} disabled />
-                                    </div>
-                                )}
-
-                                {selectedOption === 'referral' && (
-                                    <div>
-
-                                        <Input
-                                            className='custom-placeholder-input'
-                                            type="text"
-                                            id="referral-id"
-                                            value={referralId}
-                                            name='invite_code'
-                                            onChange={(e) => hadleRefferalId(e.target.value)}
-
-                                            //onChange={hadleRefferalId}
-
-                                            placeholder="Enter referral ID"
-                                            style={{ marginBottom: '10px' }}
-                                        />
-                                    </div>
-                                )}
-
-                            </div> */}
-                            {/* --------------------- */}
-                            {/* andt firt name */}
+                           
                             <div className='first_name'>
                                 <p>First Name</p>
                                 <Input

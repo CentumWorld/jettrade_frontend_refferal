@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { Dropdown, Menu } from 'antd';
 import MemberForgetPassword from './MemberForgetPassword';
 import logo from './../img/logo1.png';
+import { RiLogoutBoxLine } from "react-icons/ri";
 
 function Navbar() {
     const { state, dispatch } = useContext(UserContext);
@@ -56,7 +57,11 @@ function Navbar() {
                 <>
 
                     <li className="nav-item">
-                        <NavLink className="btn btn-outline-dark rounded-pill " to="/logout" aria-current="page" >Logout</NavLink>
+                        <NavLink className="btn rounded btn-outline-primary rounded-pill" to="/logout" aria-current="page"
+                         style={{ marginRight: "1rem", display:'flex', alignItems:'center', gap:'.5rem', width:"max-content",color:'0D6EFD'}}
+                         >Logout
+                          <RiLogoutBoxLine style={{height:'1rem', width:'1rem'}}/>
+                         </NavLink>
                     </li>
                 </>
             )

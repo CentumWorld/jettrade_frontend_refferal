@@ -152,31 +152,6 @@ const RefferalPayout = () => {
         },
     ];
 
-    // const approvedColumns = [
-    //     {
-    //         title: 'Member ID',
-    //         dataIndex: 'memberid',
-    //         key: 'memberid',
-    //     },
-    //     {
-    //         title: 'Wallet Amount',
-    //         dataIndex: 'walletAmount',
-    //         key: 'walletAmount',
-    //         render: (text) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(text),
-    //     },
-    //     {
-    //         title: 'Requested Date',
-    //         dataIndex: 'requestDate',
-    //         key: 'requestDate',
-    //         render: (text) => moment(text).format('DD/MM/YY HH:mm:ss'),
-    //     },
-    //     {
-    //         title: 'Approved Date',
-    //         dataIndex: 'approveDate',
-    //         key: 'approveDate',
-    //         render: (text) => moment(text).format('DD/MM/YY HH:mm:ss'),
-    //     },
-    // ];
 
 
     console.log(lastDate);

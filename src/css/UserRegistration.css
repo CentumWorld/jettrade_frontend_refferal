@@ -8,13 +8,13 @@
     background: url('/src/img/reg-bg1.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    animation: animationBg 5s linear infinite;
+    /* animation: animationBg 5s linear infinite; */
 }
-@keyframes animationBg {
+/* @keyframes animationBg {
     100%{
         filter: hue-rotate(360deg);
     }
-}
+} */
 .registration-body{
     width: 45%;
     height: 90%;

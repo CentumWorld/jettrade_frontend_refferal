@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react'
 import '../../css/ChangePassword.css';
 import { Input, message } from 'antd';
 import axios from 'axios';
+import baseUrl from '../../baseUrl';
+
+const apiurl = baseUrl.apiUrl
 
 function ChangePassword() {
   const [selectDiv, setSelectDiv] = useState('');
@@ -38,7 +41,7 @@ function ChangePassword() {
               Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
             },
         }
-      axios.post('/member/member-change-password', data, config)
+      axios.post(`${apiurl}`+'/member/member-change-password', data, config)
       .then(res => {
        
           message.success(res.data.message);
