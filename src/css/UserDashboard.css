@@ -10,6 +10,7 @@
     height: 90vh;
     background: rgb(243,245,254);
     overflow: hidden;
+    /* overflow: hidden; */
 }
 .user_content_container{
     margin-left: 2px;
