@@ -104,7 +104,11 @@ const RefferalPayout = () => {
                 const finalDate = `${day}/${month}/${year}`;
                 console.log(finalDate,lastData.walletAmount,'180');
                  setLastDate(finalDate);
-                setLastAmount(lastData.walletAmount);
+                 const formattedAmount =  new Intl.NumberFormat('en-IN', {
+                    style: 'currency',
+                    currency: 'INR'
+                  }).format(lastData.walletAmount)
+                setLastAmount(formattedAmount);
                 setRequestDetails(res.data.memberWithdrawalRequest);
                 fetchRefferalPayout();
 
@@ -193,7 +197,7 @@ const RefferalPayout = () => {
                     <h6>Amount:{lastAmount}</h6>
                     <strong> Last Date: {lastDate}</strong>
                 </div>
-
+        </div>
       <br />
       <Tabs defaultActiveKey="1">
         <TabPane tab="Withdrawal" key="1">

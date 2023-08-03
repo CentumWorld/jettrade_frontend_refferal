@@ -44,7 +44,7 @@
     .card-container{
       display: flex;
       flex-direction: column;
-      width: auto;
+      /* width: auto; */
     }
     .card{
       width: auto;
