@@ -60,70 +60,59 @@ const RefferalPayout = () => {
     fetchApprovedRequest();
   }, [requestDetails]);
 
-  const fetchRefferalPayout = () => {
-    let token = localStorage.getItem("token");
-    let memberid = localStorage.getItem("memberid");
-    let config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-    const data = {
-      memberid: memberid,
-    };
-    axios
-      .post(
-        `${apiurl}` + "/member/refferal/member-fetch-refferal-payout",
-        data,
-        config
-      )
-      .then((res) => {
-        const formattedAmount = res.data.wallet.toLocaleString("en-IN", {
-          style: "currency",
-          currency: "INR",
-        });
-        setPayOutAmount(formattedAmount);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  // fetch refferal request data
-  const fetchRefferalRequest = () => {
-    let token = localStorage.getItem("token");
-    let data = {
-      memberid: localStorage.getItem("memberid"),
-    };
-    let config = {
-      headers: { Authorization: `Bearer ${token}` },
-    };
-    axios
-      .post(
-        `${apiurl}` +
-          "/member/refferal/fetch-member-refferal-payout-request-withdrawal",
-        data,
-        config
-      )
-      .then((res) => {
-        const length = res.data.memberWithdrawalRequest.length;
-        const lastData = res.data.memberWithdrawalRequest[length - 1];
-        const lastDate =
-          res.data.memberWithdrawalRequest[length - 1].requestDate;
-        console.log(res);
-        const formattedDate = new Date(lastDate).toLocaleDateString();
-        const parts = formattedDate.split("/");
-        const month = parts[0];
-        const day = parts[1];
-        const year = parts[2];
-        const finalDate = `${day}/${month}/${year}`;
-        console.log(finalDate, lastData.walletAmount, "180");
-        setLastDate(finalDate);
-        setLastAmount(lastData.walletAmount);
-        setRequestDetails(res.data.memberWithdrawalRequest);
-        fetchRefferalPayout();
-      })
-      .catch((err) => {
-        console.log(err.response.data.message);
-      });
-  };
+    const fetchRefferalPayout = () => {
+        let token = localStorage.getItem('token');
+        let memberid = localStorage.getItem('memberid');
+        let config = {
+            headers: { 'Authorization': `Bearer ${token}` }
+        }
+        const data = {
+            memberid: memberid
+        }
+        axios.post(`${apiurl}`+'/member/refferal/member-fetch-refferal-payout', data, config)
+            .then((res) => {
+                const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
+                    style: 'currency',
+                    currency: 'INR'
+                });
+                setPayOutAmount(formattedAmount)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+    // fetch refferal request data
+    const fetchRefferalRequest = () => {
+        let token = localStorage.getItem("token");
+        let data = {
+            memberid: localStorage.getItem('memberid')
+        }
+        let config = {
+            headers: { 'Authorization': `Bearer ${token}` }
+        }
+        axios.post(`${apiurl}`+'/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
+            .then((res) => {
+                const length = res.data.memberWithdrawalRequest.length;
+                const lastData = res.data.memberWithdrawalRequest[length - 1];
+                const lastDate = res.data.memberWithdrawalRequest[length - 1].requestDate;
+                console.log(res);
+                const formattedDate = new Date(lastDate).toLocaleDateString();
+                const parts = formattedDate.split('/');
+                const month = parts[0];
+                const day = parts[1];
+                const year = parts[2];
+                const finalDate = `${day}/${month}/${year}`;
+                console.log(finalDate,lastData.walletAmount,'180');
+                 setLastDate(finalDate);
+                setLastAmount(lastData.walletAmount);
+                setRequestDetails(res.data.memberWithdrawalRequest);
+                fetchRefferalPayout();
+
+            })
+            .catch(err => {
+                console.log(err.response.data.message)
+            })
+    }
 
   // fetch approved request--
   const fetchApprovedRequest = () => {
@@ -177,37 +166,33 @@ const RefferalPayout = () => {
 
   console.log(lastDate);
 
-  return (
-    <div className="reffer-container">
-      <p>Reffer Payout History</p>
+    return (
+        <div className="reffer-container">
+            <p>Withdrawal History</p>
 
-      <div class="card-container">
-        <div class="card">
-          <p>Total Amount</p>
-          <h6>Total Amount: {payoutAmout}</h6>
-          <p>Refferal Payout Amount</p>
-        </div>
-        <div class="card">
-          <p>Refferal Payout Request</p>
-          <label htmlFor="">Enter Amount</label>
-          <Input
-            type="number"
-            placeholder="Enter amount"
-            value={amount}
-            onChange={handleAmountChange}
-            prefix={<FaRupeeSign />}
-          />
-          <Button onClick={requestRefferalPayout}>Withdraw</Button>
-        </div>
-        <div class="card">
-          <p>Last Payout Request</p>
-          <h6>
-            Amount:
-            <FaRupeeSign /> {lastAmount}
-          </h6>
-          <strong> Last Date: {lastDate}</strong>
-        </div>
-      </div>
+            <div class="card-container">
+                <div class="card">
+                    <p>Total Amount</p>
+                    <h6>Total Amount: {payoutAmout}</h6>
+                    
+                </div>
+                <div class="card">
+                    <p>Withdrawal</p>
+                    <label htmlFor="">Enter Amount</label>
+                    <Input
+                        type="number"
+                        placeholder="Enter amount"
+                        value={amount}
+                        onChange={handleAmountChange}
+                        prefix={<FaRupeeSign />}
+                    />
+                    <Button onClick={requestRefferalPayout}>Withdraw</Button>
+                </div>
+                <div class="card">
+                    <p>Last Withdrawal</p>
+                    <h6>Amount:{lastAmount}</h6>
+                    <strong> Last Date: {lastDate}</strong>
+                </div>
 
       <br />
       <Tabs defaultActiveKey="1">
