@@ -199,18 +199,15 @@ const RefferalPayout = () => {
                 </div>
         </div>
       <br />
+        <div className="table-box">
       <Tabs defaultActiveKey="1">
         <TabPane tab="Withdrawal" key="1">
-          <div style={{ overflow: "auto", maxHeight: "250px" }}>
+          <div style={{ overflow: "auto", }}>
             <Table columns={requestColumns} dataSource={requestDetails} />
           </div>
         </TabPane>
-        {/* <TabPane tab="Approved" key="2">
-                        <div style={{ overflow: 'auto', maxHeight: '250px' }}>
-                            <Table columns={approvedColumns} dataSource={approvedDetails} />
-                        </div>
-                    </TabPane> */}
       </Tabs>
+                      </div>
     </div>
   );
 };

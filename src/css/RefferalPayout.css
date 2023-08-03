@@ -11,6 +11,10 @@
     font-weight: 600;
 }
 
+.table-box{
+  width: auto;
+}
+
 .card-container {
     display: flex;
     justify-content: space-between;
