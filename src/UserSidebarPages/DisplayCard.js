@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import '../css/DisplayCard.css';
-import { FaRupeeSign } from 'react-icons/fa';
+import { FaRupeeSign, FaHandHoldingUsd } from 'react-icons/fa';
 import axios from 'axios';
-import { Modal,Menu, Dropdown } from 'antd';
+import { Modal, Menu, Dropdown, Table } from 'antd';
 import baseUrl from '../baseUrl';
+import moment from 'moment';
 
 const apiurl = baseUrl.apiUrl
 
@@ -34,7 +35,7 @@ const DisplayCard = () => {
             navigate('/userdashboard/market-data');
         }
     };
-    
+
     const menu = (
         <Menu onClick={handleMenuClick}>
             <Menu.Item key="cryptocurrency-market">Cryptocurrency Market</Menu.Item>
@@ -87,7 +88,7 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post(`${apiurl}`+'/member/fetch-member-details-member-side', data, config)
+        axios.post(`${apiurl}` + '/member/fetch-member-details-member-side', data, config)
             .then((res) => {
 
                 const walletAmount = res.data.result.wallet
@@ -119,7 +120,7 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post(`${apiurl}`+'/member/refferal/refferal-total-withdrawal', data, config)
+        axios.post(`${apiurl}` + '/member/refferal/refferal-total-withdrawal', data, config)
             .then((res) => {
                 //console.log(res.data.walletAmount)
                 if (res.data.data === 0) {
@@ -128,7 +129,11 @@ const DisplayCard = () => {
 
                 } else {
                     const totalWithdrawal = res.data.walletAmount;
-                    setTotalWithdrawal(totalWithdrawal)
+                    const formattedwithdrawal = totalWithdrawal.toLocaleString('en-IN', {
+                        style: 'currency',
+                        currency: 'INR'
+                    });
+                    setTotalWithdrawal(formattedwithdrawal)
                 }
 
 
@@ -149,11 +154,13 @@ const DisplayCard = () => {
                 Authorization: `Bearer ${token}`
             }
         }
-        axios.post(`${apiurl}`+'/member/refferal/refferal-my-team', data, config)
+        axios.post(`${apiurl}` + '/member/refferal/refferal-my-team', data, config)
             .then((res) => {
                 // console.log(res.data.teamMembers.length)
-                if (res.data.teamMembers.length > 0) {
+                if (res.data.teamMembers) {
                     setRefferalTeam(res.data.teamMembers);
+                    // console.log(res.data.teamMembers);
+
                     setNoRefferalTeam(false)
                 } else {
                     setNoRefferalTeam(true)
@@ -194,6 +201,38 @@ const DisplayCard = () => {
     const viewPersonalDetails = () => {
         navigate('/userdashboard/setting/userdetails')
     }
+    const gotoWithdrawalPage = () => {
+        navigate('/userdashboard/refferal-payout');
+    }
+
+    const columns = [
+        {
+            title: 'User ID',
+            dataIndex: 'userid',
+            key: 'userid',
+        },
+        {
+            title: 'Amount',
+            dataIndex: 'referralAmount',
+            key: 'referralAmount',
+            render: (referralAmount) => new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR'
+              }).format(referralAmount),
+        },
+        {
+            title: 'Type',
+            dataIndex: 'userType',
+            key: 'userType',
+        },
+        {
+            title: 'DOJ',
+            dataIndex: 'joininigDate',
+            key: 'joininigDate',
+            render: (joininigDate) => moment(joininigDate).format('YYYY-MM-DD HH:mm'),
+        },
+
+    ];
 
 
     return (
@@ -225,15 +264,28 @@ const DisplayCard = () => {
                 </div>
                 <div className='card1'>
                     <div className='wallet'>
-                        <h6> Referral Wallet</h6>
+                        <h6>Wallet</h6>
                     </div>
                     <div className='d-flex'>
-                        <h6>Amount :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}>{subscriptionStatus.formattedAmount}</span>
+                        <h6>Balance :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}>{subscriptionStatus.formattedAmount}</span>
                     </div>
-                    <div className='d-flex'>
+                    {/* <div className='d-flex'>
                         <h6>Withdrawal :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}><FaRupeeSign />{totalWithdrawal}</span>
+                    </div> */}
+                </div>
+
+                <div className='card1'>
+                    <div className='wallet'>
+                        <h6>Withdrawal</h6>
+                    </div>
+                    <div className='d-flex'>
+                        <h6>Total withdrawal:</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}>{totalWithdrawal}</span>
+                    </div>
+                    <div className='d-flex' style={{ cursor: 'pointer' }} onClick={gotoWithdrawalPage}>
+                        <h6>Withdraw :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}><FaHandHoldingUsd /></span>
                     </div>
                 </div>
+
                 <div className='card1'>
                     <div className='inviteFriend'>
                         <h6>Invite Friend</h6>
@@ -287,11 +339,11 @@ const DisplayCard = () => {
                 onCancel={handleCancel}
                 footer={null}
             >
-                {!noRefferalTeam ? <div style={{ textAlign: "center", maxHeight: "300px", overflowY: "scroll" }}>
-                    {refferalTeam.map((name, index) => (
-                        <p key={index}>{index + 1}.UserID: &nbsp;{name}</p>
-                    ))}
+                {!noRefferalTeam ? 
+                <div>
+                    <Table dataSource={refferalTeam} columns={columns} />
                 </div>
+                
                     : 'No Refferal Found'}
             </Modal>
 
