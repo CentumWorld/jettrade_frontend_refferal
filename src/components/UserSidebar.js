@@ -123,7 +123,7 @@ const routes = [
     },
     {
         path: '/userdashboard/refferal-payout',
-        name: "Referral Payout",
+        name: "Withdrawal",
         icon: <FaShare />,
     },
     {
