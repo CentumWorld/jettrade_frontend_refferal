@@ -32,7 +32,7 @@ function UserRegistration() {
     const [phone, setPhone] = useState('')
 
     const [memberData, setMemberData] = useState({
-        fname: "", lname: "", email: "", phone: "", address: "", gender: "", dob: "", aadhar_no: "", pan_no: "", memberid: '', password: "",foregien_id: ''
+        fname: "", lname: "", email: "", phone: "", address: "", gender: "", dob: "", aadhar_no: "", pan_no: "", memberid: '', password: "",foregien_id: '', refferedId: "",
     })
     const [panError, setPanError] = useState(false);
     const [aadharError, setAadharError] = useState(false);
@@ -175,7 +175,7 @@ function UserRegistration() {
         }
 
         if (countryCode === '91') {
-            axios.post(`${apiurl}`+'/member/member-registration', formData)
+            axios.post('/member/member-registration', formData)
                 .then((res) => {
                     setMemberData({
                         fname: "",
@@ -191,7 +191,7 @@ function UserRegistration() {
                     setSpin(false);
                 })
         } else {
-            axios.post(`${apiurl}`+'/member/refferal/other-country-member-registration', formData)
+            axios.post('/member/refferal/other-country-member-registration', formData)
                 .then((res) => {
                     message.success('Registration successful');
                     navigate('/member-login');
@@ -261,6 +261,18 @@ function UserRegistration() {
                     <p>Sign up with credentials</p>
                     <div className='form-content'>
                         <form>
+                        <div className='first_name'>
+                                <p>Reffered ID</p>
+                                <Input
+                                    className='custom-placeholder-input'
+                                    // prefix={<UserOutlined />}
+                                    placeholder="Enter reffered Id"
+                                    name='refferedId'
+                                    value={memberData.refferedId}
+                                    onChange={memberInputs}
+                                    style={{ marginBottom: '10px', width:"min-content" }}
+                                />
+                            </div>
                            
                             <div className='first_name'>
                                 <p>First Name</p>
@@ -410,7 +422,7 @@ function UserRegistration() {
                                         className='custom-placeholder-input'
                                         placeholder=" Enter Pan no."
                                         type="text"
-                                        name='pan_no'
+                                        name='pan_no' 
                                         onChange={memberInputs}
                                         style={{ marginBottom: '10px' }}
                                     //style={{ width: '500px', height: '40px' , marginBottom: '10px' }}
