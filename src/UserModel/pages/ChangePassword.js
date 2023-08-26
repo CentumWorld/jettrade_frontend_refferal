@@ -41,7 +41,7 @@ function ChangePassword() {
               Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
             },
         }
-      axios.post(`${apiurl}`+'/member/member-change-password', data, config)
+      axios.post('/member/member-change-password', data, config)
       .then(res => {
        
           message.success(res.data.message);

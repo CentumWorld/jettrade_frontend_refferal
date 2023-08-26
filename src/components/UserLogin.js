@@ -33,7 +33,7 @@ function UserLogin(props) {
    
     const userLogin = (e) => {
         e.preventDefault();
-        Axios.post(`${apiurl}`+"/member/member-login", {
+        Axios.post("/member/member-login", {
             memberid: user.userid,
             password: user.password
         })

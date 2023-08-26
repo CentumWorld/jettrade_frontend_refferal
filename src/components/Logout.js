@@ -11,7 +11,7 @@ function Logout() {
     // console.log("Badal")
 
     useEffect(()=>{
-        fetch(`${apiurl}`+"/admin/logout",{
+        fetch("/admin/logout",{
             method:"GET",
             headers:{
                 Accept:"application/json",
