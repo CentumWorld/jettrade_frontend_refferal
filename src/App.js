@@ -43,6 +43,7 @@ import HeatMap from './UserSidebarPages/HeatMap';
 import EconomicCelender from './UserSidebarPages/EconomicCelender';
 import MarketData from './UserSidebarPages/MarketData';
 import Screener from './UserSidebarPages/Screener';
+import ReferraPayout from './components/ReferraPayout';
 
 
 
@@ -138,6 +139,7 @@ function App() {
               <Route path='transfer' element={<InternalTransfer/>}/>
               <Route path='invite' element={<InviteFriend/>}/>
               <Route path='chat' element={<LiveChat/>} />
+              <Route path="referral-payout" element={<ReferraPayout />} />
               
 
               {/* Opertaion Hostory */}

@@ -130,6 +130,11 @@ const routes = [
         path:'/userdashboard/chat',
         name:"Chat",
         icon:<BsFillChatTextFill />
+    },
+    {
+        path: "/userdashboard/referral-payout",
+        name: "Referral Payout",
+        icon: <BsFillChatTextFill />
     }
     // {
     //     path: '/copytrading',
