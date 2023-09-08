@@ -5,6 +5,15 @@
     padding: 20px;
     border-radius: 5px;
 } 
+.reffer-header{
+  width: 100%;
+  height: 60px;
+  background: #02015a;
+  border-radius: 5px;
+  padding: 10px 0 0 10px;
+  color: white;
+  margin-bottom: 5px;
+}
 .reffer-container p{
     font-size: large;
     font-family: Calibri;

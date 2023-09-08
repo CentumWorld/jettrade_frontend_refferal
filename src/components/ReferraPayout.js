@@ -19,7 +19,7 @@ const ReferraPayout = () => {
 
   useEffect(() => {
     memberDetails();
-  }, []);
+  },[]);
 
   const memberDetails = () => {
     try {

@@ -44,6 +44,7 @@ import EconomicCelender from './UserSidebarPages/EconomicCelender';
 import MarketData from './UserSidebarPages/MarketData';
 import Screener from './UserSidebarPages/Screener';
 import ReferraPayout from './components/ReferraPayout';
+import AddBankDetails from './UserSidebarPages/AddBankDetails';
 
 
 
@@ -140,6 +141,7 @@ function App() {
               <Route path='invite' element={<InviteFriend/>}/>
               <Route path='chat' element={<LiveChat/>} />
               <Route path="referral-payout" element={<ReferraPayout />} />
+              <Route path='add-bank-details' element={<AddBankDetails/>}/>
               
 
               {/* Opertaion Hostory */}
