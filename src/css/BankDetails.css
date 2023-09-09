@@ -1,0 +1,15 @@
+.bank-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background: #090155;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.bank-header p{
+    color:#fff;
+    padding: 10px 0 0 10px;
+}
