@@ -52,13 +52,13 @@ const ReferraPayout = () => {
 
   const columns = [
     {
-      title: "User ID",
-      dataIndex: "userid",
+      title: "Refer user ID",
+      dataIndex: "refferUserId",
       key: "userid",
     },
     {
       title: "Amount",
-      dataIndex: "referralAmount",
+      dataIndex: "creditAmount",
       key: "referralAmount",
       render: (amount) => {
         // Format the amount with two decimal places
@@ -68,7 +68,7 @@ const ReferraPayout = () => {
     },
     {
       title: "New/Renewal",
-      dataIndex: "userType",
+      dataIndex: "Type",
       key: "userType",
     },
   ];
