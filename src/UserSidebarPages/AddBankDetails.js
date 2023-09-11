@@ -38,7 +38,7 @@ const AddBankDetails = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         };
 
-        axios.post('/member/create-member-bank-account-holder', data, config)
+        axios.post(`${apiurl}` +'/member/create-member-bank-account-holder', data, config)
             .then((res) => {
                 message.success(res.data.message)
                 setShowSpin(false)
@@ -63,7 +63,7 @@ const AddBankDetails = () => {
         const config = {
             headers: { 'Authorization': `Bearer ${token}` }
         };
-        axios.post('/member/create-member-upi-holder', data, config)
+        axios.post(`${apiurl}` +'/member/create-member-upi-holder', data, config)
             .then((res) => {
                 console.log(res.data)
                 message.success(res.data.message)
@@ -125,7 +125,7 @@ const AddBankDetails = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         };
 
-        axios.post('/member/get-member-own-bank-details', data, config)
+        axios.post(`${apiurl}` +'/member/get-member-own-bank-details', data, config)
             .then((res) => {
                 console.log(res.data)
                 setBankDetails(res.data.memberBankDetails)
@@ -143,7 +143,7 @@ const AddBankDetails = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         };
 
-        axios.post('/member/get-member-own-upi', data, config)
+        axios.post(`${apiurl}` +'/member/get-member-own-upi', data, config)
             .then((res) => {
                 setUpiDetails(res.data.memberUpiId)
             })

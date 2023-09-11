@@ -83,7 +83,7 @@ const RefferalPayout = () => {
       memberid: memberid
     }
     // /member/refferal/member-fetch-refferal-payout
-    axios.post(`${apiurl}` + '/member/refferal/member-fetch-refferal-payout', data, config)
+    axios.post(`${apiurl}` +'/member/refferal/member-fetch-refferal-payout', data, config)
       .then((res) => {
         const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
           style: 'currency',
@@ -104,7 +104,7 @@ const RefferalPayout = () => {
     let config = {
       headers: { 'Authorization': `Bearer ${token}` }
     }
-    axios.post(`${apiurl}` + '/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
+    axios.post(`${apiurl}` +'/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
       .then((res) => {
         const length = res.data.memberWithdrawalRequest.length;
         const lastData = res.data.memberWithdrawalRequest[length - 1];
@@ -236,7 +236,7 @@ const RefferalPayout = () => {
       headers: { Authorization: `Bearer ${token}` },
     };
 
-    axios.post('/member/get-member-own-bank-details', data, config)
+    axios.post(`${apiurl}` +'/member/get-member-own-bank-details', data, config)
       .then((res) => {
         console.log(res.data)
         setBankDetails(res.data.memberBankDetails)
@@ -245,7 +245,7 @@ const RefferalPayout = () => {
         console.log(err.response.data.message)
       })
 
-    axios.post('/member/get-member-own-upi', data, config)
+    axios.post(`${apiurl}` +'/member/get-member-own-upi', data, config)
       .then((res) => {
         setUpiDetails(res.data.memberUpiId)
       })
@@ -256,7 +256,7 @@ const RefferalPayout = () => {
     let data1 = {
       memberid: localStorage.getItem("memberid"),
     }
-    axios.post('/member/fetch-member-details-member-side', data1, config)
+    axios.post(`${apiurl}` +'/member/fetch-member-details-member-side', data1, config)
       .then((res) => {
         console.log(res.data.result.verifyDate)
         const isoDateString = res.data.result.verifyDate;
