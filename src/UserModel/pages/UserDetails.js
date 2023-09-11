@@ -63,7 +63,7 @@ const UserDetails = () => {
       },
     };
     try {
-      const response = await axios.post('/member/fetch-member-details-member-side', data, config);
+      const response = await axios.post(`${apiurl}`+'/member/fetch-member-details-member-side', data, config);
       console.log(response.data, '58');
       if (response) {
         console.log(response.data.result);
@@ -94,7 +94,7 @@ const UserDetails = () => {
       },
     };
     try {
-      const response = await axios.post('/member/fetch-member-profile-photo', data, config);
+      const response = await axios.post(`${apiurl}`+'/member/fetch-member-profile-photo', data, config);
       console.log(response.data.result, '61');
       setImage({ placeholder: response.data.result[0].imageUrl })
     }
@@ -121,7 +121,7 @@ const UserDetails = () => {
       },
     }
 
-    axios.post('/member/member-profile-photo-upload', formData, config)
+    axios.post(`${apiurl}`+'/member/member-profile-photo-upload', formData, config)
       .then((res) => {
         if (res) {
           setLoading(false);
@@ -174,7 +174,7 @@ const UserDetails = () => {
         Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
       }
     }
-    axios.post('/member/refferal/edit-member-details', data, config)
+    axios.post(`${apiurl}`+'/member/refferal/edit-member-details', data, config)
       .then((result) => {
         console.log(result.data.result[0].fname,
           result.data.result[0].lname
@@ -239,7 +239,7 @@ const UserDetails = () => {
         Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
       }
     }
-    axios.post('/member/refferal/save-member-edited-details', data, config)
+    axios.post(`${apiurl}`+'/member/refferal/save-member-edited-details', data, config)
     .then((res) => {
       message.success('Updated Successfully');
       setIsEditModalVisible(false);

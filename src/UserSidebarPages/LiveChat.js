@@ -40,7 +40,7 @@ const LiveChat = () => {
             headers: { 'Authorization': `Bearer ${token}` }
         }
 
-        axios.post('/member/refferal/fetch-chat-details-refferal', data, config)
+        axios.post(`${apiurl}`+'/member/refferal/fetch-chat-details-refferal', data, config)
             .then((result) => {
                 const length = result.data.refferalChatDetails.length;
                 if (length > 0) {

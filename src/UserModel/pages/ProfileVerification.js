@@ -110,7 +110,7 @@ function ProfileVerification() {
               Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
             },
         }
-        axios.post('/member/fetch-member-details-member-side', data,config)
+        axios.post(`${apiurl}`+'/member/fetch-member-details-member-side', data,config)
             .then((result) => {
                 console.log(result.data.result);
                 setAadharImage({ placeholder: result.data.result.aadhar_front_side});
@@ -140,7 +140,7 @@ function ProfileVerification() {
               Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
             },
           }
-        axios.post('/member/member-profile-verification', formData,config)
+        axios.post(`${apiurl}`+'/member/member-profile-verification', formData,config)
             .then(data => {
                 
                 message.success('Documents uploaded successfully')

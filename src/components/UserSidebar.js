@@ -15,6 +15,9 @@ import UserSidebarMenu from './usersidebar/UserSidebarMenu';
 import { UserModal } from '../UserModel/UserModal';
 import { BsBellFill,BsFillChatTextFill } from 'react-icons/bs';
 import {FcNeutralTrading} from 'react-icons/fc'
+import baseUrl from '../baseUrl'
+
+const apiurl = baseUrl.apiUrl
 
 
 const routes = [
@@ -191,7 +194,7 @@ function UserSidebar() {
             }
         }
 
-        axios.post('/member/refferal/fetch-refferal-notification', data, config)
+        axios.post(`${apiurl}` + '/member/refferal/fetch-refferal-notification', data, config)
             .then((result) => {
                 console.log(result.data.allNotitfication)
                 setAllNotification(result.data.allNotitfication)
@@ -215,7 +218,7 @@ function UserSidebar() {
                 Authorization: `Bearer ${token}`,
             }
         }
-        axios.post('/member/refferal/fetch-member-notification-status',data,config)
+        axios.post(`${apiurl}` + '/member/refferal/fetch-member-notification-status',data,config)
         .then((res)=>{
             setNotificationStatus(res.data.isNotification)
         })
@@ -234,7 +237,7 @@ function UserSidebar() {
                 Authorization: `Bearer ${token}`,
             }
         }
-        axios.post('/member/refferal/set-notification-to-false-member',data,config)
+        axios.post(`${apiurl}` + '/member/refferal/set-notification-to-false-member',data,config)
         .then((res)=>{
             callApiToNotificationStatus();
         })

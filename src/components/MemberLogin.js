@@ -57,7 +57,7 @@ const MemberLogin = () => {
             localStorage.removeItem('password');
             localStorage.removeItem('rememberMe');
         }
-        Axios.post("/member/member-login", {
+        Axios.post(`${apiurl}`+"/member/member-login", {
             memberid: member.memberid,
             password: member.password,
         })
