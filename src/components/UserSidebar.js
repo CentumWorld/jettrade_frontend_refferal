@@ -9,6 +9,7 @@ import { RxCountdownTimer } from 'react-icons/rx'
 import { TfiMenuAlt, TfiGift } from 'react-icons/tfi'
 import { IoTrophy } from 'react-icons/io5'
 import { BiStar } from 'react-icons/bi'
+import { VscReferences } from 'react-icons/vsc'
 import { AiOutlineSetting, AiFillBank,AiOutlineAreaChart } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 import UserSidebarMenu from './usersidebar/UserSidebarMenu';
@@ -137,7 +138,12 @@ const routes = [
     {
         path: "/userdashboard/referral-payout",
         name: "Referral Payout",
-        icon: <BsFillChatTextFill />
+        icon: <VscReferences />
+    },
+    {
+        path: "/userdashboard/add-bank-details",
+        name: "Add Bank",
+        icon: <AiFillBank />
     }
     // {
     //     path: '/copytrading',
