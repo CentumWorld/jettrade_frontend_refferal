@@ -72,64 +72,6 @@ const RefferalPayout = () => {
       });
   };
 
-<<<<<<< HEAD
-    const fetchRefferalPayout = () => {
-        let token = localStorage.getItem('token');
-        let memberid = localStorage.getItem('memberid');
-        let config = {
-            headers: { 'Authorization': `Bearer ${token}` }
-        }
-        const data = {
-            memberid: memberid
-        }
-        axios.post(`${apiurl}`+'/member/refferal/member-fetch-refferal-payout', data, config)
-            .then((res) => {
-                const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
-                    style: 'currency',
-                    currency: 'INR'
-                });
-                setPayOutAmount(formattedAmount)
-            })
-            .catch(err => {
-                console.log(err);
-            })
-    }
-    // fetch refferal request data
-    const fetchRefferalRequest = () => {
-        let token = localStorage.getItem("token");
-        let data = {
-            memberid: localStorage.getItem('memberid')
-        }
-        let config = {
-            headers: { 'Authorization': `Bearer ${token}` }
-        }
-        axios.post(`${apiurl}`+'/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
-            .then((res) => {
-                const length = res.data.memberWithdrawalRequest.length;
-                const lastData = res.data.memberWithdrawalRequest[length - 1];
-                const lastDate = res.data.memberWithdrawalRequest[length - 1].requestDate;
-                console.log(res);
-                const formattedDate = new Date(lastDate).toLocaleDateString();
-                const parts = formattedDate.split('/');
-                const month = parts[0];
-                const day = parts[1];
-                const year = parts[2];
-                const finalDate = `${day}/${month}/${year}`;
-                console.log(finalDate,lastData.walletAmount,'180');
-                 setLastDate(finalDate);
-                 const formattedAmount =  new Intl.NumberFormat('en-IN', {
-                    style: 'currency',
-                    currency: 'INR'
-                  }).format(lastData.walletAmount)
-                setLastAmount(formattedAmount);
-                setRequestDetails(res.data.memberWithdrawalRequest);
-                fetchRefferalPayout();
-
-            })
-            .catch(err => {
-                console.log(err.response.data.message)
-            })
-=======
 
   const fetchRefferalPayout = () => {
     let token = localStorage.getItem('token');
@@ -139,10 +81,9 @@ const RefferalPayout = () => {
     }
     const data = {
       memberid: memberid
->>>>>>> f5284208c9560861dbd1fa0d051c748e3b6608b3
     }
     // /member/refferal/member-fetch-refferal-payout
-    axios.post('/member/refferal/member-fetch-refferal-payout', data, config)
+    axios.post(`${apiurl}` + '/member/refferal/member-fetch-refferal-payout', data, config)
       .then((res) => {
         const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
           style: 'currency',
@@ -163,7 +104,7 @@ const RefferalPayout = () => {
     let config = {
       headers: { 'Authorization': `Bearer ${token}` }
     }
-    axios.post('/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
+    axios.post(`${apiurl}` + '/member/refferal/fetch-member-refferal-payout-request-withdrawal', data, config)
       .then((res) => {
         const length = res.data.memberWithdrawalRequest.length;
         const lastData = res.data.memberWithdrawalRequest[length - 1];
