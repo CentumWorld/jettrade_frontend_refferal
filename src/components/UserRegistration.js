@@ -206,7 +206,7 @@ function UserRegistration() {
 
     if (countryCode === "91") {
       axios
-        .post("/member/member-registration", formData)
+        .post(`${apiurl}`+"/member/member-registration", formData)
         .then((res) => {
           setMemberData({
             fname: "",
@@ -223,7 +223,7 @@ function UserRegistration() {
         });
     } else {
       axios
-        .post("/member/refferal/other-country-member-registration", formData)
+        .post(`${apiurl}`+"/member/refferal/other-country-member-registration", formData)
         .then((res) => {
           message.success("Registration successful");
           navigate("/member-login");

@@ -218,7 +218,7 @@ const DisplayCard = () => {
             render: (referralAmount) => new Intl.NumberFormat('en-IN', {
                 style: 'currency',
                 currency: 'INR'
-              }).format(referralAmount),
+            }).format(referralAmount),
         },
         {
             title: 'Type',
@@ -246,6 +246,22 @@ const DisplayCard = () => {
                         <h6>Referral ID</h6> &nbsp; : &nbsp; <span style={{ cursor: 'pointer', color: 'yellow' }}>{memberDetails.refferal}</span>
                     </div>
                 </div>
+                <div className="card1">
+                    <div className="live-chat">
+                        <h6>CENTUMO Swap</h6>
+                    </div>
+                    <div className="live-chat-join">
+                        <a
+                            href="https://centumo.centumworld.com/#/exchange/quick"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{ color: "yellow", cursor: "pointer" }}
+                        >
+                            Click me
+                        </a>
+                    </div>
+                </div>
+
                 <div className='card1'>
                     <div className='live-chat'>
                         <h6>Personal Details</h6>
@@ -339,11 +355,11 @@ const DisplayCard = () => {
                 onCancel={handleCancel}
                 footer={null}
             >
-                {!noRefferalTeam ? 
-                <div>
-                    <Table dataSource={refferalTeam} columns={columns} />
-                </div>
-                
+                {!noRefferalTeam ?
+                    <div>
+                        <Table dataSource={refferalTeam} columns={columns} />
+                    </div>
+
                     : 'No Refferal Found'}
             </Modal>
 

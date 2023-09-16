@@ -8,7 +8,7 @@ import { FaMoneyBillWaveAlt, FaBars, FaCarrot, FaUserPlus,FaShare  } from 'react
 import { RxCountdownTimer } from 'react-icons/rx'
 import { TfiMenuAlt, TfiGift } from 'react-icons/tfi'
 import { IoTrophy } from 'react-icons/io5'
-import { BiStar } from 'react-icons/bi'
+import { FcBarChart } from 'react-icons/fc'
 import { VscReferences } from 'react-icons/vsc'
 import { AiOutlineSetting, AiFillBank,AiOutlineAreaChart } from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
@@ -28,9 +28,16 @@ const routes = [
         icon: <MdDashboard />,
     },
     {
+        path: "https://centumo.centumworld.com/#/exchange/quick",
+        name: "CENTUMO Swap",
+        icon: <FcNeutralTrading />,
+        externalLink: true,
+        target: "_blank",
+      },
+    {
         path: '/userdashboard/trading-chart',
         name: "Trading Chart",
-        icon: <FcNeutralTrading/>,
+        icon: <FcBarChart/>,
     },
     // {
     //     path: '/userdashboard/transfer',
@@ -345,10 +352,16 @@ function UserSidebar() {
                                 );
                             }
                             return (
-                                <NavLink to={route.path} key={route.name} className={isOpen ? 'user_sidebar_link' : 'user_sidebar_link_small'}>
+                                <NavLink to={route.path} key={route.name}
+                                 className={isOpen ? 'user_sidebar_link' : 'user_sidebar_link_small'}
+                                target="_blank" // This will open "CENTUMO Swap" in a new tab
+                                rel="noopener noreferrer" // Recommended for security
+                                >
+                                    
                                     <div className='icon'>{route.icon}</div>
                                     {isOpen && <motion.div className='link_text'>{route.name}</motion.div>}
                                 </NavLink>
+                                
                             )
                         })}
 
