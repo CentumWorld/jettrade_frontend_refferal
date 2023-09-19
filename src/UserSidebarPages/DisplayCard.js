@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import '../css/DisplayCard.css';
 import { FaRupeeSign, FaHandHoldingUsd } from 'react-icons/fa';
 import axios from 'axios';
-import { Modal, Menu, Dropdown, Table } from 'antd';
+import { Modal, Menu, Dropdown, Table, message } from 'antd';
+import {FaCopy} from "react-icons/fa"
 import baseUrl from '../baseUrl';
 import moment from 'moment';
 
@@ -234,6 +235,11 @@ const DisplayCard = () => {
 
     ];
 
+    const copyToClipBoard = ()=>{
+        navigator.clipboard.writeText(memberDetails.refferal)
+        message.success("Text copied to clipboard" + memberDetails.refferal)
+    }
+
 
     return (
         <>
@@ -243,7 +249,7 @@ const DisplayCard = () => {
                         <h6>Member ID </h6>&nbsp; : &nbsp;<span style={{ color: 'yellow' }}>{memberDetails.memberid}</span>
                     </div>
                     <div className='d-flex'>
-                        <h6>Referral ID</h6> &nbsp; : &nbsp; <span style={{ cursor: 'pointer', color: 'yellow' }}>{memberDetails.refferal}</span>
+                        <h6>Referral ID</h6> &nbsp; : &nbsp; <span style={{ cursor: 'pointer', color: 'yellow' }} onClick={copyToClipBoard}>{memberDetails.refferal} <FaCopy style={{color:"white"}}/></span>
                     </div>
                 </div>
                 <div className="card1">
