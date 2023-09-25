@@ -110,7 +110,7 @@ const AddBankDetails = () => {
   ];
   const upiColumn = [
     {
-      title: "UPI Id",
+      title: "Member Id",
       dataIndex: "userId",
       key: "userId",
     },

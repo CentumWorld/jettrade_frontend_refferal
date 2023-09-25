@@ -52,7 +52,7 @@ const ReferraPayout = () => {
 
   const columns = [
     {
-      title: "Refer user ID",
+      title: "Reffer Trader ID",
       dataIndex: "refferUserId",
       key: "userid",
     },
