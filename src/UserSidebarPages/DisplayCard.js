@@ -356,7 +356,7 @@ const DisplayCard = () => {
             {/* ----------------My team modal */}
             <Modal
                 title={<span style={{ color: "purple" }}>My Team</span>}
-                open={isModalVisible}
+                open  ={isModalVisible}
                 onOk={handleOk}
                 onCancel={handleCancel}
                 footer={null}
