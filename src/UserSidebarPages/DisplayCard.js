@@ -208,7 +208,7 @@ const DisplayCard = () => {
 
     const columns = [
         {
-            title: 'User ID',
+            title: 'Trader ID',
             dataIndex: 'userid',
             key: 'userid',
         },
