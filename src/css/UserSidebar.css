@@ -45,6 +45,10 @@
     font-size: 22px;
 }
 
+.bars{
+    cursor: pointer;
+}
+
 .refferal-notification-title .ant-modal-title {
     color: red; /* Change the color as desired */
   }
@@ -112,7 +116,7 @@ a{
 .user_sidebar_link_small{
     display: flex;
     color: rgb(34, 31, 31);
-    gap: 10px;
+    gap: 20px;
     padding: 10px 15px;
     font-size: 16px;
     font-weight: 500;
