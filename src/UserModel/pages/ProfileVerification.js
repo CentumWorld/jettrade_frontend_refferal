@@ -203,7 +203,7 @@ function ProfileVerification() {
                                         onChange={handleClickAadharFrontImage}
                                     />
                                     <label htmlFor="file-input-front">
-                                        <img src={aadharImage.placeholder} alt="" width={200} height={100} />
+                                        <img src={aadharImage.placeholder} alt="" width={200} height={100} className='verification-img' />
                                     </label>
 
                                     <div className='aadhar_front_heading'>
@@ -227,7 +227,7 @@ function ProfileVerification() {
                                         onChange={handleClickAadharBackImage}
                                     />
                                     <label htmlFor="file-input-back">
-                                        <img src={aadharBackImage.placeholder} alt="" width={200} height={100} />
+                                        <img src={aadharBackImage.placeholder} alt="" width={200} height={100} className='verification-img'/>
                                     </label>
                                     <div className='aadhar_front_heading'>
                                         <span>Reverse side</span>
@@ -243,7 +243,7 @@ function ProfileVerification() {
                                     onChange={handleClickPanImage}
                                 />
                                 <label htmlFor="file-input-pan">
-                                    <img src={panImage.placeholder} alt="" width={230} height={120} />
+                                    <img src={panImage.placeholder} alt="" className='verification-img' width={200} height={100} />
                                 </label>
                                 <div className='aadhar_front_heading'>
                                     <span>Pan Card</span>

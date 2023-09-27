@@ -3,6 +3,10 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.verification-img{
+    display:block;
+}
 .profile_verification{
     display: flex;
     align-items: center;
@@ -59,6 +63,7 @@
 }
 .verification_file_area{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .verification_file_select{
@@ -159,7 +164,8 @@
         width: 100%;
     }
     .verification_file_area{
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
     .verification_file_select{
         justify-content: space-between;

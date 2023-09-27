@@ -402,7 +402,7 @@ function UserSidebar() {
             {isOpen && (
               <div className="setting">
                 <AiOutlineSetting onClick={openModal} />
-                {showModal ? <UserModal setShowModal={setShowModal} /> : null}
+                {showModal ? <UserModal setShowModal={setShowModal} toggleMenu={toggle} /> : null}
               </div>
             )}
             <div className="notification">
