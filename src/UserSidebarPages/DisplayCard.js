@@ -237,7 +237,7 @@ const DisplayCard = () => {
 
     const copyToClipBoard = ()=>{
         navigator.clipboard.writeText(memberDetails.refferal)
-        message.success("Text copied to clipboard" + memberDetails.refferal)
+        message.success("Text copied to clipboard " + memberDetails.refferal)
     }
 
 
