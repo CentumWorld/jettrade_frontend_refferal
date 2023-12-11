@@ -426,53 +426,54 @@ function UserSidebar() {
                         <NavLink to='/userdashboard/new-deposit' className='deposit_logo'><AiFillBank /></NavLink>
                     } */}
 
-          <section className="routes">
-            {routes.map((route) => {
-              if (route.subRoutes) {
-                return <UserSidebarMenu isOpen={isOpen} route={route} toggleSidebar={toggle} />;
-              }
-              if (route.externalLink) {
-                return (
-                  <a
-                    onClick={toggle}
-                    href={route.path}
-                    key={route.name}
-                    className={
-                      isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
-                    }
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="admin-icon">{route.icon}</div>
-                    <motion.div className="admin_link_text" onClick={toggle}>
-                      {route.name}
-                    </motion.div>
-                  </a>
-                );
-              }
-              return (
-                <NavLink
-                  onClick={toggle}
-                  to={route.path}
-                  key={route.name}
-                  className={
-                    isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
-                  }
-                >
-                  <div className="icon">{route.icon}</div>
-                  {isOpen && (
-                    <motion.div className="link_text" onClick={toggle}>
-                      {route.name}
-                    </motion.div>
-                  )}
-                </NavLink>
-              );
-            })}
-          </section>
-        </motion.div>
-      </div>
-    </>
-  );
+
+
+                    <section className='routes'>
+                        {routes.map((route) => {
+                            if (route.subRoutes) {
+                                return (
+                                    <UserSidebarMenu isOpen={isOpen} route={route} />
+                                );
+                            }
+                            if (route.externalLink) {
+                                // For the "CENTUMO Swap" link, open in a new tab
+                                return (
+                                  <a
+                                    href={route.path}
+                                    key={route.name}
+                                    className={
+                                      isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
+                                    }
+                                    target="_blank" // This will open "CENTUMO Swap" in a new tab
+                                    rel="noopener noreferrer" // Recommended for security
+                                  >
+                                    <div className="admin-icon">{route.icon}</div>
+                                    <motion.div className="user_link_text">
+                                      {route.name}
+                                    </motion.div>
+                                  </a>
+                                );
+                              }
+                            return (
+                                <NavLink to={route.path} key={route.name}
+                                 className={isOpen ? 'user_sidebar_link' : 'user_sidebar_link_small'}
+                                >
+                                    
+                                    <div className='icon'>{route.icon}</div>
+                                    {isOpen && <motion.div className='link_text'>{route.name}</motion.div>}
+                                </NavLink>
+                                
+                            )
+                        })}
+
+                    </section>
+
+                </motion.div>
+
+
+            </div>
+        </>
+    )
 }
 
 export default UserSidebar;
