@@ -21,3 +21,11 @@
     display: flex;
     justify-content: center;
 }
+
+/* Hide the scrollbar for the table */
+.ant-table-wrapper {
+    overflow: hidden;
+  }
+  
+ 
+  

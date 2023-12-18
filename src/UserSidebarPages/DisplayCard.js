@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../css/DisplayCard.css";
 import { FaRupeeSign, FaHandHoldingUsd } from "react-icons/fa";
 import axios from "axios";
-import { Modal, Menu, Dropdown, Table, message } from "antd";
+import { Modal, Menu, Dropdown, Table, message, Input } from "antd";
 import { FaCopy } from "react-icons/fa";
 import baseUrl from "../baseUrl";
 import moment from "moment";
@@ -60,6 +60,7 @@ const DisplayCard = () => {
   const [refferalTeam, setRefferalTeam] = useState([]);
   const [noRefferalTeam, setNoRefferalTeam] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     setMemberDetails({
@@ -192,7 +193,7 @@ const DisplayCard = () => {
 
   // refferalPayout
   const refferalPayout = () => {
-    navigate("/userdashboard/refferal-payout");
+    navigate("/userdashboard/referral-payout");
   };
 
   // viewTradingChart
@@ -204,6 +205,7 @@ const DisplayCard = () => {
   const viewPersonalDetails = () => {
     navigate("/userdashboard/setting/userdetails");
   };
+
   const gotoWithdrawalPage = () => {
     navigate("/userdashboard/refferal-payout");
   };
@@ -215,6 +217,11 @@ const DisplayCard = () => {
       key: "userid",
     },
     {
+      title: "Type",
+      dataIndex: "userType",
+      key: "userType",
+    },
+    {
       title: "Amount",
       dataIndex: "referralAmount",
       key: "referralAmount",
@@ -224,11 +231,7 @@ const DisplayCard = () => {
           currency: "INR",
         }).format(referralAmount),
     },
-    {
-      title: "Type",
-      dataIndex: "userType",
-      key: "userType",
-    },
+
     {
       title: "DOJ",
       dataIndex: "joininigDate",
@@ -439,9 +442,27 @@ const copyToClipBoard = (text) => {
         onCancel={handleCancel}
         footer={null}
       >
+        <Input
+          placeholder="Search By Trader Id or type"
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          style={{ marginBottom: "16px" }} // You can adjust the styling as needed
+        />
+
         {!noRefferalTeam ? (
           <div>
-            <Table dataSource={refferalTeam} columns={columns} />
+            <Table
+              dataSource={refferalTeam.filter(
+                (item) =>
+                  item.userid
+                    .toLowerCase()
+                    .includes(searchText.toLowerCase()) ||
+                  item.userType.toLowerCase().includes(searchText.toLowerCase())
+              )}
+              columns={columns}
+              scroll={{ y: 400 }}
+              pagination={false}
+            />
           </div>
         ) : (
           "No Refferal Found"
