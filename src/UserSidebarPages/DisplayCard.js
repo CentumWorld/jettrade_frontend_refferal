@@ -7,6 +7,7 @@ import { Modal, Menu, Dropdown, Table, message, Input } from "antd";
 import { FaCopy } from "react-icons/fa";
 import baseUrl from "../baseUrl";
 import moment from "moment";
+import ShareMessage from "./common/ShareMessage";
 
 const apiurl = baseUrl.apiUrl;
 
@@ -61,6 +62,7 @@ const DisplayCard = () => {
   const [noRefferalTeam, setNoRefferalTeam] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const [openSharModal, setOpenShareModal] = useState(false);
 
   useEffect(() => {
     setMemberDetails({
@@ -245,8 +247,21 @@ const DisplayCard = () => {
     message.success("Text copied to clipboard " + memberDetails.refferal);
   };
 
+  const openModal = () => {
+    setOpenShareModal(true);
+  };
+
+  const handleClose = () => {
+    setOpenShareModal(false);
+  };
+
   return (
     <>
+      <ShareMessage
+         openSharModal={openSharModal}
+         handleClose={handleClose}
+         referralID={memberDetails.refferal}
+      />
       <div className="card1-container">
         <div className="card1">
           <div className="d-flex">
@@ -292,14 +307,14 @@ const DisplayCard = () => {
             </span>
           </div>
         </div>
-        <div className="card1">
+        {/* <div className="card1">
           <div className="live-chat">
             <h6>Live Chat</h6>
           </div>
           <div className="live-chat-join" onClick={joinChat}>
             <span style={{ color: "yellow", cursor: "pointer" }}>Join</span>
           </div>
-        </div>
+        </div> */}
         <div className="card1">
           <div className="wallet">
             <h6>Wallet</h6>
@@ -310,9 +325,7 @@ const DisplayCard = () => {
               {subscriptionStatus.formattedAmount}
             </span>
           </div>
-          {/* <div className='d-flex'>
-                        <h6>Withdrawal :</h6>&nbsp;&nbsp; <span style={{ color: 'yellow' }}><FaRupeeSign />{totalWithdrawal}</span>
-                    </div> */}
+          
         </div>
 
         <div className="card1">
@@ -337,12 +350,13 @@ const DisplayCard = () => {
 
         <div className="card1">
           <div className="inviteFriend">
-            <h6>Invite Friend</h6>
+            <h6>Share and Earn</h6>
           </div>
           <div className="share">
-            <span style={{ color: "yellow", cursor: "pointer" }}>share</span>
+            <span style={{ color: "yellow", cursor: "pointer" }} onClick={openModal}>share</span>
           </div>
         </div>
+
         <div className="card1">
           <div className="my-team">
             <h6>My Team</h6>

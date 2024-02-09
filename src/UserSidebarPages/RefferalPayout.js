@@ -6,6 +6,7 @@ import { FaRupeeSign } from "react-icons/fa";
 import { BsPlusCircle } from "react-icons/bs"
 import moment from "moment";
 import baseUrl from "../baseUrl";
+import { endDate } from "./common/EndDate";
 
 const apiurl = baseUrl.apiUrl;
 
@@ -310,12 +311,12 @@ const RefferalPayout = () => {
               onChange={handleAmountChange}
               prefix={<FaRupeeSign />}
             />
-            <Button onClick={requestRefferalPayout} disabled={!selectStateUpiId}>Withdraw</Button>
+            <Button onClick={requestRefferalPayout} disabled={!selectStateUpiId} style={{marginTop:"2px"}}>Withdraw</Button>
           </div>
           <div class="card">
             <p>Last Withdrawal</p>
             <h6>Amount:{lastAmount}</h6>
-            <strong> Last Date: {lastDate}</strong>
+            <strong> Last Date: {endDate(lastDate)}</strong>
           </div>
         </div>
         <br />

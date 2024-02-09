@@ -17,7 +17,7 @@
 }
 .verification_card{
     width: 80%;
-    height: 80vh;
+    height: 85vh;
     background-color: #fff;
     border-radius: 30px;
     padding: 15px;
@@ -95,6 +95,23 @@
     justify-content: center;
     align-items: center;
 }
+
+.aadhar_front_div label img{
+    width:250px;
+    height:130px;
+    cursor:pointer;
+}
+.aadhar_back_div label img{
+    width:250px;
+    height:130px;
+    cursor:pointer;
+}
+.verification_image label img{
+    width:250px;
+    height:130px;
+    cursor:pointer;
+}
+
 .aadhar_front_heading{
     font-size: 18px;
     font-weight: 15px;
@@ -173,6 +190,20 @@
     }
     .verification_card{
         overflow-y: scroll;
+    }
+    .verification_file_select{
+        display:flex;
+        flex-direction:column;
+    }
+    .aadhar_front_div label img{
+        width:100%;
+        height:150px;
+    }
+    .verification_card{
+        height:85vh;
+    }
+    .check strong, .uncheck strong{
+        font-size:12px;
     }
     
 }    

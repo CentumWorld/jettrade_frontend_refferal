@@ -180,9 +180,6 @@ function ProfileVerification() {
                                     </select>
                                 </div>
                             </div>
-                            {/* <div className='verification_para col-md-6'>
-                                <p>The document you are providing must be valid at least 30 days and contain all of the following details:</p>
-                            </div> */}
                         </div>
                     </div>
 
@@ -190,12 +187,6 @@ function ProfileVerification() {
                         <div className='verification_file_area'>
                             <div className='verification_file_select col-md-8'>
                                 <div className='aadhar_front_div col-md-6'>
-                                    {/* <div className='aadhar_front'>
-                                        <div className='plus_icon'>
-                                            <label htmlFor="add_aadhar_front"><AiOutlinePlus/></label>
-                                            <input type="file" id='add_aadhar_front' />
-                                        </div>
-                                    </div> */}
                                     <input
                                         id="file-input-front"
                                         type="file"
@@ -203,7 +194,7 @@ function ProfileVerification() {
                                         onChange={handleClickAadharFrontImage}
                                     />
                                     <label htmlFor="file-input-front">
-                                        <img src={aadharImage.placeholder} alt="" width={200} height={100} className='verification-img' />
+                                        <img src={aadharImage.placeholder} alt=""  className='verification-img' />
                                     </label>
 
                                     <div className='aadhar_front_heading'>
@@ -214,12 +205,6 @@ function ProfileVerification() {
                                 </div>
 
                                 <div className='aadhar_back_div col-md-6'>
-                                    {/* <div className='aadhar_back'>
-                                        <div className='plus_icon'>
-                                            <label htmlFor="add_aadhar_back"><AiOutlinePlus /></label>
-                                            <input type="file" id='add_aadhar_back' />
-                                        </div>
-                                    </div> */}
                                     <input
                                         id="file-input-back"
                                         type="file"

@@ -62,96 +62,44 @@ const routes = [
     name: "Trading Chart",
     icon: <FcBarChart />,
   },
+  
   // {
-  //     path: '/userdashboard/transfer',
-  //     name: "Internal transfer",
-  //     icon: <MdSend />,
+  //   path: "/userdashboard",
+  //   name: "Chart and Data",
+  //   icon: <AiOutlineAreaChart />,
+  //   subRoutes: [
+  //     {
+  //       path: "/userdashboard/cryptocurrency-market",
+  //       name: "Cryptocurrency Market",
+  //     },
+  //     {
+  //       path: "/userdashboard/economic-celender",
+  //       name: "Economic Celender",
+  //     },
+  //     {
+  //       path: "/userdashboard/heat-map",
+  //       name: "Heat Map",
+  //     },
+  //     {
+  //       path: "/userdashboard/cross-rates",
+  //       name: "Cross Rates",
+  //     },
+  //     {
+  //       path: "/userdashboard/market-data",
+  //       name: "Market Data",
+  //     },
+  //     {
+  //       path: "/userdashboard/screener",
+  //       name: "Screener",
+  //     },
+  //   ],
   // },
+  
   // {
-  //     path: '/userdashboard/promotion',
-  //     name: "Promotions",
-  //     icon: <FaCarrot />,
+  //   path: "/userdashboard/invite",
+  //   name: "Invite a friend",
+  //   icon: <FaUserPlus />,
   // },
-  // {
-  //     path: '/userdashboard',
-  //     name: "Operation history",
-  //     icon: <RxCountdownTimer />,
-  //     subRoutes: [
-  //         {
-  //             path: "/userdashboard/deposite",
-  //             name: 'Deposite history',
-  //         },
-  //         {
-  //             path: "/userdashboard/withdrawlhistory",
-  //             name: 'Withdrawal history',
-  //         },
-  //         {
-  //             path: "/userdashboard/transferhistory",
-  //             name: 'Transfer history',
-  //         },
-
-  //     ],
-  // },
-  {
-    path: "/userdashboard",
-    name: "Chart and Data",
-    icon: <AiOutlineAreaChart />,
-    subRoutes: [
-      {
-        path: "/userdashboard/cryptocurrency-market",
-        name: "Cryptocurrency Market",
-      },
-      {
-        path: "/userdashboard/economic-celender",
-        name: "Economic Celender",
-      },
-      {
-        path: "/userdashboard/heat-map",
-        name: "Heat Map",
-      },
-      {
-        path: "/userdashboard/cross-rates",
-        name: "Cross Rates",
-      },
-      // {
-      //     path: "/userdashboard/helper-charts",
-      //     name: 'Helper Charts',
-      // },
-      {
-        path: "/userdashboard/market-data",
-        name: "Market Data",
-      },
-      {
-        path: "/userdashboard/screener",
-        name: "Screener",
-      },
-    ],
-  },
-  // {
-  //     path: '/userdashboard/contest',
-  //     name: "Contests",
-  //     icon: <IoTrophy />,
-  //     subRoutes: [
-  //         {
-  //             path: "/contests/champion-demo",
-  //             name: 'Champion Demo Contest',
-  //         },
-  //         {
-  //             path: "/contests/opne-champion-demo/account",
-  //             name: ' Opne Champion Demo Contest account',
-  //         },
-  //     ],
-  // },
-  // {
-  //     path: '/userdashboard/statuses',
-  //     name: "User Statuses",
-  //     icon: <BiStar />,
-  // },
-  {
-    path: "/userdashboard/invite",
-    name: "Invite a friend",
-    icon: <FaUserPlus />,
-  },
   {
     path: "/userdashboard/refferal-payout",
     name: "Withdrawal",
@@ -444,8 +392,8 @@ function UserSidebar() {
                                     className={
                                       isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
                                     }
-                                    target="_blank" // This will open "CENTUMO Swap" in a new tab
-                                    rel="noopener noreferrer" // Recommended for security
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                   >
                                     <div className="admin-icon">{route.icon}</div>
                                     <motion.div className="user_link_text">
@@ -460,7 +408,7 @@ function UserSidebar() {
                                 >
                                     
                                     <div className='icon'>{route.icon}</div>
-                                    {isOpen && <motion.div className='link_text'>{route.name}</motion.div>}
+                                    {isOpen && <motion.div className='link_text' style={{marginTop:"6px"}}>{route.name}</motion.div>}
                                 </NavLink>
                                 
                             )
