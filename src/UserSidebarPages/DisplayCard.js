@@ -255,6 +255,47 @@ const DisplayCard = () => {
     setOpenShareModal(false);
   };
 
+
+const copyToClipBoard = (text) => {
+    const textField = document.createElement("textarea");
+    textField.innerText = text;
+    document.body.appendChild(textField);
+    textField.select();
+
+    try {
+      const successful = document.execCommand("copy");
+      if (successful) {
+        message.success("Text copied to clipboard: " + text);
+      } else {
+        fallbackCopyTextToClipboard(text);
+      }
+    } catch (err) {
+      fallbackCopyTextToClipboard(text);
+    }
+
+    document.body.removeChild(textField);
+  };
+
+  const fallbackCopyTextToClipboard = (text) => {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      const successful = document.execCommand("copy");
+      if (successful) {
+        message.success("Text copied to clipboard: " + text);
+      } else {
+        message.error("Copy to clipboard failed. Please try manually.");
+      }
+    } catch (err) {
+      message.error("Copy to clipboard failed. Please try manually.");
+    }
+
+    document.body.removeChild(textArea);
+  };
   return (
     <>
       <ShareMessage

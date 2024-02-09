@@ -280,16 +280,16 @@ function UserRegistration() {
     <>
       <div className="registration-page">
         <div className="registration-body">
-          <h4>Welcome to JETTRADE FX</h4>
+          <h4>Welcome to JET TRADE FX</h4>
           <p>Sign up with credentials</p>
           <div className="form-content">
             <form>
               <div className="first_name">
-                <p>Reffered ID</p>
+                <p>Referred ID</p>
                 <Input
                   className="custom-placeholder-input"
                   // prefix={<UserOutlined />}
-                  placeholder="Enter reffered Id"
+                  placeholder="Enter referred Id"
                   name="refferedId"
                   value={memberData.refferedId}
                   onChange={memberInputs}
@@ -497,7 +497,7 @@ function UserRegistration() {
                 </>
               )}
               <div className="password-input">
-                <p>User ID</p>
+                <p>Member ID</p>
                 <Input
                   className="custom-placeholder-input"
                   placeholder="Enter your member ID"
