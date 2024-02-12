@@ -256,25 +256,25 @@ const DisplayCard = () => {
   };
 
 
-const copyToClipBoard = (text) => {
-    const textField = document.createElement("textarea");
-    textField.innerText = text;
-    document.body.appendChild(textField);
-    textField.select();
+// const copyToClipBoard = (text) => {
+//     const textField = document.createElement("textarea");
+//     textField.innerText = text;
+//     document.body.appendChild(textField);
+//     textField.select();
 
-    try {
-      const successful = document.execCommand("copy");
-      if (successful) {
-        message.success("Text copied to clipboard: " + text);
-      } else {
-        fallbackCopyTextToClipboard(text);
-      }
-    } catch (err) {
-      fallbackCopyTextToClipboard(text);
-    }
+//     try {
+//       const successful = document.execCommand("copy");
+//       if (successful) {
+//         message.success("Text copied to clipboard: " + text);
+//       } else {
+//         fallbackCopyTextToClipboard(text);
+//       }
+//     } catch (err) {
+//       fallbackCopyTextToClipboard(text);
+//     }
 
-    document.body.removeChild(textField);
-  };
+//     document.body.removeChild(textField);
+//   };
 
   const fallbackCopyTextToClipboard = (text) => {
     const textArea = document.createElement("textarea");

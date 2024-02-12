@@ -1,5 +1,5 @@
 const baseUrl = {
-    apiUrl: 'http://localhost:4000',
+    apiUrl: 'http://103.149.68.19:8081',
   };
   
   export default baseUrl;
