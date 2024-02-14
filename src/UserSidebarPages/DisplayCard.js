@@ -8,6 +8,8 @@ import { FaCopy } from "react-icons/fa";
 import baseUrl from "../baseUrl";
 import moment from "moment";
 import ShareMessage from "./common/ShareMessage";
+import card from "../img/JTF.gif";
+import card1 from "../img/JTF1.gif";
 
 const apiurl = baseUrl.apiUrl;
 
@@ -255,26 +257,25 @@ const DisplayCard = () => {
     setOpenShareModal(false);
   };
 
+  // const copyToClipBoard = (text) => {
+  //     const textField = document.createElement("textarea");
+  //     textField.innerText = text;
+  //     document.body.appendChild(textField);
+  //     textField.select();
 
-// const copyToClipBoard = (text) => {
-//     const textField = document.createElement("textarea");
-//     textField.innerText = text;
-//     document.body.appendChild(textField);
-//     textField.select();
+  //     try {
+  //       const successful = document.execCommand("copy");
+  //       if (successful) {
+  //         message.success("Text copied to clipboard: " + text);
+  //       } else {
+  //         fallbackCopyTextToClipboard(text);
+  //       }
+  //     } catch (err) {
+  //       fallbackCopyTextToClipboard(text);
+  //     }
 
-//     try {
-//       const successful = document.execCommand("copy");
-//       if (successful) {
-//         message.success("Text copied to clipboard: " + text);
-//       } else {
-//         fallbackCopyTextToClipboard(text);
-//       }
-//     } catch (err) {
-//       fallbackCopyTextToClipboard(text);
-//     }
-
-//     document.body.removeChild(textField);
-//   };
+  //     document.body.removeChild(textField);
+  //   };
 
   const fallbackCopyTextToClipboard = (text) => {
     const textArea = document.createElement("textarea");
@@ -299,12 +300,22 @@ const DisplayCard = () => {
   return (
     <>
       <ShareMessage
-         openSharModal={openSharModal}
-         handleClose={handleClose}
-         referralID={memberDetails.refferal}
+        openSharModal={openSharModal}
+        handleClose={handleClose}
+        referralID={memberDetails.refferal}
       />
       <div className="card1-container">
-        <div className="card1">
+        <div
+          className="card1"
+          style={{
+            backgroundImage: `url(${card})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center bottom",
+            display:"flex",
+            flexDirection:"column",
+            alignItems:"center"
+          }}
+        >
           <div className="d-flex">
             <h6>Member ID </h6>&nbsp; : &nbsp;
             <span style={{ color: "yellow" }}>{memberDetails.memberid}</span>
@@ -319,7 +330,16 @@ const DisplayCard = () => {
             </span>
           </div>
         </div>
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="live-chat">
             <h6>CENTUMO Swap</h6>
           </div>
@@ -335,7 +355,16 @@ const DisplayCard = () => {
           </div>
         </div>
 
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="live-chat">
             <h6>Personal Details</h6>
           </div>
@@ -356,7 +385,16 @@ const DisplayCard = () => {
             <span style={{ color: "yellow", cursor: "pointer" }}>Join</span>
           </div>
         </div> */}
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="wallet">
             <h6>Wallet</h6>
           </div>
@@ -366,10 +404,17 @@ const DisplayCard = () => {
               {subscriptionStatus.formattedAmount}
             </span>
           </div>
-          
         </div>
 
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+        }}
+        >
           <div className="wallet">
             <h6>Withdrawal</h6>
           </div>
@@ -389,16 +434,39 @@ const DisplayCard = () => {
           </div>
         </div>
 
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="inviteFriend">
             <h6>Share and Earn</h6>
           </div>
           <div className="share">
-            <span style={{ color: "yellow", cursor: "pointer" }} onClick={openModal}>share</span>
+            <span
+              style={{ color: "yellow", cursor: "pointer" }}
+              onClick={openModal}
+            >
+              share
+            </span>
           </div>
         </div>
 
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="my-team">
             <h6>My Team</h6>
           </div>
@@ -406,7 +474,16 @@ const DisplayCard = () => {
             <span style={{ color: "yellow", cursor: "pointer" }}>View</span>
           </div>
         </div>
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="refferal-payout">
             <h6>Referral Payout</h6>
           </div>
@@ -419,7 +496,16 @@ const DisplayCard = () => {
             </span>
           </div>
         </div>
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="trading-chart">
             <h6>Trading Chart</h6>
           </div>
@@ -432,7 +518,16 @@ const DisplayCard = () => {
             </span>
           </div>
         </div>
-        <div className="card1">
+        <div className="card1"
+         style={{
+          backgroundImage: `url(${card1})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
+          display:"flex",
+          flexDirection:"column",
+          alignItems:"center"
+        }}
+        >
           <div className="trading-chart">
             <h6>Chart and Data</h6>
           </div>

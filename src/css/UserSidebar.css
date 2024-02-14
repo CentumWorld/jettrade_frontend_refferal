@@ -29,10 +29,21 @@
     position: relative;
     padding: 15px 10px;
 }
-.logo{
+
+.logo {
+    font-family: "Arial", sans-serif;
     font-size: 24px;
-    line-height: 0;
-}
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: 0;
+    color: gray;
+  }
+  
+  .logo:hover {
+    color: #007bff;
+    transition: color 0.3s ease-in-out;
+  }
+  
 .icon{
     font-size: 20px;
 }
