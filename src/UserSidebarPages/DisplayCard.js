@@ -8,7 +8,6 @@ import { FaCopy } from "react-icons/fa";
 import baseUrl from "../baseUrl";
 import moment from "moment";
 import ShareMessage from "./common/ShareMessage";
-import card from "../img/JTF.gif";
 import card1 from "../img/JTF1.gif";
 
 const apiurl = baseUrl.apiUrl;
@@ -308,7 +307,7 @@ const DisplayCard = () => {
         <div
           className="card1"
           style={{
-            backgroundImage: `url(${card})`,
+            backgroundImage: `url(${card1})`,
             backgroundSize: "cover",
             backgroundPosition: "center bottom",
             display:"flex",
@@ -357,7 +356,7 @@ const DisplayCard = () => {
 
         <div className="card1"
          style={{
-          backgroundImage: `url(${card})`,
+          backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           display:"flex",
@@ -408,7 +407,7 @@ const DisplayCard = () => {
 
         <div className="card1"
          style={{
-          backgroundImage: `url(${card})`,
+          backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           display:"flex",
@@ -459,7 +458,7 @@ const DisplayCard = () => {
 
         <div className="card1"
          style={{
-          backgroundImage: `url(${card})`,
+          backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           display:"flex",
@@ -498,7 +497,7 @@ const DisplayCard = () => {
         </div>
         <div className="card1"
          style={{
-          backgroundImage: `url(${card})`,
+          backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
           backgroundPosition: "center bottom",
           display:"flex",
