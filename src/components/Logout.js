@@ -8,8 +8,6 @@ const apiurl = baseUrl.apiUrl
 function Logout() {
     const {state, dispatch } = useContext(UserContext);
     const navigate = useNavigate();
-    // console.log("Badal")
-
     useEffect(()=>{
         fetch(`${apiurl}`+"/admin/logout",{
             method:"GET",

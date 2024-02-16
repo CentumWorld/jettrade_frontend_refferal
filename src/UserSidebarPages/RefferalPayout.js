@@ -45,7 +45,6 @@ const RefferalPayout = () => {
 
   const requestRefferalPayout = (e) => {
     e.preventDefault();
-    console.log(amount);
     const token = localStorage.getItem("token");
     const data = {
       memberid: localStorage.getItem("memberid"),
@@ -83,7 +82,6 @@ const RefferalPayout = () => {
     const data = {
       memberid: memberid
     }
-    // /member/refferal/member-fetch-refferal-payout
     axios.post(`${apiurl}` +'/member/refferal/member-fetch-refferal-payout', data, config)
       .then((res) => {
         const formattedAmount = res.data.wallet.toLocaleString('en-IN', {
@@ -110,14 +108,12 @@ const RefferalPayout = () => {
         const length = res.data.memberWithdrawalRequest.length;
         const lastData = res.data.memberWithdrawalRequest[length - 1];
         const lastDate = res.data.memberWithdrawalRequest[length - 1].requestDate;
-        console.log(res);
         const formattedDate = new Date(lastDate).toLocaleDateString();
         const parts = formattedDate.split('/');
         const month = parts[0];
         const day = parts[1];
         const year = parts[2];
         const finalDate = `${day}/${month}/${year}`;
-        console.log(finalDate, lastData.walletAmount, '180');
         setLastDate(finalDate);
         const formattedAmount = new Intl.NumberFormat('en-IN', {
           style: 'currency',
@@ -129,7 +125,6 @@ const RefferalPayout = () => {
 
       })
       .catch(err => {
-        console.log(err.response.data.message)
       })
   }
 
@@ -151,11 +146,9 @@ const RefferalPayout = () => {
         config
       )
       .then((res) => {
-        console.log(res.data);
         setApprovedDetails(res.data.memberApproveWithdrawal);
       })
       .catch((err) => {
-        console.log(err);
       });
   };
   //data ---------
@@ -224,7 +217,6 @@ const RefferalPayout = () => {
   ];
 
 
-  console.log(lastDate);
 
   // bank modal
   const openBankSelectModal = () => {
@@ -239,11 +231,9 @@ const RefferalPayout = () => {
 
     axios.post(`${apiurl}` +'/member/get-member-own-bank-details', data, config)
       .then((res) => {
-        console.log(res.data)
         setBankDetails(res.data.memberBankDetails)
       })
       .catch((err) => {
-        console.log(err.response.data.message)
       })
 
     axios.post(`${apiurl}` +'/member/get-member-own-upi', data, config)
@@ -251,7 +241,7 @@ const RefferalPayout = () => {
         setUpiDetails(res.data.memberUpiId)
       })
       .catch((err) => {
-        console.log(err.response.data.message)
+      
       })
 
     let data1 = {
@@ -259,23 +249,19 @@ const RefferalPayout = () => {
     }
     axios.post(`${apiurl}` +'/member/fetch-member-details-member-side', data1, config)
       .then((res) => {
-        console.log(res.data.result.verifyDate)
         const isoDateString = res.data.result.verifyDate;
         const convertedDateString = isoDateString.substring(0, 10);
-        console.log(convertedDateString)
         const currentDate = new Date();
         const date = new Date(convertedDateString);
         const differenceInMilliseconds = currentDate - date;
         const differenceInDays = Math.floor(differenceInMilliseconds / (1000 * 60 * 60 * 24));
         setDayDifference(7 - differenceInDays)
-
-        console.log(`Difference in days: ${differenceInDays}`);
         if (differenceInDays > 7) {
           setStopWithdrawal(true)
         }
       })
       .catch((err) => {
-        console.log(err.response.data.message)
+        
       })
 
   }

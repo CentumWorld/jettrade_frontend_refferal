@@ -7,9 +7,6 @@ const HeatMap = () => {
         const handleLoad = () => {
           if (iframeRef.current) {
             const iframeContentWindow = iframeRef.current.contentWindow;
-            // Access the contentWindow and perform any necessary operations
-            // with the iframe's document or window objects
-            console.log(iframeContentWindow);
           }
         };
     

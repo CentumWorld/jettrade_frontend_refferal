@@ -3,38 +3,18 @@ import { Modal, Badge } from "antd";
 import axios from "axios";
 import "../css/UserSidebar.css";
 import { motion } from "framer-motion";
-import { MdDashboard, MdSend } from "react-icons/md";
-import {
-  FaMoneyBillWaveAlt,
-  FaBars,
-  FaCarrot,
-  FaUserPlus,
-  FaShare,
-} from "react-icons/fa";
-import { RxCountdownTimer } from "react-icons/rx";
-import { TfiMenuAlt, TfiGift } from "react-icons/tfi";
-import { IoTrophy } from "react-icons/io5";
+import { MdDashboard } from "react-icons/md";
+import { FaBars, FaShare } from "react-icons/fa";
+
 import { FcBarChart } from "react-icons/fc";
 import { VscReferences } from "react-icons/vsc";
-import {
-  AiOutlineSetting,
-  AiFillBank,
-  AiOutlineAreaChart,
-  AiOutlineSwap,
-} from "react-icons/ai";
+import { AiOutlineSetting, AiFillBank, AiOutlineSwap } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import UserSidebarMenu from "./usersidebar/UserSidebarMenu";
 import { UserModal } from "../UserModel/UserModal";
-import {
-  BsBellFill,
-  BsFillChatTextFill,
-  BsMinecartLoaded,
-} from "react-icons/bs";
-import { FcNeutralTrading } from "react-icons/fc";
-import { FcUpRight } from "react-icons/fc";
+import { BsBellFill, BsMinecartLoaded } from "react-icons/bs";
 import baseUrl from "../baseUrl";
 import { BiLogOutCircle } from "react-icons/bi";
-
 const apiurl = baseUrl.apiUrl;
 
 const routes = [
@@ -62,54 +42,13 @@ const routes = [
     name: "Trading Chart",
     icon: <FcBarChart />,
   },
-  
-  // {
-  //   path: "/userdashboard",
-  //   name: "Chart and Data",
-  //   icon: <AiOutlineAreaChart />,
-  //   subRoutes: [
-  //     {
-  //       path: "/userdashboard/cryptocurrency-market",
-  //       name: "Cryptocurrency Market",
-  //     },
-  //     {
-  //       path: "/userdashboard/economic-celender",
-  //       name: "Economic Celender",
-  //     },
-  //     {
-  //       path: "/userdashboard/heat-map",
-  //       name: "Heat Map",
-  //     },
-  //     {
-  //       path: "/userdashboard/cross-rates",
-  //       name: "Cross Rates",
-  //     },
-  //     {
-  //       path: "/userdashboard/market-data",
-  //       name: "Market Data",
-  //     },
-  //     {
-  //       path: "/userdashboard/screener",
-  //       name: "Screener",
-  //     },
-  //   ],
-  // },
-  
-  // {
-  //   path: "/userdashboard/invite",
-  //   name: "Invite a friend",
-  //   icon: <FaUserPlus />,
-  // },
+
   {
     path: "/userdashboard/refferal-payout",
     name: "Withdrawal",
     icon: <FaShare />,
   },
-  // {
-  //     path:'/userdashboard/chat',
-  //     name:"Chat",
-  //     icon:<BsFillChatTextFill />
-  // },
+
   {
     path: "/userdashboard/referral-payout",
     name: "Referral Payout",
@@ -139,7 +78,6 @@ function UserSidebar() {
   const openModal = () => {
     setShowModal(true);
   };
-  console.log(showModal);
 
   useEffect(() => {
     callApiToNotificationStatus();
@@ -176,19 +114,14 @@ function UserSidebar() {
         config
       )
       .then((result) => {
-        console.log(result.data.allNotitfication);
         setAllNotification(result.data.allNotitfication);
         setAllRefferalNotification(result.data.allRefferalNotification);
         setParticularRefferalNotification(result.data.particularRefferal);
-        // console.log(result.data.allRefferalNotification)
-        // console.log(result.data.particularRefferal)
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
-  // callApiToNotificationStatus
+  //callApiToNotificationStatus
   const callApiToNotificationStatus = () => {
     const token = localStorage.getItem("token");
     const memberid = localStorage.getItem("memberid");
@@ -207,9 +140,7 @@ function UserSidebar() {
       .then((res) => {
         setNotificationStatus(res.data.isNotification);
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   // notificationStatusRemove
@@ -231,9 +162,7 @@ function UserSidebar() {
       .then((res) => {
         callApiToNotificationStatus();
       })
-      .catch((err) => {
-        console.log(err);
-      });
+      .catch((err) => {});
   };
 
   const options = {
@@ -350,7 +279,9 @@ function UserSidebar() {
             {isOpen && (
               <div className="setting">
                 <AiOutlineSetting onClick={openModal} />
-                {showModal ? <UserModal setShowModal={setShowModal} toggleMenu={toggle} /> : null}
+                {showModal ? (
+                  <UserModal setShowModal={setShowModal} toggleMenu={toggle} />
+                ) : null}
               </div>
             )}
             <div className="notification">
@@ -367,61 +298,54 @@ function UserSidebar() {
               <FaBars onClick={toggle} />
             </div>
           </div>
-          {/* {isOpen ?
-                        <div>
-                            <NavLink to='/userdashboard/new-deposit' className='deposit_button btn btn-primary'>START WITH A DEPOSIT</NavLink>
-                        </div> :
-                        <NavLink to='/userdashboard/new-deposit' className='deposit_logo'><AiFillBank /></NavLink>
-                    } */}
-
-
-
-                    <section className='routes'>
-                        {routes.map((route) => {
-                            if (route.subRoutes) {
-                                return (
-                                    <UserSidebarMenu isOpen={isOpen} route={route} />
-                                );
-                            }
-                            if (route.externalLink) {
-                                // For the "CENTUMO Swap" link, open in a new tab
-                                return (
-                                  <a
-                                    href={route.path}
-                                    key={route.name}
-                                    className={
-                                      isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
-                                    }
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                  >
-                                    <div className="admin-icon">{route.icon}</div>
-                                    <motion.div className="user_link_text">
-                                      {route.name}
-                                    </motion.div>
-                                  </a>
-                                );
-                              }
-                            return (
-                                <NavLink to={route.path} key={route.name}
-                                 className={isOpen ? 'user_sidebar_link' : 'user_sidebar_link_small'}
-                                >
-                                    
-                                    <div className='icon'>{route.icon}</div>
-                                    {isOpen && <motion.div className='link_text' style={{marginTop:"6px"}}>{route.name}</motion.div>}
-                                </NavLink>
-                                
-                            )
-                        })}
-
-                    </section>
-
-                </motion.div>
-
-
-            </div>
-        </>
-    )
+          <section className="routes">
+            {routes.map((route) => {
+              if (route.subRoutes) {
+                return <UserSidebarMenu isOpen={isOpen} route={route} />;
+              }
+              if (route.externalLink) {
+                return (
+                  <a
+                    href={route.path}
+                    key={route.name}
+                    className={
+                      isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="admin-icon">{route.icon}</div>
+                    <motion.div className="user_link_text">
+                      {route.name}
+                    </motion.div>
+                  </a>
+                );
+              }
+              return (
+                <NavLink
+                  to={route.path}
+                  key={route.name}
+                  className={
+                    isOpen ? "user_sidebar_link" : "user_sidebar_link_small"
+                  }
+                >
+                  <div className="icon">{route.icon}</div>
+                  {isOpen && (
+                    <motion.div
+                      className="link_text"
+                      style={{ marginTop: "6px" }}
+                    >
+                      {route.name}
+                    </motion.div>
+                  )}
+                </NavLink>
+              );
+            })}
+          </section>
+        </motion.div>
+      </div>
+    </>
+  );
 }
 
 export default UserSidebar;

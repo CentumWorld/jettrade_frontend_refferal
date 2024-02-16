@@ -73,7 +73,7 @@ const UserDetails = () => {
     };
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
+        Authorization: `Bearer ${token}`,
       },
     };
     try {
@@ -82,9 +82,7 @@ const UserDetails = () => {
         data,
         config
       );
-      console.log(response.data, "58");
       if (response) {
-        console.log(response.data.result);
         setMemberData({
           memberid: response.data.result.memberid,
           fname: response.data.result.fname,
@@ -98,7 +96,6 @@ const UserDetails = () => {
         fetchMemberProfilePhoto();
       }
     } catch (error) {
-      console.error("Error fetching data:", error);
     }
   };
 
@@ -109,7 +106,7 @@ const UserDetails = () => {
     };
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
+        Authorization: `Bearer ${token}`,
       },
     };
     try {
@@ -118,13 +115,11 @@ const UserDetails = () => {
         data,
         config
       );
-      console.log(response.data.result, "61");
       setImage({ placeholder: response.data.result[0].imageUrl });
     } catch (error) {
-      console.error("Error fetching data:", error);
+      
     }
   };
-  console.log(memberData);
 
   // function for upload profile
 
@@ -135,10 +130,9 @@ const UserDetails = () => {
     var formData = new FormData();
     formData.append("image", image.file);
     formData.append("memberid", localStorage.getItem("memberid"));
-    //console.log(formData);
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
+        Authorization: `Bearer ${token}`,
       },
     };
 
@@ -158,17 +152,12 @@ const UserDetails = () => {
       .catch((err) => {});
   };
 
-  //function for image change
   const handleProfileImageChange = (e) => {
-    //e.preventDefault();
-
     document.getElementById("file-input").click();
-
     if (
       e.target.files[0].type === "image/png" ||
       e.target.files[0].type === "image/jpeg"
     ) {
-      //preview shoe
       const reader = new FileReader();
       reader.onloadend = () => {
         setImage({
@@ -177,8 +166,6 @@ const UserDetails = () => {
         });
       };
       reader.readAsDataURL(e.target.files[0]);
-
-      //uploadProfile(e.target.files[0]);
     } else {
       toast.error("Invalid File !! ");
       image.file = null;
@@ -193,13 +180,12 @@ const UserDetails = () => {
     };
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
+        Authorization: `Bearer ${token}`,
       },
     };
     axios
       .post(`${apiurl}` + "/member/refferal/edit-member-details", data, config)
       .then((result) => {
-        console.log(result.data.result[0].fname, result.data.result[0].lname);
         setEditMemberData({
           fname: result.data.result[0].fname,
           lname: result.data.result[0].lname,
@@ -212,7 +198,7 @@ const UserDetails = () => {
         });
       })
       .catch((error) => {
-        console.log(error);
+      
       });
   };
 
@@ -237,7 +223,6 @@ const UserDetails = () => {
       dob: date,
     }));
   };
-  // save edit value
   const editModalSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -254,7 +239,7 @@ const UserDetails = () => {
     const token = localStorage.getItem("token");
     const config = {
       headers: {
-        Authorization: `Bearer ${token}`, // Set the 'Authorization' header with the token
+        Authorization: `Bearer ${token}`,
       },
     };
     axios
@@ -306,7 +291,6 @@ const UserDetails = () => {
                   </div>
                   <div className="user_head_data">
                     <h6>{memberData.email}</h6>
-                    {/* <span><NavLink to={''}>change</NavLink></span> */}
                   </div>
                 </div>
               </div>
@@ -318,7 +302,6 @@ const UserDetails = () => {
                   </div>
                   <div className="user_head_data">
                     <h6>{memberData.phone}</h6>
-                    {/* <span><NavLink to={''}>change</NavLink></span> */}
                   </div>
                 </div>
               </div>
@@ -419,7 +402,6 @@ const UserDetails = () => {
               Submit
             </Button>,
           ]}
-          //footer={null}
         >
           <div className="edit-container">
             <div>

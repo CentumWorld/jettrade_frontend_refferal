@@ -7,8 +7,6 @@ export const Protected = (props) => {
     const nevigate = useNavigate();
     useEffect(()=>{
         let login = localStorage.getItem('login');
-        
-        //console.log(login);
         if(!login){
             nevigate('/')
         }

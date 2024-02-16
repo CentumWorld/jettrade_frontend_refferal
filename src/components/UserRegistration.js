@@ -1,18 +1,15 @@
-import React, { useState, useEffect, createContext, useContext } from "react";
+import React, { useState, createContext } from "react";
 import axios from "axios";
 
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, NavLink } from "react-router-dom";
-// import UserLogin from './UserLogin';
 import "../css/UserRegistration.css";
 import {
   Select,
   Input,
-  Form,
   Radio,
   DatePicker,
   Button,
-  Upload,
   message,
   Typography,
   Spin,
@@ -20,13 +17,9 @@ import {
 
 import {
   MailOutlined,
-  UserOutlined,
   FlagOutlined,
   CalendarOutlined,
 } from "@ant-design/icons";
-import { FaAddressCard } from "react-icons/fa";
-//import PhoneInput from 'react-phone-number-input'
-//import 'react-phone-number-input/style.css'
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import baseUrl from "../baseUrl";
@@ -79,17 +72,10 @@ function UserRegistration() {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
-  //console.log(userData)
   const memberInputs = (e) => {
     e.preventDefault();
     setMemberData({ ...memberData, [e.target.name]: e.target.value });
 
-    // if (memberData.aadhar_no.length < 11 || memberData.aadhar_no.length > 11) {
-    //     setErrorMessage('Only 12 digit allow!');
-    //     setAadharCount(memberData.aadhar_no.length + 1)
-    // } else {
-    //     setErrorMessage('');
-    // }
   };
 
   //handle front aadhar image function
@@ -150,7 +136,6 @@ function UserRegistration() {
     e.preventDefault();
     setMemberData({ ...memberData, pan_no: e.target.value });
     let panLength = e.target.value;
-    console.log(memberData.pan_no);
     if (panLength.length === 10) {
       setPanError(false);
     } else {
@@ -172,7 +157,6 @@ function UserRegistration() {
   const submit = (e) => {
     setSpin(true);
     e.preventDefault();
-    console.log(memberData, phone, aadharImage, aadharBackImage, panImage);
     const formData = new FormData();
     formData.append("fname", memberData.fname);
     formData.append("lname", memberData.lname);
@@ -181,17 +165,9 @@ function UserRegistration() {
     formData.append("address", memberData.address);
     formData.append("gender", memberData.gender);
     formData.append("dob", memberData.dob);
-    // formData.append('aadhar', memberData.aadhar_no);
-    // formData.append('aadhar_front_side', aadharImage.file);
-    // formData.append('aadhar_back_side', aadharBackImage.file);
-    // formData.append('pan_card', panImage.file);
-    // formData.append('pan', memberData.pan_no);
-    //formData.append('pan_upload', memberData.pan_upload);
     formData.append("reffered_id", memberData.refferedId);
     formData.append("memberid", memberData.memberid);
     formData.append("password", memberData.password);
-
-    console.log(formData, "44");
 
     if (countryCode === "91") {
       formData.append("aadhar", memberData.aadhar_no);
@@ -213,9 +189,7 @@ function UserRegistration() {
           });
           message.success("Registration successful");
           setSpin(false);
-
           navigate("/member-login");
-          console.log(res.data);
         })
         .catch((error) => {
           message.warning(error.response.data.message);
@@ -227,11 +201,9 @@ function UserRegistration() {
         .then((res) => {
           message.success("Registration successful");
           navigate("/member-login");
-          // console.log(res.data)
           setSpin(false);
         })
         .catch((error) => {
-          //console.log(error.response.data)
           message.warning(error.response.data.message);
           setSpin(false);
         });
@@ -245,28 +217,21 @@ function UserRegistration() {
     }));
   };
 
-  // -----------------
-
   const [selectedOption, setSelectedOption] = useState("referral");
   const [referralId, setReferralId] = useState("");
-  const officialId = "admin@123"; // Replace with your official ID
+  const officialId = "admin@123";
   const [countryCode, setCountryCode] = useState("");
 
   const handleDropdownChange = (value) => {
     setSelectedOption(value);
     setReferralId("");
-    setMemberData({ ...memberData, invite_code: officialId }); // Reset referral ID when changing options
+    setMemberData({ ...memberData, invite_code: officialId });
   };
 
   const hadleRefferalId = (value) => {
     setReferralId(value);
     setMemberData({ ...memberData, invite_code: value });
   };
-
-  // const handlePhoneChange = (value) => {
-  //     setPhone(value);
-  //     setMemberData({ ...memberData, phone: value })
-  // };
 
   const handlePhoneChange = (value) => {
     const str = value;
@@ -288,7 +253,6 @@ function UserRegistration() {
                 <p>Referred ID</p>
                 <Input
                   className="custom-placeholder-input"
-                  // prefix={<UserOutlined />}
                   placeholder="Enter referred Id"
                   name="refferedId"
                   value={memberData.refferedId}
@@ -301,7 +265,6 @@ function UserRegistration() {
                 <p>First Name</p>
                 <Input
                   className="custom-placeholder-input"
-                  // prefix={<UserOutlined />}
                   placeholder="Enter first name"
                   name="fname"
                   value={memberData.fname}
@@ -313,7 +276,6 @@ function UserRegistration() {
                 <p>Last Name</p>
                 <Input
                   className="custom-placeholder-input"
-                  //prefix={<UserOutlined />}
                   placeholder=" Enter last name"
                   name="lname"
                   value={memberData.lname}
@@ -321,8 +283,6 @@ function UserRegistration() {
                   style={{ marginBottom: "10px" }}
                 />
               </div>
-
-              {/* antd email input */}
               <div className="first_name">
                 <p>Email</p>
                 <Input
@@ -336,7 +296,6 @@ function UserRegistration() {
                   style={{ marginBottom: "10px" }}
                 />
               </div>
-              {/* antd phone */}
               <div className="first_name">
                 <p>Phone</p>
                 <PhoneInput
@@ -356,7 +315,6 @@ function UserRegistration() {
                 <p>Address</p>
                 <Input
                   className="custom-placeholder-input"
-                  // prefix={<FaAddressCard />}
                   placeholder="Enter Address"
                   name="address"
                   value={memberData.address}
@@ -412,20 +370,12 @@ function UserRegistration() {
                     />
                     {errorMessage && <Text type="danger">{errorMessage}</Text>}
                   </div>
-
-                  {/* <Upload beforeUpload={handleClickAadharFrontImage}
-                                    className='aadhar_front_mobile'
-                                    
-                                    >
-                                    <Button icon={<UploadOutlined />}>Upload Aadhar Front</Button>
-                                </Upload> */}
                   <div className="aadhar-front">
                     <p>Aadhar Front</p>
                     <div>
                       <Input
                         placeholder="Aadhar Front Image"
                         type="file"
-                        //style={{ display: 'none' }}
                         onChange={handleClickAadharFrontImage}
                       />
                     </div>
@@ -437,7 +387,6 @@ function UserRegistration() {
                       <Input
                         placeholder="Aadhar back Image"
                         type="file"
-                        //style={{ display: 'none' }}
                         onChange={handleClickAadharBackImage}
                       />
                     </div>
@@ -452,7 +401,6 @@ function UserRegistration() {
                       name="pan_no"
                       onChange={memberInputs}
                       style={{ marginBottom: "10px" }}
-                      //style={{ width: '500px', height: '40px' , marginBottom: '10px' }}
                     />
                   </div>
 
@@ -463,7 +411,6 @@ function UserRegistration() {
                         className="custom-placeholder-input"
                         placeholder="Pan card"
                         type="file"
-                        //style={{ display: 'none' }}
                         onChange={handleClickPanCardImage}
                         style={{ marginBottom: "10px" }}
                       />
@@ -489,7 +436,6 @@ function UserRegistration() {
                       <Input
                         placeholder="Upload ID Card"
                         type="file"
-                        //style={{ display: 'none' }}
                         onChange={handleClickForeignCard}
                       />
                     </div>
@@ -504,7 +450,6 @@ function UserRegistration() {
                   value={memberData.memberid}
                   name="memberid"
                   onChange={memberInputs}
-                  // style={{ marginBottom: '10px' }}
                 />
               </div>
               <div className="password-input">
@@ -515,7 +460,6 @@ function UserRegistration() {
                   value={memberData.password}
                   name="password"
                   onChange={memberInputs}
-                  // style={{ marginBottom: '10px' }}
                 />
               </div>
 

@@ -9,9 +9,7 @@ const MoveStuffAround = () => (
       <>
       
         <div className="forex-ticker">
-            {/* <p style={{color:'black'}}>{index}</p> */}
-            {/* <ForexTricker /> */}
-            {/* <div id="tvchart"></div> */}
+
         </div>
         
       </>

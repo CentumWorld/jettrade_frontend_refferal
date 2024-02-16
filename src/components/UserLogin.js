@@ -25,10 +25,8 @@ function UserLogin(props) {
         userid: "", password: ""
     })
     const [hide, setHide] = useState(true);
-    //console.log(hide);
     const handleInputs = e => {
         setUser({ ...user, [e.target.name]: e.target.value })
-        console.log(e.target.value)
     }
    
     const userLogin = (e) => {
@@ -38,7 +36,6 @@ function UserLogin(props) {
             password: user.password
         })
             .then((response) => {
-                console.log(response.data.memberLogin);
                 localStorage.setItem('token',response.data.token);
                 localStorage.setItem('memberid',response.data.memberLogin.memberid)
                 localStorage.setItem('fname',response.data.memberLogin.fname)
@@ -49,7 +46,6 @@ function UserLogin(props) {
                 navigate('/userdashboard');
 
             }).catch((error) => {
-                console.log('Not login');
                 if (error.response.status === 422) {
                     toast.warning("Please Fill all Details!", {
                         autoClose: 2000,
@@ -59,12 +55,10 @@ function UserLogin(props) {
                     user.password = "";
                 }
                 if (error.response.status === 404) {
-                   
                     toast.warning("Invalid Credential!", {
                         autoClose: 2000,
                         theme: "dark"
-                    });
-                   
+                    }); 
                 }
             })
             setShow(false);
@@ -84,10 +78,6 @@ function UserLogin(props) {
                                 <div className='col'>
                                     <div className='form-group mb-3'>
                                         <label htmlFor="userid"> LOGIN ID</label>
-                                         {/* <input type="text" name='userid' id='userid' className='form-control' placeholder='Enter login ID'
-                                            value={user.userid}
-                                            onChange={handleInputs}
-                                         /> */}
                                          <Input placeholder='Enter login ID ' 
                                          prefix={<UserOutlined/>} 
                                          value={user.userid}
@@ -103,10 +93,6 @@ function UserLogin(props) {
                                 <div className='col'>
                                     <div className='form-group mb-3'>
                                         <label htmlFor="password">PASSWORD</label>
-                                        {/* <input type="password" name='password' id='password' className='form-control' placeholder='Enter Password'
-                                            value={user.password}
-                                            onChange={handleInputs}
-                                        /> */}
                                          <Input.Password placeholder='Enter your password'
                                             prefix={<UnlockOutlined />}
                                             value={user.password}
@@ -115,30 +101,21 @@ function UserLogin(props) {
                                          />
                                     </div>
                                 </div>
-
                             </div>
-
                         </form>
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    {/* <Button variant='primary' className='user_signup_button me-auto'  >Sign Up</Button> */}
-                    {/* <NavLink to="/user-registration" onClick={handleClose}>Sign Up</NavLink> */}
-
                     <Button variant="danger" onClick={handleClose}>
                         Close
                     </Button>
                     <Button variant="outline-success" onClick={userLogin}>
                         Login
                     </Button>
-                   
                 </Modal.Footer>
             </Modal>
-            
         </>
     );
-
-
 }
 
 export default UserLogin

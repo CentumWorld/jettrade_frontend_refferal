@@ -30,7 +30,7 @@ const ForexTricker = () => {
         }));
         candleSeries.setData(cdata);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {});
 
     return () => {
       chart.remove();

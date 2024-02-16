@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import baseUrl from "../baseUrl";
 import "../css/BankDetails.css";
 import { BsPlusCircleFill } from "react-icons/bs";
-import { AiOutlineUser } from "react-icons/ai";
 import { Button, Modal, Tabs, Input, Form, message, Spin, Table } from "antd";
 import axios from "axios";
 const { TabPane } = Tabs;
@@ -23,7 +22,6 @@ const AddBankDetails = () => {
     callApiToUpiDetails();
   }, []);
   const onFinish = (values, form) => {
-    console.log("Received values:", values);
     setShowSpin(true);
     let token = localStorage.getItem("token");
     let data = {
@@ -51,12 +49,11 @@ const AddBankDetails = () => {
         callApiToBankDetails();
       })
       .catch((err) => {
-        console.log(err.response.data.message);
+        
       });
   };
 
   const submitUPIId = (values) => {
-    console.log(values.upiId);
     setShowSpin(true);
 
     let token = localStorage.getItem("token");
@@ -70,7 +67,6 @@ const AddBankDetails = () => {
     axios
       .post(`${apiurl}` + "/member/create-member-upi-holder", data, config)
       .then((res) => {
-        console.log(res.data);
         message.success(res.data.message);
         setBankModal(false);
         setShowSpin(false);
@@ -132,11 +128,9 @@ const AddBankDetails = () => {
     axios
       .post(`${apiurl}` + "/member/get-member-own-bank-details", data, config)
       .then((res) => {
-        console.log(res.data);
         setBankDetails(res.data.memberBankDetails);
       })
       .catch((err) => {
-        console.log(err.response.data.message);
       });
   };
   const callApiToUpiDetails = () => {

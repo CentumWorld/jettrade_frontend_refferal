@@ -1,4 +1,3 @@
-// TradingViewWidget.jsx
 
 import React, { useEffect, useRef } from 'react';
 import '../css/Dashboard.css'

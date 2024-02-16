@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import "../css/Navbar.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { UserContext } from "../App";
-import UserRegistration from "./UserRegistration";
 import UserLogin from "./UserLogin";
 import Button from "react-bootstrap/Button";
 import { Dropdown, Menu } from "antd";
@@ -26,14 +25,10 @@ function Navbar() {
   //react metarial drop down
   const navigate = useNavigate();
   const handleMenuClick = (e) => {
-    console.log(e.key);
     if (e.key === "login") {
-      //openUserLoginFuction();
       navigate("/member-login");
     }
     if (e.key === "signup") {
-      //console.log("hii");
-      // <NavLink to="/user-registration">Sign Up</NavLink>
       navigate("/member-registration");
     }
     if (e.key === "forget") {
@@ -49,34 +44,34 @@ function Navbar() {
     </Menu>
   );
 
-    const RenderMenu = () => {
-        if (login) {
-            return (
-
-                <>
-
-                    <li className="nav-item">
-                        <NavLink className="btn rounded btn-outline-primary rounded-pill" to="/logout" aria-current="page"
-                         style={{ marginRight: "1rem", display:'flex', alignItems:'center', gap:'.5rem', width:"max-content",color:'0D6EFD'}}
-                         >Logout
-                          <RiLogoutBoxLine style={{height:'1rem', width:'1rem'}}/>
-                         </NavLink>
-                    </li>
-                </>
-            )
-        } else {
-            return (
-                <>
-                    {/* <li className="nav-item">
-                       
-                        <Button variant=" btn rounded btn-outline-primary rounded-pill" onClick={openAdminLoginFuction}>
-                            Admin
-                        </Button>
-                    </li>&nbsp;&nbsp; */}
+  const RenderMenu = () => {
+    if (login) {
+      return (
+        <>
           <li className="nav-item">
-            {/* <Button variant=" btn rounded btn-outline-primary rounded-pill" onClick={openUserLoginFuction}>
-                            User
-                        </Button> */}
+            <NavLink
+              className="btn rounded btn-outline-primary rounded-pill"
+              to="/logout"
+              aria-current="page"
+              style={{
+                marginRight: "1rem",
+                display: "flex",
+                alignItems: "center",
+                gap: ".5rem",
+                width: "max-content",
+                color: "0D6EFD",
+              }}
+            >
+              Logout
+              <RiLogoutBoxLine style={{ height: "1rem", width: "1rem" }} />
+            </NavLink>
+          </li>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <li className="nav-item">
             <Dropdown overlay={menu} trigger={["click"]}>
               <Button variant=" btn rounded btn-outline-primary rounded-pill">
                 Member

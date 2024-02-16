@@ -37,10 +37,7 @@ const Chat = ({ socket, username, room }) => {
 
 
 
-        //received message from admin
         socket.on("refferal_receive_message", (data) => {
-            //console.log(data)
-            //setMessageList((list) => [...list, data])
             fetchChatMessage();
 
         });

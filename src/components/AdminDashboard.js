@@ -6,7 +6,6 @@ import '../css/AdminDashboard.css'
 const AdminDashboard = () => {
   return (
     <>
-  
       <div className='admin-main-container'>
         <div className='admin_sideBar'>
           <AdminSideBar/>
@@ -15,8 +14,6 @@ const AdminDashboard = () => {
             <Outlet/>
         </div>
       </div>
-      
-      
     </>
   )
 }

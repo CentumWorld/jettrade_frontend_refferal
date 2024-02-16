@@ -6,7 +6,6 @@ const ResetPassword = () => {
 
 function onChangeValue(event) {
   setSelectDiv(event.target.value);
-  console.log(event.target.value);
 }
   return (
     <>
@@ -45,31 +44,13 @@ function onChangeValue(event) {
          
             <div className='fx_pin'>
               <div className='password_form'>
-                {/* <div className='newpassword form-group'>
-                  <label htmlFor="new_password">New</label>
-                  <input type="text" className='form-control' placeholder='New password' />
-                </div> */}
-                {/* <div className='password_form'>
-                  <div className='newpassword form-group'>
-                    <label htmlFor="new_password">Repeat</label>
-                    <input type="text" className='form-control' placeholder='Repeat password' />
-                  </div>
-                </div> */}
                 <div className='reset_password_submit'>
                   <button className='btn btn-primary'>Submit</button>
                 </div>
               </div>
-
             </div>
-           
-
-        
-
         </div>
-
       </div>
-
-
     </>
   )
 }
