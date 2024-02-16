@@ -35,11 +35,9 @@ function NewDeposite() {
   const amountFunction = (e) => {
     e.preventDefault();
     let onetEthValue = 2439.02;
-    // setEathValue(e.target.value * onetEthValue);
 
     setEathValue((Math.round(e.target.value * onetEthValue * 100) / 100).toFixed(2));
     setAmount(e.target.value);
-    // console.log(e.target.value,'34');
   }
   const handleChange = (event) => {
     setEthereum(event.target.value);
@@ -63,12 +61,6 @@ function NewDeposite() {
           </div>
           <div className='where_to_money_transfer row'>
             <span className='col-md-6'>
-              {/* <Form.Select  >
-                <option>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </Form.Select> */}
              <Select className='where_to_money_transfer_select'
               placeholder='Select account'>
                 {accounts.map((account,index)=>{
@@ -81,7 +73,6 @@ function NewDeposite() {
             <h2>New deposit for account {1654875}</h2>
           </div>
           <div className='deposite_coin_account_type '>
-            {/* <div className='deposite_coin_account_one row'> */}
             <div className='deposite_coin_card' onClick={() => changeDiv('btc')}>
               <span><img src={btc} alt="" width='200px' height='60px' /></span>
             </div>
@@ -93,9 +84,7 @@ function NewDeposite() {
               <span><img src={binpay} alt="" width='100px' height='40px' /></span>
               <span className='ms'> Ethereum(ERC20)</span>
             </div>
-            {/* </div> */}
-
-            {/* <div className='deposite_coin_account_two row'> */}
+            
             <div className='deposite_coin_card' onClick={() => changeDiv('litecoin')}>
               <div className='lite-coin'>
                 <span><img src={lite} alt="" width='80px' height='40px' /></span>
@@ -108,8 +97,7 @@ function NewDeposite() {
             <div className='deposite_coin_card' onClick={() => changeDiv('skrill')}>
               <span><img src={skrill} alt="" width='180px' height='50px' /></span>
             </div>
-            {/* </div> */}
-            {/* <div className='deposit_coin_account_three  row'> */}
+          
             <div className='deposite_coin_card' onClick={() => changeDiv('usdte')}>
               <span><img src={usdte} alt="" width='80px' height='40px' /></span>
               <span>Tether (ERC20)</span>
@@ -118,7 +106,7 @@ function NewDeposite() {
               <span><img src={usdtt} alt="" width='80px' height='40px' /></span>
               <span>Tether (TRC20)</span>
             </div>
-            {/* </div> */}
+        
           </div>
           <div className='deposit_commission_area'>
             <ul>
@@ -305,15 +293,6 @@ function NewDeposite() {
                       style={{
                         height: 220,
                       }}
-                    // items={new Array(30).fill(null).map((_, i) => {
-                    //   const id = String(i);
-                    //   return {
-                    //     label: `Tab-${id}`,
-                    //     key: id,
-                    //     disabled: i === 28,
-                    //     children: `Content of tab ${id}`,
-                    //   };
-                    // })}
                     />
                   </div>
                 </div>

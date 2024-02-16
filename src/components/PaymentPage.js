@@ -16,7 +16,6 @@ function PaymentPage() {
                 <h1>JETTRADE FX</h1>
                 <h4>Payment Details</h4>
                 <div className='input-box container'>
-                    {/* <input type="text" value={3500}  disabled/> */}
                     <CurrencyInput value={3500} intlConfig={{ locale: 'en-IN', currency: 'INR' }} />
                 </div>
 

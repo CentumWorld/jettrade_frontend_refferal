@@ -61,15 +61,5 @@ const NewsLetter = () => {
 
 export default NewsLetter
 
-                    // <div className='newsletter_subscription'>
-                    //    <div className='head_name'>
-                    //         <p>Newsletter subscription</p>
-                    //    </div>
-                    //    <div className='form-group'>
-                    //         <select name="" id="">
-                    //             <option value="">Enabled</option>
-                    //             <option value="">Disabled</option>
-                    //         </select>
-                    //    </div>
-                    // </div>      
+                         
 

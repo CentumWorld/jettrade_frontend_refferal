@@ -21,10 +21,8 @@ const MemberLogin = () => {
     const [hide, setHide] = useState(true);
     const handleInputs = (e) => {
         setMember({ ...member, [e.target.name]: e.target.value })
-        console.log(e.target.value)
     }
     //Remember me
-
     const handleRememberMeChange = (event) => {
         setRememberMe(event.target.checked);
     };
@@ -37,12 +35,9 @@ const MemberLogin = () => {
     
         if (storedRememberMe === 'true') {
           setMember({memberid:storeUserID,password:storedPassword});
-        //   setMember({password:storedPassword});
           setRememberMe(true);
         }
       }, []);
-
-      console.log(member.memberid);
 
     // --------------
     const memberLogin = (e) => {
@@ -52,7 +47,6 @@ const MemberLogin = () => {
             localStorage.setItem('password', member.password);
             localStorage.setItem('rememberMe', true);
         } else {
-            // If "Remember Me" is unchecked, remove the stored login information
             localStorage.removeItem('userid');
             localStorage.removeItem('password');
             localStorage.removeItem('rememberMe');
@@ -66,7 +60,6 @@ const MemberLogin = () => {
                 localStorage.setItem('login', true);
                 member.memberid = '';
                 member.password = "";
-                console.log(response.data.memberLogin);
                 localStorage.setItem('member', response.data.memberLogin._id);
                 localStorage.setItem('token', response.data.token);
                 localStorage.setItem('memberid', response.data.memberLogin.memberid);
@@ -75,22 +68,17 @@ const MemberLogin = () => {
                 navigate('/userdashboard');
 
             }).catch((error) => {
-                console.log('Not login');
                 if (error.response.status === 422) {
                     message.warning("Please Fill all Details!");
-
                     member.memberid = '';
                     member.password = "";
                 }
                 if (error.response.status === 404) {
-
                     message.warning("Invalid Credential!");
-
                 }
                 if (error.response.status === 401) {
                     message.warning('Your Account is Blocked')
                 }
-
             })
         setShow(false);
     }
@@ -114,14 +102,11 @@ const MemberLogin = () => {
                                 />
                             </div>
                         </div>
-
                     </div>
-
                     <div className='row'>
                         <div className='col'>
                             <div className='password-section form-group mb-3'>
                                 <label htmlFor="password" style={{color:'white'}}>PASSWORD</label>
-
                                 <Input.Password placeholder='Enter your password'
                                     className="custom-placeholder-password"
                                     prefix={<UnlockOutlined />}
@@ -170,7 +155,6 @@ const MemberLogin = () => {
                         </div>
                     </div>
                 </div>
-
             </div>
         </>
     )

@@ -68,26 +68,6 @@
     position: relative;
     cursor: pointer;
   }
-   
-  /* -------------- */
-  /* .container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .left-item {
-    margin-right: auto;
-    margin: 3px 0 0 2px;
-    color: #fff;
-  }
-  
-  .centered-item {
-    margin: 0 auto;
-    align-items: center;
-    color: #fff;
-    font-weight: 700;
-    line-height: 45px;
-  } */
 
   /* -------------- */
  .chat-header1 p {

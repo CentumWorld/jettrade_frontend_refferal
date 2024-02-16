@@ -1,39 +1,43 @@
 .share-icon {
-    display: flex;
-    gap: 20px;  /* Adjust the value according to your preference */
-  }
-  
-  
-  
-  .social-icon:hover {
-    background-color: #f0f0f0; /* Change background color on hover */
-  }
-  
-  /* Customize styles for each social media icon */
-  .social-icon.facebook {
-    background-color: #fff; /* Facebook blue */
-    color: #1877f2;             /* White icon color */
-  }
-  
-  .social-icon.twitter {
-    background-color: #fff; /* Twitter blue */
-    color: #1da1f2;              /* White icon color */
-  }
-  
-  .social-icon.linkedin {
-    background-color: #fff; /* LinkedIn blue */
-    color: #0077b5;              /* White icon color */
-  }
-  
-  .social-icon.whatsapp {
-    background-color: #25d366; /* WhatsApp green */
-    color: #fff;
-    border-radius:6px;              /* White icon color */
-  }
-  
-  .social-icon.instagram {
-    background-color: #bc2a8d;
-    color: #fff; 
-    background-image: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-    border-radius:6px;
-  }
+  display: flex;
+  gap: 20px;
+}
+.social-icon:hover {
+  background-color: #f0f0f0;
+}
+
+.social-icon.facebook {
+  background-color: #fff;
+  color: #1877f2;
+}
+
+.social-icon.twitter {
+  background-color: #fff;
+  color: #1da1f2;
+}
+
+.social-icon.linkedin {
+  background-color: #fff;
+  color: #0077b5;
+}
+
+.social-icon.whatsapp {
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 6px;
+}
+
+.social-icon.instagram {
+  background-color: #bc2a8d;
+  color: #fff;
+  background-image: linear-gradient(
+    45deg,
+    #405de6,
+    #5851db,
+    #833ab4,
+    #c13584,
+    #e1306c,
+    #fd1d1d
+  );
+  border-radius: 6px;
+}

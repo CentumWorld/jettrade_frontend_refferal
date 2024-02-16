@@ -45,23 +45,19 @@ const ReferralPayout = () => {
           setMyTeam(res.data.memberTransactions);
         })
         .catch((err) => {
-          console.log(err.message);
         });
     } catch (err) {
-      console.error(err.message);
     }
   };
 
   const handleSearch = (value) => {
     setSearchText(value);
-
     const filteredData = myTeam.filter((record) => {
       return (
         record.refferUserId.toLowerCase().includes(value.toLowerCase()) ||
         record.Type.toLowerCase().includes(value.toLowerCase())
       );
     });
-
     setFilteredMyTeam(filteredData);
   };
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/DisplayCard.css";
-import { FaRupeeSign, FaHandHoldingUsd } from "react-icons/fa";
+import { FaHandHoldingUsd } from "react-icons/fa";
 import axios from "axios";
 import { Modal, Menu, Dropdown, Table, message, Input } from "antd";
 import { FaCopy } from "react-icons/fa";
@@ -13,14 +13,10 @@ const apiurl = baseUrl.apiUrl;
 
 const DisplayCard = () => {
   const handleMenuClick = (e) => {
-    console.log(e.key);
     if (e.key === "cryptocurrency-market") {
-      //openUserLoginFuction();
       navigate("/userdashboard/cryptocurrency-market");
     }
     if (e.key === "economic-celender") {
-      //console.log("hii");
-      // <NavLink to="/user-registration">Sign Up</NavLink>
       navigate("/userdashboard/economic-celender");
     }
     if (e.key === "heat-map") {
@@ -74,13 +70,10 @@ const DisplayCard = () => {
     callApiToMyTeam();
   }, []);
 
-  // joinChat
-
   const joinChat = () => {
     navigate("/userdashboard/chat");
   };
 
-  // fetchMemberDataForSubscription
   const fetchMemberDataForSubscription = () => {
     const memberid = localStorage.getItem("memberid");
     const token = localStorage.getItem("token");
@@ -134,7 +127,6 @@ const DisplayCard = () => {
         config
       )
       .then((res) => {
-        //console.log(res.data.walletAmount)
         if (res.data.data === 0) {
           setTotalWithdrawal(0);
         } else {
@@ -165,19 +157,15 @@ const DisplayCard = () => {
     axios
       .post(`${apiurl}` + "/member/refferal/refferal-my-team", data, config)
       .then((res) => {
-        // console.log(res.data.teamMembers.length)
         if (res.data.teamMembers) {
           setRefferalTeam(res.data.teamMembers);
-          // console.log(res.data.teamMembers);
 
           setNoRefferalTeam(false);
         } else {
           setNoRefferalTeam(true);
         }
       })
-      .catch((error) => {
-        console.log(error.response);
-      });
+      .catch((error) => {});
   };
 
   // modal for my team
@@ -255,27 +243,6 @@ const DisplayCard = () => {
     setOpenShareModal(false);
   };
 
-
-// const copyToClipBoard = (text) => {
-//     const textField = document.createElement("textarea");
-//     textField.innerText = text;
-//     document.body.appendChild(textField);
-//     textField.select();
-
-//     try {
-//       const successful = document.execCommand("copy");
-//       if (successful) {
-//         message.success("Text copied to clipboard: " + text);
-//       } else {
-//         fallbackCopyTextToClipboard(text);
-//       }
-//     } catch (err) {
-//       fallbackCopyTextToClipboard(text);
-//     }
-
-//     document.body.removeChild(textField);
-//   };
-
   const fallbackCopyTextToClipboard = (text) => {
     const textArea = document.createElement("textarea");
     textArea.value = text;
@@ -299,9 +266,9 @@ const DisplayCard = () => {
   return (
     <>
       <ShareMessage
-         openSharModal={openSharModal}
-         handleClose={handleClose}
-         referralID={memberDetails.refferal}
+        openSharModal={openSharModal}
+        handleClose={handleClose}
+        referralID={memberDetails.refferal}
       />
       <div className="card1-container">
         <div className="card1">
@@ -348,14 +315,6 @@ const DisplayCard = () => {
             </span>
           </div>
         </div>
-        {/* <div className="card1">
-          <div className="live-chat">
-            <h6>Live Chat</h6>
-          </div>
-          <div className="live-chat-join" onClick={joinChat}>
-            <span style={{ color: "yellow", cursor: "pointer" }}>Join</span>
-          </div>
-        </div> */}
         <div className="card1">
           <div className="wallet">
             <h6>Wallet</h6>
@@ -366,7 +325,6 @@ const DisplayCard = () => {
               {subscriptionStatus.formattedAmount}
             </span>
           </div>
-          
         </div>
 
         <div className="card1">
@@ -394,7 +352,12 @@ const DisplayCard = () => {
             <h6>Share and Earn</h6>
           </div>
           <div className="share">
-            <span style={{ color: "yellow", cursor: "pointer" }} onClick={openModal}>share</span>
+            <span
+              style={{ color: "yellow", cursor: "pointer" }}
+              onClick={openModal}
+            >
+              share
+            </span>
           </div>
         </div>
 
@@ -460,7 +423,7 @@ const DisplayCard = () => {
           placeholder="Search By Trader Id or type"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
-          style={{ marginBottom: "16px" }} // You can adjust the styling as needed
+          style={{ marginBottom: "16px" }}
         />
 
         {!noRefferalTeam ? (

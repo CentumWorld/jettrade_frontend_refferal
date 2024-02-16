@@ -10,8 +10,6 @@ import { BiStar } from 'react-icons/bi'
 import { NavLink } from "react-router-dom"
 import AdminSideBarMenu from "./AdminSideBarMenu";
 
-
-
 const routes = [
     {
         path: '/admindashboard/dashboard',
@@ -50,8 +48,6 @@ const routes = [
                 path: "/admindashboard/transferhistory",
                 name: 'Transfer history',
             },
-
-
         ],
     },
     {
@@ -79,8 +75,6 @@ const routes = [
                 path: "/admindashboard/demo-account",
                 name: 'Open demo account',
             },
-
-
         ],
     },
     {
@@ -123,20 +117,12 @@ const routes = [
 
 function AdminSideBar() {
     const [isOpen, setIsOpen] = useState(false);
-    // const [showModal, setShowModal] = useState(false);
-    // const openModal = () => {
-    //     setShowModal(true);
-    // };
-    // console.log(showModal);
-
     const toggle = () => setIsOpen(!isOpen);
     return (
         <div className='admin-sidebar-main-container'>
             <motion.div animate={{ width: isOpen ? '350px' : '50px' }} className='admin-sidebar'>
                 <div className="admin-top-section">
                     {isOpen && <h1 className='admin_logo'>Admin</h1>}
-
-                    {/* <h1 className="">Badal</h1> */}
                     <div className="admin-bars">
                         <FaBars onClick={toggle} />
                     </div>
@@ -155,7 +141,6 @@ function AdminSideBar() {
                             </NavLink>
                         )
                     })}
-
                 </section>
             </motion.div>
         </div>
