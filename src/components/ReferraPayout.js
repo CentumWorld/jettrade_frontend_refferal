@@ -5,6 +5,10 @@ import moment from "moment";
 import axios from "axios";
 import baseUrl from "../baseUrl";
 import TabPane from "antd/es/tabs/TabPane";
+import { useNavigate } from "react-router-dom";
+import {BiArrowBack} from 'react-icons/bi'
+
+
 const apiurl = baseUrl.apiUrl;
 const memberID = localStorage.getItem("memberid");
 const memberToken = localStorage.getItem("token");
@@ -12,6 +16,8 @@ const memberToken = localStorage.getItem("token");
 const { Search } = Input;
 
 const ReferralPayout = () => {
+
+  const navigate = useNavigate()
   const [myTeam, setMyTeam] = useState([]);
   const [filteredMyTeam, setFilteredMyTeam] = useState([]);
   const [searchText, setSearchText] = useState("");
@@ -44,10 +50,8 @@ const ReferralPayout = () => {
         .then((res) => {
           setMyTeam(res.data.memberTransactions);
         })
-        .catch((err) => {
-        });
-    } catch (err) {
-    }
+        .catch((err) => {});
+    } catch (err) {}
   };
 
   const handleSearch = (value) => {
@@ -96,11 +100,18 @@ const ReferralPayout = () => {
     pageSize: 7,
   };
 
+  const gotoHome = ()=> {
+
+  }
+
   return (
     <div>
       <div className="myteam-container">
         <div className="myteam-header">
-          <p>Referral Payout</p>
+          <div className="d-flex" >
+            <BiArrowBack onClick={gotoHome} style={{ cursor: "pointer",color:'wheat',marginTop:'5px' }} />
+            &nbsp;<p>Referral Payout</p>
+          </div>
           <Search
             placeholder="Search by User ID or Type"
             allowClear
