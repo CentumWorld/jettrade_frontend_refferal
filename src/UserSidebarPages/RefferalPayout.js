@@ -296,7 +296,7 @@ const RefferalPayout = () => {
 
           </div>
           <div class="card">
-            <div className="d-flex justify-content-between"><p>Withdrawal</p><Button type="primary" style={{ cursor: "pointer" }} onClick={openBankSelectModal}><BsPlusCircle />&nbsp;Add Bank</Button></div>
+            <div className="d-flex justify-content-between"><p>Withdrawal</p><Button type="primary" style={{ cursor: "pointer" }} onClick={openBankSelectModal}><BsPlusCircle />&nbsp;Select Bank</Button></div>
             <label htmlFor="">Enter Amount</label>
             <Input
               type="number"

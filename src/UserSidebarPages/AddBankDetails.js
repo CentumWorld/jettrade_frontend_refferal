@@ -198,7 +198,7 @@ const AddBankDetails = () => {
               </Form.Item>
 
               <Form.Item
-                label="Brnch name"
+                label="Branch name"
                 name="branch"
                 rules={[
                   {
