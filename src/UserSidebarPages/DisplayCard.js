@@ -232,8 +232,15 @@ const DisplayCard = () => {
   ];
 
   const copyToClipBoard = () => {
-    navigator.clipboard.writeText(memberDetails.refferal);
-    message.success("Text copied to clipboard " + memberDetails.refferal);
+    const textField = document.createElement('textarea');
+    textField.innerText = memberDetails.refferal;
+  
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand('copy');
+    document.body.removeChild(textField);
+  
+    message.success("Text copied to clipboard: " + memberDetails.refferal);
   };
 
   const openModal = () => {
@@ -439,7 +446,7 @@ const DisplayCard = () => {
               style={{ color: "yellow", cursor: "pointer" }}
               onClick={openModal}
             >
-              share
+          
             </span>
           </div>
         </div>
