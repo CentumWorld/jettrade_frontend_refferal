@@ -231,9 +231,14 @@ const DisplayCard = () => {
     },
   ];
 
-  const copyToClipBoard = () => {
-    navigator.clipboard.writeText(memberDetails.refferal);
-    message.success("Text copied to clipboard " + memberDetails.refferal);
+  const copyToClipBoard = async () => {
+    try {
+      await navigator.clipboard.writeText(memberDetails.refferal);
+      message.success("Text copied to clipboard: " + memberDetails.refferal);
+    } catch (error) {
+      console.error("Clipboard access failed:", error);
+      message.error("Clipboard access failed");
+    }
   };
 
   const openModal = () => {
