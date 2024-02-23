@@ -7,12 +7,16 @@ import { BsPlusCircle } from "react-icons/bs"
 import moment from "moment";
 import baseUrl from "../baseUrl";
 import { endDate } from "./common/EndDate";
+import {BiArrowBack} from 'react-icons/bi'
+import { useNavigate } from "react-router-dom";
 
 const apiurl = baseUrl.apiUrl;
 
 const { TabPane } = Tabs;
 
 const RefferalPayout = () => {
+  const navigate = useNavigate();
+
   const [payoutAmout, setPayOutAmount] = useState(0);
   const [amount, setAmount] = useState("");
   const [requestDetails, setRequestDetails] = useState([]);
@@ -273,22 +277,26 @@ const RefferalPayout = () => {
     setSelectedUpiId(e.target.value);
   }
 
+  const gotoHome = ()=> {
+    navigate('/userdashboard/dashboard');
+  }
+
   return (
     <>
       <div className="reffer-container">
         <div className="reffer-header">
-          <p>Withdrawal History</p>
+          <div className="d-flex"><BiArrowBack onClick={gotoHome} style={{cursor:'pointer',marginTop:'5px'}}/>&nbsp;<p>Withdrawal History</p></div>
         </div>
 
 
         <div class="card-container">
           <div class="card">
             <p>Total Amount</p>
-            <h6>Total Amount: {payoutAmout}</h6>
+            <h6>Total Amount:<strong> {payoutAmout}</strong></h6>
 
           </div>
           <div class="card">
-            <div className="d-flex justify-content-between"><p>Withdrawal</p><Button type="primary" style={{ cursor: "pointer" }} onClick={openBankSelectModal}><BsPlusCircle />&nbsp;Add Bank</Button></div>
+            <div className="d-flex justify-content-between"><p>Withdrawal</p><Button type="primary" style={{ cursor: "pointer" }} onClick={openBankSelectModal}><BsPlusCircle />&nbsp;Select Bank</Button></div>
             <label htmlFor="">Enter Amount</label>
             <Input
               type="number"
@@ -301,8 +309,8 @@ const RefferalPayout = () => {
           </div>
           <div class="card">
             <p>Last Withdrawal</p>
-            <h6>Amount:{lastAmount}</h6>
-            <strong> Last Date: {endDate(lastDate)}</strong>
+            <h6>Amount: {lastAmount ? lastAmount : "0.00"}</h6>
+            <strong>Last Date: {lastDate ? endDate(lastDate) : "00-00-0000"}</strong>
           </div>
         </div>
         <br />

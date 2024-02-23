@@ -163,7 +163,7 @@ const AddBankDetails = () => {
       </div>
 
       <Modal
-        title="Bank details & UPI Id"
+       title={<span style={{ color: '#1677ff' }}>Bank details & UPI Id</span>}
         open={bankModal}
         onCancel={() => setBankModal(false)}
         footer={null}
@@ -198,7 +198,7 @@ const AddBankDetails = () => {
               </Form.Item>
 
               <Form.Item
-                label="Brnch name"
+                label="Branch name"
                 name="branch"
                 rules={[
                   {

@@ -1,3 +1,6 @@
+*{
+  font-family:Roboto;
+}
 .reffer-container{
     background: rgb(243,245,254);
     width: 100%;
@@ -16,7 +19,6 @@
 }
 .reffer-container p{
     font-size: large;
-    font-family: Calibri;
     font-weight: 600;
 }
 

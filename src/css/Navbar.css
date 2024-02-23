@@ -10,6 +10,14 @@
     font-weight: bold;
    
 }
+
+.navbar-toggler{
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem 0 0;
+}
 .navbar{
     position: sticky;
     top: 0px;
@@ -33,14 +41,27 @@ form label {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+img{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 1rem;
+}
+
 @media only screen and (max-width: 365px) {
-    img{
-        display: none;
-    }
+  
     .navbar-brand{
         display: flex;
         align-items: center;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    img{
+        display: none;
+    }
+ 
 }
 
 /* tablet Screen */
