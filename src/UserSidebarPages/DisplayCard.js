@@ -231,14 +231,16 @@ const DisplayCard = () => {
     },
   ];
 
-  const copyToClipBoard = async () => {
-    try {
-      await navigator.clipboard.writeText(memberDetails.refferal);
-      message.success("Text copied to clipboard: " + memberDetails.refferal);
-    } catch (error) {
-      console.error("Clipboard access failed:", error);
-      message.error("Clipboard access failed");
-    }
+  const copyToClipBoard = () => {
+    const textField = document.createElement('textarea');
+    textField.innerText = memberDetails.refferal;
+  
+    document.body.appendChild(textField);
+    textField.select();
+    document.execCommand('copy');
+    document.body.removeChild(textField);
+  
+    message.success("Text copied to clipboard: " + memberDetails.refferal);
   };
 
   const openModal = () => {
@@ -444,7 +446,7 @@ const DisplayCard = () => {
               style={{ color: "yellow", cursor: "pointer" }}
               onClick={openModal}
             >
-              share
+          
             </span>
           </div>
         </div>
