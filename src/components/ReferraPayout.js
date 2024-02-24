@@ -101,7 +101,7 @@ const ReferralPayout = () => {
   };
 
   const gotoHome = ()=> {
-
+    navigate("/");
   }
 
   return (

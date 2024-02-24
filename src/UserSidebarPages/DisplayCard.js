@@ -446,7 +446,7 @@ const DisplayCard = () => {
               style={{ color: "yellow", cursor: "pointer" }}
               onClick={openModal}
             >
-          
+          share
             </span>
           </div>
         </div>
