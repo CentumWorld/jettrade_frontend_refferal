@@ -75,7 +75,6 @@ function UserRegistration() {
   const memberInputs = (e) => {
     e.preventDefault();
     setMemberData({ ...memberData, [e.target.name]: e.target.value });
-
   };
 
   //handle front aadhar image function
@@ -182,7 +181,7 @@ function UserRegistration() {
 
     if (countryCode === "91") {
       axios
-        .post(`${apiurl}`+"/member/member-registration", formData)
+        .post(`${apiurl}` + "/member/member-registration", formData)
         .then((res) => {
           setMemberData({
             fname: "",
@@ -197,7 +196,10 @@ function UserRegistration() {
         });
     } else {
       axios
-        .post(`${apiurl}`+"/member/refferal/other-country-member-registration", formData)
+        .post(
+          `${apiurl}` + "/member/refferal/other-country-member-registration",
+          formData
+        )
         .then((res) => {
           message.success("Registration successful");
           navigate("/member-login");
@@ -219,13 +221,14 @@ function UserRegistration() {
 
   const [selectedOption, setSelectedOption] = useState("referral");
   const [referralId, setReferralId] = useState("");
-  const officialId = "admin@123";
+  const officialId = "FC-FRA3894";
   const [countryCode, setCountryCode] = useState("");
 
   const handleDropdownChange = (value) => {
+    console.log(value)
     setSelectedOption(value);
     setReferralId("");
-    setMemberData({ ...memberData, invite_code: officialId });
+    setMemberData({ ...memberData, refferedId: officialId });
   };
 
   const hadleRefferalId = (value) => {
@@ -250,15 +253,30 @@ function UserRegistration() {
           <div className="form-content">
             <form>
               <div className="first_name">
-                <p>Referred ID</p>
-                <Input
-                  className="custom-placeholder-input"
-                  placeholder="Enter referred Id"
-                  name="refferedId"
-                  value={memberData.refferedId}
-                  onChange={memberInputs}
-                  style={{ marginBottom: "10px", width: "min-content" }}
-                />
+                <Select value={selectedOption} onChange={handleDropdownChange}>
+                  <Option value="official">Official ID</Option>
+                  <Option value="referral"> Put Referral ID</Option>
+                </Select>
+                {selectedOption === "official" && (
+                  <Input
+                    className="custom-placeholder-input"
+                    placeholder="Enter referred Id"
+                    value={officialId}
+                    style={{ marginBottom: "10px", width: "min-content" ,backgroundColor:"#fff"}}
+                    disabled
+                  />
+                )}
+
+                {selectedOption === "referral" && (
+                  <Input
+                    className="custom-placeholder-input"
+                    placeholder="Enter referred Id"
+                    name="refferedId"
+                    value={memberData.refferedId}
+                    onChange={memberInputs}
+                    style={{ marginBottom: "10px", width: "min-content" }}
+                  />
+                )}
               </div>
 
               <div className="first_name">
