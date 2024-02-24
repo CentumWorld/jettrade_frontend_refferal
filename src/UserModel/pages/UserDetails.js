@@ -95,8 +95,7 @@ const UserDetails = () => {
         });
         fetchMemberProfilePhoto();
       }
-    } catch (error) {
-    }
+    } catch (error) {}
   };
 
   const fetchMemberProfilePhoto = async () => {
@@ -116,9 +115,7 @@ const UserDetails = () => {
         config
       );
       setImage({ placeholder: response.data.result[0].imageUrl });
-    } catch (error) {
-      
-    }
+    } catch (error) {}
   };
 
   // function for upload profile
@@ -197,9 +194,7 @@ const UserDetails = () => {
           gender: result.data.result[0].gender,
         });
       })
-      .catch((error) => {
-      
-      });
+      .catch((error) => {});
   };
 
   const editInputChange = (e) => {
@@ -217,16 +212,16 @@ const UserDetails = () => {
     }));
   };
 
-  const handleDobChange = (date) => {
+  const handleDobChange = (date, stringDate) => {
     setEditMemberData((prevFormData) => ({
       ...prevFormData,
-      dob: date,
+      dob: stringDate,
     }));
   };
   const editModalSubmit = (e) => {
     e.preventDefault();
     const data = {
-      memberid: localStorage.getItem("memberid"),
+      userid: localStorage.getItem("memberid"),
       fname: editMemberData.fname,
       lname: editMemberData.lname,
       phone: editMemberData.phone,
@@ -236,6 +231,7 @@ const UserDetails = () => {
       pan: editMemberData.pan,
       gender: editMemberData.gender,
     };
+    console.log(data);
     const token = localStorage.getItem("token");
     const config = {
       headers: {
@@ -249,6 +245,7 @@ const UserDetails = () => {
         config
       )
       .then((res) => {
+        console.log(res.data)
         message.success("Updated Successfully");
         setIsEditModalVisible(false);
       })
@@ -372,11 +369,11 @@ const UserDetails = () => {
                     name="file1"
                     onChange={handleProfileImageChange}
                   />
-                  <label htmlFor="file-input" style={{cursor:'pointer'}}>
-                    <img src={image.placeholder} alt="" />
+                  <label htmlFor="file-input" style={{ cursor: "pointer" }}>
+                    <img src={image.placeholder} alt="image" />
                   </label>
 
-                  <div class=" upload_file d-grid mx-auto">
+                  <div class="upload_file d-grid mx-auto">
                     <button class="btn btn-primary" type="submit">
                       {loading ? <Spin /> : "Upload"}
                     </button>
