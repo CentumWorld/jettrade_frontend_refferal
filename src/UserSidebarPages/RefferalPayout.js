@@ -291,8 +291,8 @@ const RefferalPayout = () => {
 
         <div class="card-container">
           <div class="card">
-            <p>Total Amount</p>
-            <h6>Total Amount:<strong> {payoutAmout}</strong></h6>
+            <p>Total Wallet Amount</p>
+            <h6>Total Wallet Amount:<strong> {payoutAmout}</strong></h6>
 
           </div>
           <div class="card">
