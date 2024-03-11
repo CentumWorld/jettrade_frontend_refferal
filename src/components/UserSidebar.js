@@ -43,11 +43,11 @@ const routes = [
     icon: <FcBarChart />,
   },
 
-  {
-    path: "/userdashboard/refferal-payout",
-    name: "Withdrawal",
-    icon: <FaShare />,
-  },
+  // {
+  //   path: "/userdashboard/refferal-payout",
+  //   name: "Withdrawal",
+  //   icon: <FaShare />,
+  // },
 
   {
     path: "/userdashboard/referral-payout",

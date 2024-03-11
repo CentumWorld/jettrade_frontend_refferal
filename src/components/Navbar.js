@@ -41,7 +41,7 @@ function Navbar() {
     <Menu onClick={handleMenuClick}>
       <Menu.Item key="login">Login</Menu.Item>
       <Menu.Item key="signup">Sign Up</Menu.Item>
-      <Menu.Item key="forget">Forget Password</Menu.Item>
+      {/* <Menu.Item key="forget">Forget Password</Menu.Item> */}
     </Menu>
   );
 

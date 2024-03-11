@@ -379,7 +379,7 @@ const DisplayCard = () => {
             <span style={{ color: "yellow", cursor: "pointer" }}>Join</span>
           </div>
         </div> */}
-        <div className="card1"
+        {/* <div className="card1"
          style={{
           backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
@@ -398,9 +398,9 @@ const DisplayCard = () => {
               {subscriptionStatus.formattedAmount}
             </span>
           </div>
-        </div>
+        </div> */}
 
-        <div className="card1"
+        {/* <div className="card1"
          style={{
           backgroundImage: `url(${card1})`,
           backgroundSize: "cover",
@@ -426,7 +426,7 @@ const DisplayCard = () => {
               <FaHandHoldingUsd />
             </span>
           </div>
-        </div>
+        </div> */}
 
         <div className="card1"
          style={{
