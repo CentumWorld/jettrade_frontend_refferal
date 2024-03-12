@@ -377,7 +377,7 @@ function UserRegistration() {
               {countryCode === "91" ? (
                 <>
                   <div className="first_name">
-                    <p>Aadhar No......</p>
+                    <p>Aadhar No.</p>
                     <Input
                       className="custom-placeholder-input"
                       placeholder=" Enter Aadhar no."
