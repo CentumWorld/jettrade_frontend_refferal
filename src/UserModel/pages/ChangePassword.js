@@ -42,7 +42,7 @@ function ChangePassword() {
           setFormData("");
         })
         .catch((err) => {
-          message.error("Server error !!");
+          message.error(err.response.data.message);
         });
     }
   };
