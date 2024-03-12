@@ -397,7 +397,6 @@ function UserRegistration() {
                         type="file"
                         accept=".jpg, .jpeg, .png"
                         onChange={handleClickAadharFrontImage}
-                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
@@ -410,7 +409,6 @@ function UserRegistration() {
                         type="file"
                         accept=".jpg, .jpeg, .png"
                         onChange={handleClickAadharBackImage}
-                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
@@ -435,7 +433,6 @@ function UserRegistration() {
                         placeholder="Pan card"
                         accept=".jpg, .jpeg, .png" 
                         type="file"
-                        accept=".jpg, .jpeg, .png"
                         onChange={handleClickPanCardImage}
                         style={{ marginBottom: "10px" }}
                       />
@@ -463,7 +460,6 @@ function UserRegistration() {
                         type="file"
                         accept=".jpg, .jpeg, .png"
                         onChange={handleClickForeignCard}
-                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
