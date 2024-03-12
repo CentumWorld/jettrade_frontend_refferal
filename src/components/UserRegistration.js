@@ -377,12 +377,13 @@ function UserRegistration() {
               {countryCode === "91" ? (
                 <>
                   <div className="first_name">
-                    <p>Aadhar No.</p>
+                    <p>Aadhar No......</p>
                     <Input
                       className="custom-placeholder-input"
                       placeholder=" Enter Aadhar no."
                       type="text"
                       name="aadhar_no"
+                      maxLength="12"                   
                       onChange={memberInputs}
                       style={{ marginBottom: "10px" }}
                     />
@@ -395,6 +396,7 @@ function UserRegistration() {
                         placeholder="Aadhar Front Image"
                         type="file"
                         onChange={handleClickAadharFrontImage}
+                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
@@ -406,6 +408,7 @@ function UserRegistration() {
                         placeholder="Aadhar back Image"
                         type="file"
                         onChange={handleClickAadharBackImage}
+                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
@@ -428,6 +431,7 @@ function UserRegistration() {
                       <Input
                         className="custom-placeholder-input"
                         placeholder="Pan card"
+                        accept=".jpg, .jpeg, .png" 
                         type="file"
                         onChange={handleClickPanCardImage}
                         style={{ marginBottom: "10px" }}
@@ -455,6 +459,7 @@ function UserRegistration() {
                         placeholder="Upload ID Card"
                         type="file"
                         onChange={handleClickForeignCard}
+                        accept=".jpg, .jpeg, .png" 
                       />
                     </div>
                   </div>
