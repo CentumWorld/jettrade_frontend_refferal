@@ -28,7 +28,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 const ShareMessage = ({ openSharModal, handleClose, referralID }) => {
   const [userType, setUserType] = useState("Referral");
 
-  const shareUrl = "https://jettradefx.in/";
+  const shareUrl = "http://trader.jettradefx.in/user-registration";
   const [open, setOpen] = useState(false);
   useEffect(() => {
     setOpen(openSharModal);

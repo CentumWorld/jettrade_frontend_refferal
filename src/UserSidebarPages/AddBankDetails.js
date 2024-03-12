@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import baseUrl from "../baseUrl";
 import "../css/BankDetails.css";
 import { BsPlusCircleFill } from "react-icons/bs";
+import { BiArrowBack } from "react-icons/bi"
 import { Button, Modal, Tabs, Input, Form, message, Spin, Table } from "antd";
 import axios from "axios";
 const { TabPane } = Tabs;
 const apiurl = baseUrl.apiUrl;
 
 const AddBankDetails = () => {
+  const navigate = useNavigate();
   const [bankModal, setBankModal] = useState(false);
   const [showSpin, setShowSpin] = useState(false);
   const [bankDetails, setBankDetails] = useState([]);
@@ -152,10 +155,14 @@ const AddBankDetails = () => {
       });
   };
 
+  const gotoDashboard = ()=>{
+    navigate('/userdashboard/dashboard')
+  }
+
   return (
     <>
       <div className="bank-header">
-        <p>Bank details & UPI ID</p>
+        <p> <BiArrowBack onClick={gotoDashboard} style={{cursor:'pointer'}}/>&nbsp;Bank details & UPI ID</p>
         <Button type="primary" onClick={openBankModal}>
           <BsPlusCircleFill />
           &nbsp; Add Bank

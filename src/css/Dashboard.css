@@ -3,6 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.heading p{
+    font-size: 18px;
+    font-weight:700;
+    font-family:'Roboto',sans-serif;
+    color:#000;
+}
 #tradingview_86a77{
     width: 100%;
     height: 85vh;

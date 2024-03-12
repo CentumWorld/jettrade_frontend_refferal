@@ -46,6 +46,10 @@
   display: flex;
   justify-content: center;
 }
+.upload_file{
+  margin-top:150px;
+}
+
 .pic img {
   border-radius: 50%;
   width: 150px;
@@ -68,6 +72,7 @@
 @media only screen and (max-width: 768px) {
   .user_deatails_main_div {
     position: relative;
+    flex-direction: column-reverse;
   }
   .user_profile {
     position: absolute;
@@ -75,10 +80,10 @@
   .user_profile img {
     width: 100px;
     height: 100px;
+    display:block;
   }
   .user_details_content {
     position: absolute;
-    margin-top: 60%;
   }
   .user_card {
     overflow: scroll;
@@ -127,6 +132,7 @@
   .upload_file {
     justify-content: center;
     align-items: center;
+    margin-top:100px;
   }
   .user_main_heading {
     display: block;

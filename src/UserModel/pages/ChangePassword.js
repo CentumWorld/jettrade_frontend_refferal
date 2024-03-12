@@ -30,16 +30,13 @@ function ChangePassword() {
     } else {
       const token = localStorage.getItem("token");
       let data = {
-        oldPassword: formData.oldPassword,
-        newPassword: formData.newPassword,
-      };
-      const config = {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+        oldpassword : formData.oldPassword,
+        newpassword : formData.newPassword,
+        usertype : "REFERRAL",
+        id : localStorage.getItem('memberid')
       };
       axios
-        .post(`${apiurl}` + "/member/member-change-password", data, config)
+        .post(`${apiurl}` + "/password/passwordChange/allPasswordChange", data)
         .then((res) => {
           message.success(res.data.message);
           setFormData("");
@@ -69,48 +66,13 @@ function ChangePassword() {
             <hr />
           </div>
           <div className="select_password_type_info">
-            <p>Select a password or PIN</p>
 
             <div className="password_radio_select">
-              <div onChange={onChangeValue}>
                 <input type="radio" name="pin" value="FXPIN" />
                 &nbsp;
                 <label htmlFor="html">JettradeFX PIN </label>
-              </div>
-              <div onChange={onChangeValue}>
-                <input type="radio" name="pin" value="PERSONALPIN" />
-                &nbsp;
-                <label htmlFor="html">Personal area Pin</label>
-              </div>
             </div>
           </div>
-          {selectDiv === "FXPIN" ? (
-            <div className="fx_pin">
-              <div className="password_form">
-                <div className="newpassword form-group">
-                  <label htmlFor="new_password">New</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="New password"
-                  />
-                </div>
-                <div className="password_form">
-                  <div className="newpassword form-group">
-                    <label htmlFor="new_password">Repeat</label>
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Repeat password"
-                    />
-                  </div>
-                </div>
-                <div className="change_password_submit">
-                  <button className="btn btn-primary">Change</button>
-                </div>
-              </div>
-            </div>
-          ) : (
             <div className="fx_pin">
               <div className="password_form">
                 <div className="newpassword form-group">
@@ -143,7 +105,7 @@ function ChangePassword() {
                 </div>
               </div>
             </div>
-          )}
+        
         </div>
       </div>
     </>

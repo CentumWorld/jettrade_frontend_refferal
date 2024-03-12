@@ -23,7 +23,7 @@ export const UserModal = ({ setShowModal, toggleMenu }) => {
                 <li><NavLink to="/userdashboard/setting/userdetails"><RiErrorWarningFill/>&nbsp;&nbsp; Your Details</NavLink></li>
                 <li><NavLink to="/userdashboard/setting/verify"><MdOutlineVerifiedUser/>&nbsp;&nbsp;Profile verification</NavLink></li>
                 <li><NavLink to="/userdashboard/setting/changepassword"><IoMdLock/>&nbsp;&nbsp;Change password</NavLink></li>
-                <li><NavLink to="/userdashboard/setting/resetpassword"><GiAnticlockwiseRotation/>&nbsp;&nbsp;Reset password</NavLink></li>
+                {/* <li><NavLink to="/userdashboard/setting/resetpassword"><GiAnticlockwiseRotation/>&nbsp;&nbsp;Reset password</NavLink></li> */}
             </ul>
         </div>
     </div>,

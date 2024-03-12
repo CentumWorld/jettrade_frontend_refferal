@@ -221,7 +221,7 @@ function UserRegistration() {
 
   const [selectedOption, setSelectedOption] = useState("referral");
   const [referralId, setReferralId] = useState("");
-  const officialId = "FC-FRA3894";
+  const officialId = "FC-FRA6365";
   const [countryCode, setCountryCode] = useState("");
 
   const handleDropdownChange = (value) => {
@@ -390,11 +390,12 @@ function UserRegistration() {
                     {errorMessage && <Text type="danger">{errorMessage}</Text>}
                   </div>
                   <div className="aadhar-front">
-                    <p>Aadhar Front</p>
+                    <p>Aadhar Front(JPG/PNG)</p>
                     <div>
                       <Input
                         placeholder="Aadhar Front Image"
                         type="file"
+                        accept=".jpg, .jpeg, .png"
                         onChange={handleClickAadharFrontImage}
                         accept=".jpg, .jpeg, .png" 
                       />
@@ -402,11 +403,12 @@ function UserRegistration() {
                   </div>
 
                   <div className="aadhar-back">
-                    <p>Aadhar Back</p>
+                    <p>Aadhar Back(JPG/PNG)</p>
                     <div>
                       <Input
                         placeholder="Aadhar back Image"
                         type="file"
+                        accept=".jpg, .jpeg, .png"
                         onChange={handleClickAadharBackImage}
                         accept=".jpg, .jpeg, .png" 
                       />
@@ -426,13 +428,14 @@ function UserRegistration() {
                   </div>
 
                   <div className="pan_card">
-                    <p>Pan Card</p>
+                    <p>Pan Card(JPG/PNG)</p>
                     <div>
                       <Input
                         className="custom-placeholder-input"
                         placeholder="Pan card"
                         accept=".jpg, .jpeg, .png" 
                         type="file"
+                        accept=".jpg, .jpeg, .png"
                         onChange={handleClickPanCardImage}
                         style={{ marginBottom: "10px" }}
                       />
@@ -458,6 +461,7 @@ function UserRegistration() {
                       <Input
                         placeholder="Upload ID Card"
                         type="file"
+                        accept=".jpg, .jpeg, .png"
                         onChange={handleClickForeignCard}
                         accept=".jpg, .jpeg, .png" 
                       />
